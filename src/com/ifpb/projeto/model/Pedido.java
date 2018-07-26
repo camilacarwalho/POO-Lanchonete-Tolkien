@@ -10,6 +10,7 @@ public class Pedido{
     private double valorTotal;
     private LocalDate data;
     private LocalTime hora;
+    private boolean atendido;
 
     public Pedido(String nome, double valorUnitario, int quantidade, LocalDate data, LocalTime hora) {
         this.nome = nome;
@@ -18,6 +19,7 @@ public class Pedido{
         this.valorTotal = quantidade*valorUnitario;
         this.data = data;
         this.hora = hora;
+        this.atendido = false;
     }
 
 
@@ -61,4 +63,12 @@ public class Pedido{
     public LocalTime getHora() {return hora;}
 
     public void setHora(LocalTime hora) {this.hora = hora;}
+
+    public boolean isAtendido() {
+        return atendido;
+    }
+
+    public void setAtendido(boolean atendido) {
+        this.atendido = atendido;
+    }
 }
