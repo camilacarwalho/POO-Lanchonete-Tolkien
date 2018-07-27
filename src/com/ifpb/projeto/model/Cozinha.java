@@ -10,8 +10,15 @@ public class Cozinha {
         this.pedidos = pedidos;
     }
 
-    //retornar if pedidos.isAberto == true;
+    public void atendePedido(Pedido pedido){
+        if (pedido.isAtendido()) pedido.setAtendido(false);
+    }
 
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
 
-    //metodo atender
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
 }
