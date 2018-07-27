@@ -10,13 +10,14 @@ public class Pedido{
     private double valorTotal;
     private LocalDate data;
     private LocalTime hora;
+    //Verificar se foi atendido ou não
     private boolean atendido;
 
     public Pedido(String nome, double valorUnitario, int quantidade, LocalDate data, LocalTime hora) {
         this.nome = nome;
         this.valorUnitario = valorUnitario;
         this.quantidade = quantidade;
-        this.valorTotal = quantidade*valorUnitario;
+        this.valorTotal = quantidade*valorUnitario; //Calcular valor total de um pedido
         this.data = data;
         this.hora = hora;
         this.atendido = false;

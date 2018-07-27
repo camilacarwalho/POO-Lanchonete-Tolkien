@@ -20,5 +20,15 @@ public class Cardapio {
         this.produtos = produtos;
     }
 
+    public void addProduto(Produto produto) {
+        produtos.add(produto);
+    }
+
+    public void removeProduto(Produto produto) {
+        produtos.remove(produto);}
+
+    public void editaProduto(Produto produto){}
+
+    //Salvar,Excluir e Editar um produti
     }
 

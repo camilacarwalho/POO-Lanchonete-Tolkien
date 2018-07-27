@@ -1,5 +1,8 @@
 package com.ifpb.projeto.model;
 
+import java.util.Objects;
+
+//Modelagem de produto
 public class Produto {
     private int codigo;
     private String nome;
@@ -44,6 +47,24 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return codigo == produto.codigo &&
+                Double.compare(produto.preco, preco) == 0 &&
+                Objects.equals(nome, produto.nome) &&
+                Objects.equals(descricao, produto.descricao);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(codigo, nome, descricao, preco);
     }
 }
 

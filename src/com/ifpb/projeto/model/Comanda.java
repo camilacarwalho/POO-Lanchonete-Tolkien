@@ -1,39 +1,35 @@
 package com.ifpb.projeto.model;
+import java.util.ArrayList;
 import java.util.List;
-
+import java.time.LocalDate;
 import com.ifpb.projeto.model.Pedido;
 
 public class Comanda {
-   private List<Pedido> pedidos;
+   private List<Pedido> comanda;
    private double valorFinal;
    private int numMesa;
+   private static LocalDate data;
    private static int numComanda;
 
-    public Comanda(List<Pedido> pedidos, int numMesa) {
-        this.pedidos = pedidos;
+    public Comanda(int numMesa) {
+        numComanda++;
+        comanda = new ArrayList<>();
         this.valorFinal = 0;
         this.numMesa = numMesa;
+        data = LocalDate.now();
     }
 
-    public static int getNumComanda() {
-        return numComanda; //Perguntar a Yan
-    }
-
-    public static void setNumComanda(int numComanda) {
-        Comanda.numComanda = numComanda;
-    }
-
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
-
-    public double getValorFinal() {
-        for(int i=0;i<pedidos.size();i++) this.valorFinal += pedidos.get(i).getValorTotal();
+    public double getValorFinal() { //Retorna valor total da comanda, junção de todos os pedidos
+        for(int i=0;i<comanda.size();i++) this.valorFinal += comanda.get(i).getValorTotal();
         return valorFinal;
+    }
+
+    public List<Pedido> getComanda() {
+        return comanda;
+    }
+
+    public void setComanda(List<Pedido> comanda) {
+        this.comanda = comanda;
     }
 
     public void setValorFinal(double valorFinal) {
@@ -48,5 +44,23 @@ public class Comanda {
         this.numMesa = numMesa;
     }
 
-    //atender, editar um pedido
+    public static LocalDate getData() {
+        return data;
+    }
+
+    public static void setData(LocalDate data) {
+        Comanda.data = data;
+    }
+
+    public static int getNumComanda() {
+        return numComanda;
+    }
+
+    public static void setNumComanda(int numComanda) {
+        Comanda.numComanda = numComanda;
+    }
+
+
+    //atender, editar um pedido com List
+
 }
