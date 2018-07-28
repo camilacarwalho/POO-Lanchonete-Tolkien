@@ -6,11 +6,19 @@ import java.lang.Object;
 import com.ifpb.projeto.model.Produto;
 
 public class Cardapio {
+
+    //O cardapio vai ser composto apenas por uma lista de produtos;
+    //A lista poderá receber novos produtos;
+    //Modificar produtos atuais;
+    //Excluir produtos já existentes;
     private List<Produto> produtos;
 
+    //Construtor
     public Cardapio(List<Produto> produtos) {
         this.produtos = produtos;
     }
+
+    //Getters and Setters
 
     public List<Produto> getProdutos() {
         return produtos;
@@ -20,6 +28,11 @@ public class Cardapio {
         this.produtos = produtos;
     }
 
+
+    //FUNÇÕES COMUNS PARA CADA CARDÁPIO;
+    //TODAS SUJEITAS A MUDANÇA;
+    //POR FAVOR FALAR COM MAILSU NO WHATS E NÃO DAR VÁCUO NELE <3;
+
     public void addProduto(Produto produto) {
         produtos.add(produto);
     }
@@ -27,8 +40,10 @@ public class Cardapio {
     public void removeProduto(Produto produto) {
         produtos.remove(produto);}
 
-    public void editaProduto(Produto produto){}
+    public void editaProduto(Produto produto, int indice){
+        produtos.set(indice,produto);
+    }
 
     //Salvar,Excluir e Editar um produti
-    }
+}
 

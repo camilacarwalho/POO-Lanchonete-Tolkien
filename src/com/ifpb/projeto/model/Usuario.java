@@ -6,22 +6,29 @@ import java.util.Objects;
 
 //Modelagem de Usuario
 public class Usuario {
+
+    //Abaixo se econtram os dados base do cadastro de um usuário;
+
     private String cpf;
     private String nome;
     private String email;
     private String telefone;
     private LocalDate nascimento;
     private Setor setor;
+    private String senha;
 
-    public Usuario(String cpf, String nome, String email, String telefone, LocalDate nascimento, Setor setor) {
+    //Construtor
+    public Usuario(String cpf, String nome, String email, String telefone, LocalDate nascimento, Setor setor, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.nascimento = nascimento;
         this.setor = setor;
+        this.senha = senha;
     }
 
+    //Getters and Setters
 
     public String getCpf() {
         return cpf;
@@ -80,6 +87,14 @@ public class Usuario {
         this.setor = setor;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public void setSetor(int setor) {
         if (setor == Setor.ATENDIMENTO.getID()) {
             setSetor(Setor.ATENDIMENTO);
@@ -90,6 +105,14 @@ public class Usuario {
         } else if (setor == Setor.GERENCIA.getID()){
             setSetor(Setor.GERENCIA);
         }
+    }
+
+    //FUNÇÕES COMUNS PARA CADA USUÁRIO;
+
+    //Verifica a autenticação do usuário;
+    //SUJEITO A MUDANÇAS, POR FAVOR FALAR COM MAILSU NO WHATS E NÃO DAR VÁCUO NELE <3;
+    public boolean autentication(String email, String senha){
+        return Objects.equals(this.email, email) && Objects.equals(this.senha, senha);
     }
 
     @Override

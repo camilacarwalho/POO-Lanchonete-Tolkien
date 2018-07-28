@@ -6,13 +6,12 @@ import java.util.List;
 public class Cozinha {
     private List<Pedido> pedidos;
 
+    //Construtor
     public Cozinha(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
 
-    public void atendePedido(Pedido pedido){
-        if (pedido.isAtendido()) pedido.setAtendido(false);
-    }
+    //Getters and Setters
 
     public List<Pedido> getPedidos() {
         return pedidos;
@@ -20,5 +19,11 @@ public class Cozinha {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    //Esta função remove um pedido da Lista da cozinha;
+    public void atendePedido(Pedido pedido){
+        //Testa se o pedido ainda não foi atendido;
+        if (!pedido.isAtendido()) pedidos.remove(pedido);
     }
 }

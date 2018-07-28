@@ -13,16 +13,19 @@ public class Pedido{
     //Verificar se foi atendido ou não
     private boolean atendido;
 
-    public Pedido(String nome, double valorUnitario, int quantidade, LocalDate data, LocalTime hora) {
+    //Construtor
+    public Pedido(String nome, double valorUnitario, int quantidade) {
         this.nome = nome;
         this.valorUnitario = valorUnitario;
         this.quantidade = quantidade;
-        this.valorTotal = quantidade*valorUnitario; //Calcular valor total de um pedido
-        this.data = data;
-        this.hora = hora;
-        this.atendido = false;
+        valorTotal = quantidade*valorUnitario; //Calcular valor total de um pedido
+        //Seta os valores de data e de hora do pedido como data e hora em que o pedido foi realizado;
+        data = LocalDate.now();
+        hora = LocalTime.now();
+        atendido = false;
     }
 
+    //Getters and Setters
 
     public double getValorTotal() {
         return valorTotal;
@@ -57,13 +60,13 @@ public class Pedido{
         this.quantidade = quantidade;
     }
 
-    public LocalDate getData() {return data;}
+    public LocalDate getData() {
+        return data;
+    }
 
-    public void setData(LocalDate data) {this.data = data; }
-
-    public LocalTime getHora() {return hora;}
-
-    public void setHora(LocalTime hora) {this.hora = hora;}
+    public LocalTime getHora() {
+        return hora;
+    }
 
     public boolean isAtendido() {
         return atendido;

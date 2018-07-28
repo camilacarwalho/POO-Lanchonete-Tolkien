@@ -9,6 +9,7 @@ public class Produto {
     private String descricao;
     private double preco;
 
+    //Construtor
     public Produto(int codigo, String nome, String descricao, double preco) {
         this.codigo = codigo;
         this.nome = nome;
@@ -16,6 +17,7 @@ public class Produto {
         this.preco = preco;
     }
 
+    //Getters and Setters
 
     public int getCodigo() {
         return codigo;
@@ -48,6 +50,7 @@ public class Produto {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
 
 
     @Override

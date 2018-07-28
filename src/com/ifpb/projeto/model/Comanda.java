@@ -11,6 +11,7 @@ public class Comanda {
    private static LocalDate data;
    private static int numComanda;
 
+    //Construtor
     public Comanda(int numMesa) {
         numComanda++;
         comanda = new ArrayList<>();
@@ -19,8 +20,12 @@ public class Comanda {
         data = LocalDate.now();
     }
 
+    //Getters and Setters
+
     public double getValorFinal() { //Retorna valor total da comanda, junção de todos os pedidos
-        for(int i=0;i<comanda.size();i++) this.valorFinal += comanda.get(i).getValorTotal();
+        for(int i=0;i<comanda.size();i++){
+            this.valorFinal += comanda.get(i).getValorTotal();
+        }
         return valorFinal;
     }
 
@@ -44,12 +49,8 @@ public class Comanda {
         this.numMesa = numMesa;
     }
 
-    public static LocalDate getData() {
+    public LocalDate getData() {
         return data;
-    }
-
-    public static void setData(LocalDate data) {
-        Comanda.data = data;
     }
 
     public static int getNumComanda() {
@@ -60,7 +61,14 @@ public class Comanda {
         Comanda.numComanda = numComanda;
     }
 
+    public void adicionarPedido(Pedido pedido){
+        comanda.add(pedido);
+    }
 
+    public void editarPedido(Pedido pedido, Pedido novo){
+        int indice = comanda.indexOf(pedido);
+        comanda.set(indice,novo);
+    }
     // editar um pedido com List
 
 }
