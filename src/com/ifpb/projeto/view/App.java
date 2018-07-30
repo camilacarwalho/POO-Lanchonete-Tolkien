@@ -1,6 +1,8 @@
 package com.ifpb.projeto.view;
+import java.util.Scanner;
 
 import com.ifpb.projeto.model.*;
+
 
 public class App {
     public static void main(String[] args) {
