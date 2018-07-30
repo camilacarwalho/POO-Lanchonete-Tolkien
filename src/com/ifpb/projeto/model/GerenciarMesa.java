@@ -3,6 +3,7 @@ package com.ifpb.projeto.model;
 import java.util.List;
 
 public class GerenciarMesa {
+    //Oi
 
     //Esta lista irá gerenciar a comanda presente em cada mesa;
     private List<Comanda> mesas;
