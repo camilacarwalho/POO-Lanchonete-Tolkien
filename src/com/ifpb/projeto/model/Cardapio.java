@@ -6,7 +6,6 @@ import java.lang.Object;
 import com.ifpb.projeto.model.Produto;
 
 public class Cardapio {
-
     //O cardapio vai ser composto apenas por uma lista de produtos;
     //A lista poderá receber novos produtos;
     //Modificar produtos atuais;
