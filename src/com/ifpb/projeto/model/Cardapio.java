@@ -14,8 +14,8 @@ public class Cardapio {
     private List<Produto> produtos;
 
     //Construtor
-    public Cardapio(List<Produto> produtos) {
-        this.produtos = produtos;
+    public Cardapio() {
+        produtos = new ArrayList<Produto>();
     }
 
     //Getters and Setters
@@ -32,6 +32,7 @@ public class Cardapio {
     //FUNÇÕES COMUNS PARA CADA CARDÁPIO;
     //TODAS SUJEITAS A MUDANÇA;
     //POR FAVOR FALAR COM MAILSU NO WHATS E NÃO DAR VÁCUO NELE <3;
+    //EU N TE DOU VACUO DESGRAÇA
 
     public void addProduto(Produto produto) {
         produtos.add(produto);
@@ -43,7 +44,8 @@ public class Cardapio {
     public void editaProduto(Produto produto, int indice){
         produtos.set(indice,produto);
     }
+    //Sujeito a mudanças na segunda fase;
 
-    //Salvar,Excluir e Editar um produti
+    //Salvar,Excluir e Editar um produto
 }
 

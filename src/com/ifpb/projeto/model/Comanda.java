@@ -63,12 +63,25 @@ public class Comanda {
 
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);
+        this.getValorFinal();
+    }
+    
+    public boolean editarAtendido(int idPedido){
+        for (Pedido pedido:comanda) {
+            if (pedido.getIdPedido()==idPedido) {
+                pedido.setAtendido(true);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void editarPedido(Pedido pedido, Pedido novo){
-        int indice = comanda.indexOf(pedido);
-        comanda.set(indice,novo);
+    @Override
+    public String toString() {
+        return "Comanda{" +
+                "comanda=" + numComanda +
+                ", valorFinal=" + valorFinal +
+                ", numMesa=" + numMesa +
+                '}';
     }
-    // editar um pedido com List
-
 }

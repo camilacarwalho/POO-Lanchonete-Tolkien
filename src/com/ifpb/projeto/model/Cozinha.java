@@ -8,7 +8,7 @@ public class Cozinha {
 
     //Construtor
     public Cozinha(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
+        pedidos = new ArrayList<Pedido>();
     }
 
     //Getters and Setters
@@ -22,8 +22,17 @@ public class Cozinha {
     }
 
     //Esta função remove um pedido da Lista da cozinha;
-    public void atendePedido(Pedido pedido){
+    public boolean atendePedido(Comanda comanda, int idPedido){
+
         //Testa se o pedido ainda não foi atendido;
-        if (!pedido.isAtendido()) pedidos.remove(pedido);
+        if(comanda.editarAtendido(idPedido)){
+            for (Pedido pedido: pedidos) {
+                if(pedido.getIdPedido()==idPedido){
+                    pedidos.remove(pedido);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

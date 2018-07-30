@@ -10,6 +10,7 @@ public class Pedido{
     private double valorTotal;
     private LocalDate data;
     private LocalTime hora;
+    private static int idPedido;
     //Verificar se foi atendido ou não
     private boolean atendido;
 
@@ -23,9 +24,15 @@ public class Pedido{
         data = LocalDate.now();
         hora = LocalTime.now();
         atendido = false;
+        idPedido++;
     }
 
+
     //Getters and Setters
+
+    public int getIdPedido() {
+        return idPedido;
+    }
 
     public double getValorTotal() {
         return valorTotal;

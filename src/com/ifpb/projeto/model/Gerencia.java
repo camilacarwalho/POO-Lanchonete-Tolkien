@@ -9,7 +9,7 @@ public class Gerencia {
     private static List<Comanda> comandas;
 
     //Esta função deve ser invocada sempre que uma comanda for encerrada;
-    public void adicionaComanda(Comanda comanda){
+    public static void adicionaComanda(Comanda comanda){
         comandas.add(comanda);
     }
 
@@ -22,11 +22,10 @@ public class Gerencia {
             //Testa se a comanda se econtra no intervalo referente;
             if((comanda.getData().compareTo(inicio)>=0) && (comanda.getData().compareTo(fim)<=0)){
                 resultado.add(comanda);
-                //Adiciona a comadna na lista resultante;
+                //Adiciona a comanda na lista resultante;
             }
         }
         return resultado;
     }
 
-    //faz um between de localdate
 }
