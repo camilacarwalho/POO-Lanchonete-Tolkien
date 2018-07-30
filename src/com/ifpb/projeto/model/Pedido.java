@@ -4,27 +4,26 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Pedido{
-    private String nome;
-    private double valorUnitario;
+    private Produto produto;
     private int quantidade;
     private double valorTotal;
     private LocalDate data;
     private LocalTime hora;
     private static int idPedido;
+    private int numeroPedido;
     //Verificar se foi atendido ou não
     private boolean atendido;
 
     //Construtor
-    public Pedido(String nome, double valorUnitario, int quantidade) {
-        this.nome = nome;
-        this.valorUnitario = valorUnitario;
+    public Pedido(Produto produto, int quantidade) {
+        this.produto = produto;
         this.quantidade = quantidade;
-        valorTotal = quantidade*valorUnitario; //Calcular valor total de um pedido
+        valorTotal = quantidade* (produto.getPreco()); //Calcular valor total de um pedido
         //Seta os valores de data e de hora do pedido como data e hora em que o pedido foi realizado;
         data = LocalDate.now();
         hora = LocalTime.now();
         atendido = false;
-        idPedido++;
+        numeroPedido = idPedido++;
     }
 
 
@@ -40,23 +39,6 @@ public class Pedido{
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
-    }
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getValorUnitario() {
-        return valorUnitario;
-    }
-
-    public void setValorUnitario(double valorUnitario) {
-        this.valorUnitario = valorUnitario;
     }
 
     public int getQuantidade() {
@@ -82,4 +64,12 @@ public class Pedido{
     public void setAtendido(boolean atendido) {
         this.atendido = atendido;
     }
+
+    public Produto getProduto() {return produto;}
+
+    public void setProduto(Produto produto) {this.produto = produto;}
+
+    public int getNumeroPedido() {return numeroPedido;}
+
+    public void setNumeroPedido(int numeroPedido) {this.numeroPedido = numeroPedido;}
 }

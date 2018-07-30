@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/App.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +18,7 @@
       <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1203">
+            <state relative-caret-position="363">
               <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -117,20 +111,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pedido.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Pedido.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="419">
+              <caret line="73" column="85" lean-forward="true" selection-start-line="73" selection-start-column="85" selection-end-line="73" selection-end-column="85" />
+              <folding>
+                <element signature="e#1489#1490#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comanda.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comanda.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+            <state relative-caret-position="-12">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1022#1023#0" expanded="true" />
@@ -158,13 +156,13 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Setor.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/App.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" />
       </list>
     </option>
   </component>
@@ -325,12 +323,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32810047" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32810047" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16105418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16105418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -668,16 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1203">
-          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -689,13 +677,6 @@
             <element signature="e#904#905#0" expanded="true" />
             <element signature="e#941#942#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -721,6 +702,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Setor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -731,21 +731,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Setor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="363">
+          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        <state relative-caret-position="419">
+          <caret line="73" column="85" lean-forward="true" selection-start-line="73" selection-start-column="85" selection-end-line="73" selection-end-column="85" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
           </folding>
         </state>
       </provider>

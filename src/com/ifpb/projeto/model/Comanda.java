@@ -65,7 +65,7 @@ public class Comanda {
         comanda.add(pedido);
         this.getValorFinal();
     }
-    
+
     public boolean editarAtendido(int idPedido){
         for (Pedido pedido:comanda) {
             if (pedido.getIdPedido()==idPedido) {
