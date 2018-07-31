@@ -7,10 +7,10 @@ public class Produto {
     private int codigo;
     private String nome;
     private String descricao;
-    private double preco;
+    private float preco;
 
     //Construtor
-    public Produto(int codigo, String nome, String descricao, double preco) {
+    public Produto(int codigo, String nome, String descricao, float preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
@@ -43,11 +43,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 

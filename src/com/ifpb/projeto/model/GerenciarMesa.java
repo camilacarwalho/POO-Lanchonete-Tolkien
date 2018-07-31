@@ -24,6 +24,15 @@ public class GerenciarMesa {
         this.mesas = mesas;
     }
 
+    public Comanda getComanda(int numMesa){
+        for (Comanda comanda:mesas ) {
+            if(comanda.getNumMesa()==numMesa){
+                return comanda;
+            }
+        }
+        return null;
+    }
+
     //Esta função irá criar uma nova comanda para a mesa que for selecionada;
     //NECESSÁRIO TESTES. SUJEITO A MUDANÇAS;
     public boolean gerarComanda(int numeroMesa) {
@@ -52,30 +61,27 @@ public class GerenciarMesa {
 
     //Para testar ahsudhasudhasudhaus;
     //Esta função ira mostrar ao usuário todas os pedidos de uma mesa;
-    public boolean verPedidos(int numeroMesa) {
-        boolean existeComanda = false;
+    public String verPedidos(int numeroMesa) {
         //É feito o teste de onde se encontra mesa
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 //Quando a comanda da mesa solicitada é encontrada, é impresso todos os seus respectivos pedidos;
                 //SUJEITO A MUDANÇAS;
-                System.out.println(comanda.toString());
-                existeComanda = true;
-                break;
+                return comanda.toString();
             }
         }
-        if (existeComanda) return true;
-        else return false;
+        return "";
     }
 
     //Para testar também asudhausdjinqwuenbqujdba
-    public void fazerPedido(int numeroMesa, Pedido pedido) {
+    public boolean fazerPedido(int numeroMesa, Pedido pedido) {
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 comanda.adicionarPedido(pedido);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     //Esta função tem como objetivo encerrar a comanda de uma mesa desejada;
@@ -90,6 +96,7 @@ public class GerenciarMesa {
                 //É salvo o indice de onde esta comadna se encontra na lista "mesas";
                 Gerencia.adicionaComanda(comanda);
                 indice = mesas.indexOf(comanda);
+                System.out.println("Valor final:"+comanda.getValorFinal());
                 break;
             }
         }

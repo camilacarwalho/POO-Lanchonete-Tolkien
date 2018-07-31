@@ -4,60 +4,132 @@ import java.util.Scanner;
 
 import com.ifpb.projeto.model.*;
 
+import javax.xml.bind.SchemaOutputResolver;
+
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("=^..^=   =^..^=   =^..^=    Testes    =^..^=    =^..^=    =^..^=");
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("---Testando Comanda e GerenciarMesa---");
-        GerenciarMesa gerenciar = new GerenciarMesa();
-        System.out.println("Numero da mesa:");
-        int numeroMesa = scanner.nextInt();
-        gerenciar.gerarComanda(numeroMesa);
+        Cozinha c = new Cozinha();
+        GerenciarMesa m = new GerenciarMesa();
 
+        Produto pao = new Produto(1, "pao","É um pao hasudhas", 0.30f);
+        Produto cafe = new Produto(2,"café","É bom",0.50f);
+        Produto pastel = new Produto(3,"pastel","Dá gastrite", 1.50f);
+        Produto bolo = new Produto(4, "bolo","de milho",1.00f);
 
-        System.out.println("---Testando Produto---");
-       System.out.println("Código:");
-        int codigo = scanner.nextInt();
-        System.out.println("Nome:");
-        String nomeP = scanner.nextLine();
-        System.out.println("Descrição");//REVER pq essa parte pula???
-        String descricao = scanner.nextLine();
-        System.out.println("Preço");
-        double preco = scanner.nextDouble();
-        Produto produto = new Produto(codigo,nomeP,descricao,preco);
+        Usuario teste = new Usuario("111.111.111-01","Lucas", "teste@gmail","11",LocalDate.now(),Setor.GERENCIA, "1234");
+        boolean continua = true;
+        int seleciona;
+        Scanner scan = new Scanner(System.in);
+        int mesa;
 
+        while(continua){
 
-        System.out.println("---Testando Pedido---");
-        System.out.println("Quantidade:");
-        int quantidade = scanner.nextInt();
-        Pedido pedido = new Pedido(produto,quantidade);
-        gerenciar.fazerPedido(numeroMesa,pedido);
-        System.out.println(pedido.toString());
+            System.out.println("1: Fazer um pedido!");
+            System.out.println("2: Editar um pedido!");
+            System.out.println("3: Adicionar comanda!");
+            System.out.println("4: Encerrar comanda!");
+            System.out.println("5: Atender pedido!");
+            System.out.println("6: Ver pedidos!");
+            System.out.println("7: Testar autenticação:");
+            System.out.println("8: Ver comandas em intervalo de tempo");
+            System.out.println("9: Ver as informações de uma comanda");
+            System.out.println("0: Encerrar programa");
 
-        System.out.println("---Testando Comanda---");
-        Comanda comanda = new Comanda(numeroMesa);
-        comanda.adicionarPedido(pedido);
-        gerenciar.verPedidos(numeroMesa);
+            seleciona = scan.nextInt();
 
-        System.out.println("---Testando Usuario---");
-        System.out.println("CPF:");//Aqui tb ta pulando
-        String cpf = scanner.nextLine();
-        System.out.println("Nome");
-        String nomeU = scanner.nextLine();
-        System.out.println("Email");
-        String email = scanner.nextLine();
-        System.out.println("Telefone");
-        String telefone = scanner.nextLine();
-        System.out.println("Senha:");
-        String senha = scanner.nextLine();
-        Setor setor = Setor.GERENCIA; //Ver como faz para pegar um enum
-        Usuario usuario = new Usuario(cpf,nomeP,email,telefone,LocalDate.now(),setor,senha);
-        System.out.println(usuario.toString());
-
-
-
+            if(seleciona<0||seleciona>9){
+                System.out.println("ERROR:Press ENTER para continar!");
+                scan.nextLine();
+            }
+            else{
+                switch(seleciona){
+                    case 1:System.out.println("selecione um pedido:");
+                           System.out.println("Digite 1:"+pao);
+                           System.out.println("Digite 2:"+cafe);
+                           System.out.println("Digite 3:"+pastel);
+                           System.out.println("Digite 4:"+bolo);
+                           int pedido = scan.nextInt();
+                           if(pedido<0||pedido>9){
+                               System.out.println("ERROR:Press ENTER para continar!");
+                               scan.nextLine();
+                           }
+                           else{
+                               System.out.println("Informe a quantidade:");
+                               int quatidade = scan.nextInt();
+                               System.out.println("Informe o numero da mesa:");
+                               mesa = scan.nextInt();
+                               switch (pedido){
+                                   case 1: System.out.println(m.fazerPedido(mesa,new Pedido(pao,quatidade)));
+                                       c.adicionarPedido(new Pedido(pao,quatidade));
+                                       break;
+                                   case 2: System.out.println(m.fazerPedido(mesa,new Pedido(cafe,quatidade)));
+                                       c.adicionarPedido(new Pedido(cafe,quatidade));
+                                       break;
+                                   case 3: System.out.println(m.fazerPedido(mesa,new Pedido(pastel,quatidade)));
+                                       c.adicionarPedido(new Pedido(pastel,quatidade));
+                                       break;
+                                   case 4: System.out.println(m.fazerPedido(mesa,new Pedido(bolo,quatidade)));
+                                       c.adicionarPedido(new Pedido(bolo,quatidade));
+                                       break;
+                               }
+                           }
+                           break;
+                    case 2: System.out.println("Não implementado ainda");
+                            break;
+                    case 3: System.out.println("Informe a mesa");
+                            mesa = scan.nextInt();
+                            System.out.println(m.gerarComanda(mesa));
+                            break;
+                    case 4: System.out.println("Informe a mesa");
+                            mesa = scan.nextInt();
+                            System.out.println(m.encerrarComanda(mesa));
+                            break;
+                    case 5: System.out.println("Informe o ID do pedido");
+                            int id = scan.nextInt();
+                            System.out.println(c.atendePedido(id));
+                            break;
+                    case 6: System.out.println("Informe a mesa");
+                            mesa = scan.nextInt();
+                            System.out.println(m.verPedidos(mesa));
+                            break;
+                    case 7: System.out.println("Informe o email:");
+                            String email = scan.next();
+                            System.out.println("Informe a senha");
+                            String senha = scan.next();
+                            System.out.println(teste.autentication(email,senha));
+                            break;
+                    case 8: System.out.println("Informe o ano:");
+                            int ano = scan.nextInt();
+                            System.out.println("Informe o mes:");
+                            int mes = scan.nextInt();
+                            System.out.println("Informe o dia:");
+                            int dia = scan.nextInt();
+                            LocalDate inicio = LocalDate.of(ano,mes,dia);
+                            System.out.println("inicio:"+inicio);
+                            System.out.println("Informe o ano:");
+                            ano = scan.nextInt();
+                            System.out.println("Informe o mes:");
+                            mes = scan.nextInt();
+                            System.out.println("Informe o dia:");
+                            dia = scan.nextInt();
+                            LocalDate fim = LocalDate.of(ano,mes,dia);
+                            System.out.println("Fim:"+ fim);
+                            System.out.println(Gerencia.between(inicio,fim));
+                            break;
+                    case 9: System.out.println("Informe a mesa");
+                            mesa = scan.nextInt();
+                            System.out.println(m.getComanda(mesa));
+                            break;
+                }
+            }
+            limpaMinhaTelaMaisMais();
+        }
 
     }
-
+    public static void limpaMinhaTelaMaisMais(){
+        for (int i=0; i<40;i++){
+            System.out.println("\n");
+        }
+    }
 }
