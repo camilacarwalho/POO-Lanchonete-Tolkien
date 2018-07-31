@@ -72,4 +72,17 @@ public class Pedido{
     public int getNumeroPedido() {return numeroPedido;}
 
     public void setNumeroPedido(int numeroPedido) {this.numeroPedido = numeroPedido;}
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "produto=" + produto +
+                ", quantidade=" + quantidade +
+                ", valorTotal=" + valorTotal +
+                ", data=" + data +
+                ", hora=" + hora +
+                ", numeroPedido=" + numeroPedido +
+                ", atendido=" + atendido +
+                '}';
+    }
 }

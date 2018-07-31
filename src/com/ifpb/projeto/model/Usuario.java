@@ -133,5 +133,16 @@ public class Usuario {
 
         return Objects.hash(cpf, nome, email, telefone, nascimento, setor);
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "CPF='" + cpf + '\'' +
+                ", Nome='" + nome + '\'' +
+                ", E-mail='" + email + '\'' +
+                ", Telefone='" + telefone + '\'' +
+                ", Setor=" + setor +
+                '}';
+    }
 }
 
