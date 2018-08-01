@@ -92,12 +92,17 @@ public class GerenciarMesa {
         //É feita uma busca pela comanda da mesa informada;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
-                //Caso realmente exista uma comanda naquela mesa
-                //É salvo o indice de onde esta comadna se encontra na lista "mesas";
-                Gerencia.adicionaComanda(comanda);
-                indice = mesas.indexOf(comanda);
-                System.out.println("Valor final:"+comanda.getValorFinal());
-                break;
+                //Caso realmente exista uma comanda naquela mesa;
+                if(comanda.allIsAtendido()){
+                    //E caso todos os pedidos tenham sido atendidos;
+                    //É salvo o indice de onde esta comadna se encontra na lista "mesas";
+                    Gerencia.adicionaComanda(comanda);
+                    indice = mesas.indexOf(comanda);
+                    System.out.println("Valor final:"+comanda.getValorFinal());
+                    break;
+                }
+                else break;
+
             }
         }
         //Testa se a variável do indice mudou;
@@ -115,7 +120,7 @@ public class GerenciarMesa {
                 List<Pedido> mesa = comanda.getComanda();
                 for (Pedido pedido : mesa) {
                     if (idPedidoAntigo == pedido.getIdPedido()) {
-                        int indice = mesa.indexOf(comanda);
+                        int indice = mesa.indexOf(pedido);
                         mesa.add(indice, novo);
                         return true;
                     }

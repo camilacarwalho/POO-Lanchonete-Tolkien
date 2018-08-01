@@ -121,13 +121,15 @@ public class App {
                             mesa = scan.nextInt();
                             System.out.println(m.getComanda(mesa));
                             break;
+                    case 0: continua = false;
                 }
             }
-            limpaMinhaTelaMaisMais();
+            limpaMinhaTelaUltraAdvancedMaisMais();
         }
+        System.out.println("---------FIM---------");
 
     }
-    public static void limpaMinhaTelaMaisMais(){
+    public static void limpaMinhaTelaUltraAdvancedMaisMais(){
         for (int i=0; i<40;i++){
             System.out.println("\n");
         }

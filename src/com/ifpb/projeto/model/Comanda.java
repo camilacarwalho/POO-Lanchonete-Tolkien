@@ -74,10 +74,19 @@ public class Comanda {
 
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);
-        this.calcularValorFinal();
+        valorFinal += pedido.getValorTotal();
     }
 
-
+    public boolean allIsAtendido(){
+        boolean verifica = true;
+        for (Pedido pedido:comanda) {
+            if(!pedido.isAtendido()){
+                verifica = false;
+                break;
+            }
+        }
+        return verifica;
+    }
 
     @Override
     public String toString() {
