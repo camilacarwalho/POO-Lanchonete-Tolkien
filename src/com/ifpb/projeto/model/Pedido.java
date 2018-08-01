@@ -79,6 +79,6 @@ public class Pedido{
 
     @Override
     public String toString() {
-        return "Pedido{" + "produto=" + produto.getNome()+", quantidade=" + quantidade + ", Numero do pedio="+numeroPedido+", valorTotal=" + valorTotal +"}\n";
+        return "Pedido{" + "produto=" + produto.getNome()+", quantidade=" + quantidade + ", Numero do pedido="+numeroPedido+", valorTotal=" + valorTotal +"}\n";
     }
 }
