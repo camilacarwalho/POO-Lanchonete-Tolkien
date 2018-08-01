@@ -32,7 +32,6 @@ public class GerenciarMesa {
         }
         return null;
     }
-
     //Esta função irá criar uma nova comanda para a mesa que for selecionada;
     //NECESSÁRIO TESTES. SUJEITO A MUDANÇAS;
     public boolean gerarComanda(int numeroMesa) {
@@ -74,10 +73,11 @@ public class GerenciarMesa {
     }
 
     //Para testar também asudhausdjinqwuenbqujdba
-    public boolean fazerPedido(int numeroMesa, Pedido pedido) {
+    public boolean fazerPedido(int numeroMesa, Pedido pedido,Cozinha cozinha) {
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 comanda.adicionarPedido(pedido);
+                cozinha.adicionarPedido(pedido);
                 return true;
             }
         }
@@ -92,10 +92,12 @@ public class GerenciarMesa {
         //É feita uma busca pela comanda da mesa informada;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
+                System.out.println("entrou aqui");
                 //Caso realmente exista uma comanda naquela mesa;
                 if(comanda.allIsAtendido()){
                     //E caso todos os pedidos tenham sido atendidos;
                     //É salvo o indice de onde esta comadna se encontra na lista "mesas";
+                    System.out.println("Entrou nesse if");
                     Gerencia.adicionaComanda(comanda);
                     indice = mesas.indexOf(comanda);
                     System.out.println("Valor final:"+comanda.getValorFinal());

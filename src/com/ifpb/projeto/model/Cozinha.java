@@ -41,6 +41,7 @@ public class Cozinha {
         //Testa se o pedido ainda não foi atendido;
         if(!getPedido(idPedido).isAtendido()){
             for (Pedido pedido: pedidos) {
+
                 if(pedido.getNumeroPedido()==idPedido){
                     pedido.editarAtendido();
                     pedidos.remove(pedido);

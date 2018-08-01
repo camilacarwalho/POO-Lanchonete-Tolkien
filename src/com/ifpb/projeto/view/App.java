@@ -12,16 +12,17 @@ public class App {
         Cozinha c = new Cozinha();
         GerenciarMesa m = new GerenciarMesa();
 
-        Produto pao = new Produto(1, "pao","É um pao hasudhas", 0.30f);
-        Produto cafe = new Produto(2,"café","É bom",0.50f);
-        Produto pastel = new Produto(3,"pastel","Dá gastrite", 1.50f);
-        Produto bolo = new Produto(4, "bolo","de milho",1.00f);
-
+        Produto[] produtos = {
+                new Produto(1, "pao","É um pao hasudhas", 0.30f),
+                new Produto(2,"café","É bom",0.50f),
+                new Produto(3,"pastel","Dá gastrite", 1.50f),
+                new Produto(4, "bolo","de milho",1.00f)
+        };
         Usuario teste = new Usuario("111.111.111-01","Lucas", "teste@gmail","11",LocalDate.now(),Setor.GERENCIA, "1234");
         boolean continua = true;
         int seleciona;
         Scanner scan = new Scanner(System.in);
-        int mesa;
+        int mesa = -1;
 
         while(continua){
 
@@ -33,7 +34,7 @@ public class App {
             System.out.println("6: Ver pedidos!");
             System.out.println("7: Testar autenticação:");
             System.out.println("8: Ver comandas em intervalo de tempo");
-            System.out.println("9: Ver as informações de uma comanda");
+            System.out.println("9: Ver peidos não atendidos");
             System.out.println("0: Encerrar programa");
 
             seleciona = scan.nextInt();
@@ -43,12 +44,16 @@ public class App {
                 scan.nextLine();
             }
             else{
+                if((seleciona>=3&&seleciona<=4)||seleciona==6||seleciona==9){
+                    System.out.println("Informe a mesa");
+                    mesa = scan.nextInt();
+                }
                 switch(seleciona){
                     case 1:System.out.println("selecione um pedido:");
-                           System.out.println("Digite 1:"+pao);
-                           System.out.println("Digite 2:"+cafe);
-                           System.out.println("Digite 3:"+pastel);
-                           System.out.println("Digite 4:"+bolo);
+                           System.out.println("Digite 1:"+produtos[0]);
+                           System.out.println("Digite 2:"+produtos[1]);
+                           System.out.println("Digite 3:"+produtos[2]);
+                           System.out.println("Digite 4:"+produtos[3]);
                            int pedido = scan.nextInt();
                            if(pedido<0||pedido>9){
                                System.out.println("ERROR:Press ENTER para continar!");
@@ -56,42 +61,24 @@ public class App {
                            }
                            else{
                                System.out.println("Informe a quantidade:");
-                               int quatidade = scan.nextInt();
+                               int quantidade = scan.nextInt();
                                System.out.println("Informe o numero da mesa:");
                                mesa = scan.nextInt();
-                               switch (pedido){
-                                   case 1: System.out.println(m.fazerPedido(mesa,new Pedido(pao,quatidade)));
-                                       c.adicionarPedido(new Pedido(pao,quatidade));
-                                       break;
-                                   case 2: System.out.println(m.fazerPedido(mesa,new Pedido(cafe,quatidade)));
-                                       c.adicionarPedido(new Pedido(cafe,quatidade));
-                                       break;
-                                   case 3: System.out.println(m.fazerPedido(mesa,new Pedido(pastel,quatidade)));
-                                       c.adicionarPedido(new Pedido(pastel,quatidade));
-                                       break;
-                                   case 4: System.out.println(m.fazerPedido(mesa,new Pedido(bolo,quatidade)));
-                                       c.adicionarPedido(new Pedido(bolo,quatidade));
-                                       break;
-                               }
+                               Pedido p = new Pedido(produtos[pedido-1],quantidade);
+                               System.out.println(m.fazerPedido(mesa,p,c));
                            }
                            break;
                     case 2: System.out.println("Não implementado ainda");
                             break;
-                    case 3: System.out.println("Informe a mesa");
-                            mesa = scan.nextInt();
-                            System.out.println(m.gerarComanda(mesa));
+                    case 3: System.out.println(m.gerarComanda(mesa));
                             break;
-                    case 4: System.out.println("Informe a mesa");
-                            mesa = scan.nextInt();
-                            System.out.println(m.encerrarComanda(mesa));
+                    case 4: System.out.println(m.encerrarComanda(mesa));
                             break;
                     case 5: System.out.println("Informe o ID do pedido");
                             int id = scan.nextInt();
                             System.out.println(c.atendePedido(id));
                             break;
-                    case 6: System.out.println("Informe a mesa");
-                            mesa = scan.nextInt();
-                            System.out.println(m.verPedidos(mesa));
+                    case 6: System.out.println(m.verPedidos(mesa));
                             break;
                     case 7: System.out.println("Informe o email:");
                             String email = scan.next();
@@ -117,9 +104,7 @@ public class App {
                             System.out.println("Fim:"+ fim);
                             System.out.println(Gerencia.between(inicio,fim));
                             break;
-                    case 9: System.out.println("Informe a mesa");
-                            mesa = scan.nextInt();
-                            System.out.println(m.getComanda(mesa));
+                    case 9: System.out.println(m.getComanda(mesa).pedidosNaoAtendidos());
                             break;
                     case 0: continua = false;
                 }

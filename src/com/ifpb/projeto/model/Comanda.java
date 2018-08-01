@@ -88,13 +88,26 @@ public class Comanda {
         return verifica;
     }
 
+    public String pedidosNaoAtendidos(){
+        String s = "";
+        for (Pedido pedido:comanda) {
+            if(!pedido.isAtendido()){
+                s+=pedido.toString();
+            }
+        }
+        if(s.equals("")){
+            return "Todos os pedidos desta mesa ja foram atendidos";
+        }
+        return s;
+    }
+
     @Override
     public String toString() {
         String resultado = "|Mesa:"+numMesa+"|| Numero da comanda"+numComanda+"||Data: "+ data+"|\n";
         for (Pedido pedido:comanda) {
             resultado+=pedido.toString();
         }
-        resultado+= "\nValor Final:"+valorFinal;
+        resultado+= "\nValor Final:"+valorFinal+"\n";
         return resultado;
     }
 }
