@@ -6,7 +6,6 @@ import com.ifpb.projeto.model.Pedido;
 
 public class Comanda {
    private List<Pedido> comanda;
-   private float valorFinal;
    private int numMesa;
    private LocalDate data;
    private static int codigo;
@@ -16,7 +15,6 @@ public class Comanda {
     public Comanda(int numMesa) {
         numComanda = ++codigo;
         comanda = new ArrayList<>();
-        this.valorFinal = 0f;
         this.numMesa = numMesa;
         data = LocalDate.now();
     }
@@ -24,11 +22,10 @@ public class Comanda {
     //Getters and Setters
 
     public float getValorFinal() {
-        return valorFinal;
-    }
-    public float calcularValorFinal(){
+
+        float valorFinal = 0;
         for(int i=0;i<comanda.size();i++){
-            this.valorFinal += comanda.get(i).getValorTotal();
+           valorFinal += comanda.get(i).getValorTotal();
         }
         return valorFinal;
     }
@@ -39,10 +36,6 @@ public class Comanda {
 
     public void setComanda(List<Pedido> comanda) {
         this.comanda = comanda;
-    }
-
-    public void setValorFinal(float valorFinal) {
-        this.valorFinal = valorFinal;
     }
 
     public int getNumMesa() {
@@ -74,7 +67,6 @@ public class Comanda {
 
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);
-        valorFinal += pedido.getValorTotal();
     }
 
     public boolean allIsAtendido(){
@@ -107,7 +99,7 @@ public class Comanda {
         for (Pedido pedido:comanda) {
             resultado+=pedido.toString();
         }
-        resultado+= "\nValor Final:"+valorFinal+"\n";
+        resultado+= "\nValor Final:"+getValorFinal()+"\n";
         return resultado;
     }
 }

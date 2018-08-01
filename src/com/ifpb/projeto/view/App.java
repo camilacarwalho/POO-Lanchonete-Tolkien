@@ -13,10 +13,10 @@ public class App {
         GerenciarMesa m = new GerenciarMesa();
 
         Produto[] produtos = {
-                new Produto(1, "pao","É um pao hasudhas", 0.30f),
-                new Produto(2,"café","É bom",0.50f),
-                new Produto(3,"pastel","Dá gastrite", 1.50f),
-                new Produto(4, "bolo","de milho",1.00f)
+                new Produto(1, "Pao","É um pao hasudhas", 0.30f),
+                new Produto(2,"Café","É bom",0.50f),
+                new Produto(3,"Pastel","Dá gastrite", 1.50f),
+                new Produto(4, "Bolo","de milho",1.00f)
         };
         Usuario teste = new Usuario("111.111.111-01","Lucas", "teste@gmail","11",LocalDate.now(),Setor.GERENCIA, "1234");
         boolean continua = true;
@@ -34,7 +34,7 @@ public class App {
             System.out.println("6: Ver pedidos!");
             System.out.println("7: Testar autenticação:");
             System.out.println("8: Ver comandas em intervalo de tempo");
-            System.out.println("9: Ver peidos não atendidos");
+            System.out.println("9: Ver pedidos não atendidos");
             System.out.println("0: Encerrar programa");
 
             seleciona = scan.nextInt();
