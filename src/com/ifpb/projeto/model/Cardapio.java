@@ -5,19 +5,30 @@ import java.lang.String;
 import java.lang.Object;
 import com.ifpb.projeto.model.Produto;
 
-public class Cardapio {
-    //O cardapio vai ser composto apenas por uma lista de produtos;
-    //A lista poderá receber novos produtos;
-    //Modificar produtos atuais;
-    //Excluir produtos já existentes;
-    private List<Produto> produtos;
+/**
+ * A classe Cardapio modela a entidade cardápio do domínio da aplicação.
+ *   Composto por uma lista de produtos.
+ *   Receber produtos, modificar e excluir existentes.
+ *   Essa classe foi simplificada para <b>facilitar o desenvolvimento</b>
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
 
-    //Construtor
+public class Cardapio {
+
+    private List<Produto> produtos;
+    /**
+     * Construtor da classe.
+     */
     public Cardapio() {
         produtos = new ArrayList<Produto>();
     }
 
-    //Getters and Setters
+    /**
+     * Getters e Setters
+     */
 
     public List<Produto> getProdutos() {
         return produtos;
@@ -28,10 +39,10 @@ public class Cardapio {
     }
 
 
-    //FUNÇÕES COMUNS PARA CADA CARDÁPIO;
-    //TODAS SUJEITAS A MUDANÇA;
-    //POR FAVOR FALAR COM MAILSU NO WHATS E NÃO DAR VÁCUO NELE <3;
-    //EU N TE DOU VACUO DESGRAÇA
+    /**
+     * Funções gerais para cardápio
+     * @param produto
+     */
 
     public void addProduto(Produto produto) {
         produtos.add(produto);
@@ -43,10 +54,6 @@ public class Cardapio {
     public void editaProduto(Produto produto, int indice){
         produtos.set(indice,produto);
     }
-    //Sujeito a mudanças na segunda fase;
-
-
-
-    //Salvar,Excluir e Editar um produto
+ 
 }
 
