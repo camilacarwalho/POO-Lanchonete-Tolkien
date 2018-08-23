@@ -4,6 +4,15 @@ import java.util.List;
 import java.time.LocalDate;
 import com.ifpb.projeto.model.Pedido;
 
+/**
+ * A classe Comanda modela a entidade comanda do domínio da aplicação.
+ *   Adiciona pedidos e verifica se foram atendidos ou não.
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
+
 public class Comanda {
    private List<Pedido> comanda;
    private int numMesa;
@@ -11,7 +20,12 @@ public class Comanda {
    private static int codigo;
    private int numComanda;
 
-    //Construtor
+
+    /**
+     * Construtor da classe.
+     * @param numMesa : número da mesa
+     */
+
     public Comanda(int numMesa) {
         numComanda = ++codigo;
         comanda = new ArrayList<>();
@@ -19,7 +33,11 @@ public class Comanda {
         data = LocalDate.now();
     }
 
-    //Getters and Setters
+
+    /**
+     * Calcula o valor final da comanda
+     * @return o valor final
+     */
 
     public float getValorFinal() {
 
@@ -30,6 +48,11 @@ public class Comanda {
         return valorFinal;
     }
 
+    /**
+     * Retornar a comanda desejada
+     * @return comanda
+     */
+
     public List<Pedido> getComanda() {
         return comanda;
     }
@@ -37,6 +60,11 @@ public class Comanda {
     public void setComanda(List<Pedido> comanda) {
         this.comanda = comanda;
     }
+
+    /**
+     * Retornar o número da mesa
+     * @return número da mesa
+     */
 
     public int getNumMesa() {
         return numMesa;
@@ -56,6 +84,12 @@ public class Comanda {
 
     public static int getCodigo() { return codigo; }
 
+    /**
+     * Procurar um pedido pelo seu ID
+     * @param idPedido : O número que representa o ID do pedido desejado
+     * @return pedido
+     */
+
     public Pedido getPedido(int idPedido){
         for (Pedido pedido: comanda) {
             if(pedido.getNumeroPedido()==idPedido){
@@ -64,10 +98,18 @@ public class Comanda {
         }
         return null;
     }
-
+    /**
+     * Adiciona um novo pedido a comanda
+     * @param pedido
+     */
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);
     }
+    /**
+     * Verifica se todos os pedidos foram atendidos
+     * @return true, se foram atendidos
+     * @return false, se não foram atendidos
+     */
 
     public boolean allIsAtendido(){
         boolean verifica = true;
@@ -79,6 +121,10 @@ public class Comanda {
         }
         return verifica;
     }
+    /**
+     * Procurar pelos pedidos não atendidos
+     * @return string de todos os pedidos
+     */
 
     public String pedidosNaoAtendidos(){
         String s = "";

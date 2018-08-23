@@ -26,13 +26,15 @@ public class Cardapio {
         produtos = new ArrayList<Produto>();
     }
 
-    /**
-     * Getters e Setters
+   /**
+     * Retorna os produtos como objeto inteiro
+     * @return produtos
      */
 
     public List<Produto> getProdutos() {
         return produtos;
     }
+
 
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
@@ -54,6 +56,6 @@ public class Cardapio {
     public void editaProduto(Produto produto, int indice){
         produtos.set(indice,produto);
     }
- 
+
 }
 
