@@ -12,6 +12,7 @@ public class App2 {
     public static void main(String[] args) {
         CadastroUsuario teste = new CadastroUsuario();
         teste.cadastrar();
+        System.out.println(teste);
     }
 
 }

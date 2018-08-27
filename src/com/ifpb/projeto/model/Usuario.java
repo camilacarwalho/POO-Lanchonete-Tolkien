@@ -137,13 +137,13 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "CPF='" + cpf + '\'' +
-                ", Nome='" + nome + '\'' +
-                ", E-mail='" + email + '\'' +
-                ", Telefone='" + telefone + '\'' +
-                ", Setor=" + setor +
-                '}';
+        return ".-----------------------------------------.\n"
+                +"Nome: " + nome +"\n"
+                +"CPF: "+cpf+"\n"
+                +"E-mail: "+email+"\n"
+                +"Telefone"+telefone+"\n"
+                +"Setor: "+setor+"\n"
+                +".-----------------------------------------.\n";
     }
 }
 
