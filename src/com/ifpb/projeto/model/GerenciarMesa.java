@@ -3,18 +3,29 @@ package com.ifpb.projeto.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciarMesa {
-    //Oi//Oie
+/**
+ * A classe GerenciarMesa modela a entidade responsável pelo gerenciamento de mesas do domínio da aplicação.
+ *   Composto por uma lista de Comandas, que irá gerenciar a comanda presente em cada mesa
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
 
-    //Esta lista irá gerenciar a comanda presente em cada mesa;
+public class GerenciarMesa {
+
     private List<Comanda> mesas;
 
-    //Construtor
+    /**
+     * Construtor da classe.
+     */
     public GerenciarMesa() {
         mesas = new ArrayList<Comanda>();
     }
 
-    //Getters and Setters
+    /**
+     * Getters e Setters
+     */
 
     public List<Comanda> getMesas() {
         return mesas;
@@ -32,40 +43,43 @@ public class GerenciarMesa {
         }
         return null;
     }
-    //Esta função irá criar uma nova comanda para a mesa que for selecionada;
-    //NECESSÁRIO TESTES. SUJEITO A MUDANÇAS;
+
+
+    /**
+     * Esta função irá criar uma nova comanda para a mesa que for selecionada. (sujeito a testes)
+     * A variável existeComanda irá informar se a mesa desejada já possui comanda.
+     * A função irá rodar a lista até que a comanda na mesa seja encontrada.
+     * Se a comanda for encontrada, a variável passa a ser TRUE.
+     * Se a comanda não for encontrada, irá gerar uma comanda na mesa informada.
+     * @param numeroMesa
+     * @return true, caso a comanda possa ser criada.
+     * @retu false, caso a comanda não possa ser gerada nessa mesa.
+     */
     public boolean gerarComanda(int numeroMesa) {
-        //Esta variável irá informar a mesa informada já possui uma comanda;
         boolean existeComanda = false;
-        //Roda a lista até que se ache (ou não) alguma comanda na mesa informada;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
-                //se existir, a variavel passa a ser TRUE;
                 existeComanda = true;
                 break;
             }
         }
-        //Se não existir nenhuma comanda:
         if (!existeComanda) {
-            //Ele gera a nova comanda solicitada;
             Comanda comanda = new Comanda(numeroMesa);
             mesas.add(comanda);
             return true;
 
-        } else {
-            //Caso exista, a função informa que não pode gerar uma comanda nesta mesa;
-            return false;
-        }
+        } else return false;
     }
 
-    //Para testar ahsudhasudhasudhaus;
-    //Esta função ira mostrar ao usuário todas os pedidos de uma mesa;
+    /**
+     * Esta função irá mostrar ao usuário todos os pedidos de uma mesa.
+     * É feito o teste de onde se encontra a mesa, quando for encontrada, seus pedidos são impressos.(testar)
+     * @param numeroMesa
+     * @return String com os pedidos da comanda.
+     */
     public String verPedidos(int numeroMesa) {
-        //É feito o teste de onde se encontra mesa
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
-                //Quando a comanda da mesa solicitada é encontrada, é impresso todos os seus respectivos pedidos;
-                //SUJEITO A MUDANÇAS;
                 return comanda.toString();
             }
         }
@@ -84,19 +98,23 @@ public class GerenciarMesa {
         return false;
     }
 
-    //Esta função tem como objetivo encerrar a comanda de uma mesa desejada;
-    //NECESSÁRIO TESTES. SUJEITO A MUDANÇAS;
+    /**
+     * Esta função tem como objetivo encerrar a comanda de uma mesa.
+     *É incializado um indice impossivel, para o caso de não existir comanda na mesa informada.
+     *É feita uma busca pela comanda da mesa informada.
+     * Caso exista comanda naquela mesa, testa se todos os pedidos foram atendidos.
+     * Caso todos os pedidos tenham sido atendidos, é salvo o índice de onde esta comanda se encontra na lista "mesas".
+     * Testa se a variável do índice mudou, caso tenha mudado, então a comanda pode ser encerrada.
+     * @param numeroMesa : informando a mesa desejada.
+     * @return true, caso a comanda tenha sido encerrada
+     * @return false, caso o encerramento não seja permitido
+     */
     public boolean encerrarComanda(int numeroMesa) {
-        //É incializado um indice impossivel, para o cado de não existir comanda na mesa informada;
         int indice = -1;
-        //É feita uma busca pela comanda da mesa informada;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 System.out.println("entrou aqui");
-                //Caso realmente exista uma comanda naquela mesa;
                 if(comanda.allIsAtendido()){
-                    //E caso todos os pedidos tenham sido atendidos;
-                    //É salvo o indice de onde esta comadna se encontra na lista "mesas";
                     System.out.println("Entrou nesse if");
                     Gerencia.adicionaComanda(comanda);
                     indice = mesas.indexOf(comanda);
@@ -107,14 +125,20 @@ public class GerenciarMesa {
 
             }
         }
-        //Testa se a variável do indice mudou;
-        //Caso tenha mudado, então será possivel Encerrar a comanda da mesa solicitada;
         if (indice != -1) {
             mesas.remove(indice);
             return true;
         } else return false;
 
     }
+
+    /**
+     * Esta função auxilia na edição de um pedido.
+     * @param idPedidoAntigo
+     * @param numMesa
+     * @param novo
+     * @return true caso o pedido seja editado
+     */
 
     public boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {  // Editar um pedido com List
         for (Comanda comanda : mesas) {

@@ -2,6 +2,13 @@ package com.ifpb.projeto.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+/**
+ * A classe Pedido modela a entidade que representa um modelo no domínio da aplicação.
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
 
 public class Pedido{
     private Produto produto;
@@ -13,20 +20,22 @@ public class Pedido{
     //Verificar se foi atendido ou não
     private boolean atendido;
 
-    //Construtor
+    /**
+     * Construtor da classe
+     * Atributos como data e hora serão setados como o momento em que o pedido for realizado.
+     * Atributo atendido é usado como facilitador no tratamento de atendimento de pedidos.
+     * @param produto Recebe o produto que deve ser adicionado como Pedido.
+     * @param quantidade Recebe um número inteiro representando a quantidade de produtos
+     */
     public Pedido(Produto produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
-
-        //Seta os valores de data e de hora do pedido como data e hora em que o pedido foi realizado;
         data = LocalDate.now();
         hora = LocalTime.now();
         atendido = false;
         numeroPedido = ++idPedido;
     }
 
-
-    //Getters and Setters
 
     public int getIdPedido() {
         return idPedido;
