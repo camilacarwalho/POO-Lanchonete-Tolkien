@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 import com.ifpb.projeto.model.*;
+import com.ifpb.projeto.control.*;
 
 import javax.xml.bind.SchemaOutputResolver;
 
@@ -10,6 +11,7 @@ import javax.xml.bind.SchemaOutputResolver;
 public class App {
     public static void main(String[] args) {
         Cozinha c = new Cozinha();
+        CadastroUsuario teste1 = new CadastroUsuario();
         GerenciarMesa m = new GerenciarMesa();
 
         Produto[] produtos = {
