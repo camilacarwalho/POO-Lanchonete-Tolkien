@@ -95,6 +95,7 @@ public class CadastroUsuario {
         return true;
     }
 
+
     public boolean delete(int index){
         if(index>cadastrados.size()-1){
             return false;

@@ -19,6 +19,9 @@ public class CadastroProduto {
     }
 
     public List<Produto> getCardapio() {
+        if (cardapio.isEmpty()){
+            System.out.println("Não há produtos cadastrados!!!");
+        }
         return cardapio;
     }
 
