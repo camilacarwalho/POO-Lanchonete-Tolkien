@@ -107,6 +107,7 @@ public class Usuario {
         }
     }
 
+
     //FUNÇÕES COMUNS PARA CADA USUÁRIO;
 
     //Verifica a autenticação do usuário;
