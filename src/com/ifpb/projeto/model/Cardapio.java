@@ -43,7 +43,7 @@ public class Cardapio {
 
     /**
      * Funções gerais para cardápio
-     * @param produto
+     * @param produto : O produto que deseja adicionar
      */
 
     public void addProduto(Produto produto) {

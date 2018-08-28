@@ -100,7 +100,7 @@ public class Comanda {
     }
     /**
      * Adiciona um novo pedido a comanda
-     * @param pedido
+     * @param pedido : O pedido que deseja adicionar
      */
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);

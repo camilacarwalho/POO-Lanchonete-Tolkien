@@ -1,15 +1,28 @@
 package com.ifpb.projeto.model;
 
 import java.util.Objects;
+/**
+ * A classe Produto modela a entidade produto do domínio da aplicação.
+ *   Composto por atributos gerais de produtos.
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
 
-//Modelagem de produto
 public class Produto {
     private int codigo;
     private String nome;
     private String descricao;
     private float preco;
 
-    //Construtor
+    /**
+     * Construtor da classe
+     * @param codigo : Representa o código do produto
+     * @param nome : Representa o nome do produto
+     * @param descricao : Representa a descrição do produto
+     * @param preco : Representa o preço do produto em reais
+     */
     public Produto(int codigo, String nome, String descricao, float preco) {
         this.codigo = codigo;
         this.nome = nome;

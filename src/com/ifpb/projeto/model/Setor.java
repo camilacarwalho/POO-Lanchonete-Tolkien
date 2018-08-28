@@ -1,5 +1,11 @@
 package com.ifpb.projeto.model;
-
+/**
+ * A classe Setor do tipo Enum representa os setores onde usuários podem atuar.
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
+ */
 /*
 Cria uma lista de valores constantes para simplificar a seleção do setor para cada usuário;
 É criada um a classe "enum" com quatro valores de setor e seu respectivo código;

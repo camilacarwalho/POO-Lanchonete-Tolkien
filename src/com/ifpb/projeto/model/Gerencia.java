@@ -21,7 +21,7 @@ public class Gerencia {
 
     /**
      * Esta função será invocada sempre que uma comanda por encerrada, para manter comandas no histórico da aplicação
-     * @param comanda
+     * @param comanda : O objeto comanda desejado
      */
 
     public static void adicionaComanda(Comanda comanda){

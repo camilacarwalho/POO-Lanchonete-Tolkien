@@ -51,9 +51,9 @@ public class GerenciarMesa {
      * A função irá rodar a lista até que a comanda na mesa seja encontrada.
      * Se a comanda for encontrada, a variável passa a ser TRUE.
      * Se a comanda não for encontrada, irá gerar uma comanda na mesa informada.
-     * @param numeroMesa
+     * @param numeroMesa : O número da mesa desejada
      * @return true, caso a comanda possa ser criada.
-     * @retu false, caso a comanda não possa ser gerada nessa mesa.
+     * @return false, caso a comanda não possa ser gerada nessa mesa.
      */
     public boolean gerarComanda(int numeroMesa) {
         boolean existeComanda = false;
@@ -74,7 +74,7 @@ public class GerenciarMesa {
     /**
      * Esta função irá mostrar ao usuário todos os pedidos de uma mesa.
      * É feito o teste de onde se encontra a mesa, quando for encontrada, seus pedidos são impressos.(testar)
-     * @param numeroMesa
+     * @param numeroMesa :  O número da mesa em que deseja fazer a ação
      * @return String com os pedidos da comanda.
      */
     public String verPedidos(int numeroMesa) {
@@ -134,13 +134,13 @@ public class GerenciarMesa {
 
     /**
      * Esta função auxilia na edição de um pedido.
-     * @param idPedidoAntigo
-     * @param numMesa
-     * @param novo
+     * @param idPedidoAntigo : O pedido original que será editado
+     * @param numMesa : O número da mesa
+     * @param novo : O pedido novo, resultado da edição
      * @return true caso o pedido seja editado
      */
 
-    public boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {  // Editar um pedido com List
+    public boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {
         for (Comanda comanda : mesas) {
             if (numMesa == comanda.getNumMesa()) {
                 List<Pedido> mesa = comanda.getComanda();

@@ -68,7 +68,7 @@ public class TelaInicial {
                                 }
                                 limpaMinhaTelaUltraAdvancedMaisMais();
                             }
-                            System.out.println("---------FIM---------");
+                            System.out.println("::.:.:.:.:.:FIM::.:.:.:.:.:");
 
                         }else System.out.println("Usuário inexistente!");
 
@@ -82,7 +82,7 @@ public class TelaInicial {
             }
             limpaMinhaTelaUltraAdvancedMaisMais();
         }
-        System.out.println("---------FIM---------");
+        System.out.println("::.:.:.:.:.:FIM::.:.:.:.:.:");
 
 
     }
