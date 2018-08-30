@@ -12,13 +12,13 @@ import com.ifpb.projeto.model.*;
 
 public class CadastroProduto {
 
-    private List<Produto> cardapio;
+    private Cardapio cardapio;
 
     public CadastroProduto() {
-        cardapio = new ArrayList<>();
+        cardapio = new Cardapio();
     }
 
-    public List<Produto> getCardapio() {
+    public Cardapio getCardapio() {
         if (cardapio.isEmpty()){
             System.out.println("Não há produtos cadastrados!!!");
         }
@@ -41,13 +41,13 @@ public class CadastroProduto {
 
     public boolean cadastrar() {
         Produto novo =  readData();
-        cardapio.add(novo);
+        cardapio.addProduto(novo);
         return true;
     }
 
 
 
-    public String consulta(String nome) {
+    public String consulta(String codigo) {
 
         return "";
     }
@@ -57,7 +57,7 @@ public class CadastroProduto {
             return false;
         }
         Produto novo = readData();
-        cardapio.add(index,novo);
+        cardapio.atualizar(index,novo);
         return true;
     }
 
@@ -65,7 +65,7 @@ public class CadastroProduto {
         if(index>cardapio.size()-1){
             return false;
         }
-        cardapio.remove(index);
+        cardapio.removeProduto(index);
         return true;
     }
 
@@ -75,8 +75,9 @@ public class CadastroProduto {
             return "Cardápio vazio!";
         }
         String str = ":.:.:.:.:.:PRODUTOS::.:.:.:.:.:\n";
+        List<Produto> produtos = cardapio.getProdutos();
         int cont = 0;
-        for (Produto produto:cardapio) {
+        for (Produto produto:produtos) {
             cont++;
             str += cont+":    \n"+produto.toString();
         }

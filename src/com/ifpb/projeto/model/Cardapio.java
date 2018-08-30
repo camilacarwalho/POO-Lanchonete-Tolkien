@@ -50,12 +50,18 @@ public class Cardapio {
         produtos.add(produto);
     }
 
-    public void removeProduto(Produto produto) {
-        produtos.remove(produto);}
-
-    public void editaProduto(Produto produto, int indice){
-        produtos.set(indice,produto);
+    public void removeProduto(int index) {
+        produtos.remove(index);
     }
 
+    public void atualizar(int index, Produto novo){
+        produtos.add(index, novo);
+    }
+    public boolean isEmpty(){
+        return produtos.isEmpty();
+    }
+    public int size(){
+        return produtos.size();
+    }
 }
 
