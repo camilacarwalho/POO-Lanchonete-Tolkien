@@ -55,7 +55,7 @@ public class Cardapio {
     }
 
     public void atualizar(int index, Produto novo){
-        produtos.add(index, novo);
+        produtos.set(index, novo);
     }
     public boolean isEmpty(){
         return produtos.isEmpty();

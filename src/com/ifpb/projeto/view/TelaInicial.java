@@ -55,13 +55,28 @@ public class TelaInicial {
                                     switch(selecionaMenu){
                                         case 1: gerencia(produtos);
                                                 break;
-                                        case 2: System.out.println("\nSelecione o usuario que deseja atualizar:\n");
-                                                selecionaUsuario = scan.nextInt();
-                                                usuario.update(selecionaUsuario-1);
+                                        case 2: System.out.println("\nAtualizar este usuario:\n\n");
+                                                System.out.println("Digite novamente o seu email:");
+                                                email = scan.next();
+                                                System.out.println("Digite a sua senha\n");
+                                                senha = scan.next();
+                                                if(usuario.updateThis(email,senha)){
+                                                    System.out.println("Usuario atualizado com sucesso!");
+                                                }else System.out.println("ERROR!");
                                                 break;
-                                        case 3: System.out.println("\nSelecione o usuario que deseja deletar:\n");
-                                                selecionaUsuario = scan.nextInt();
-                                                usuario.delete(selecionaUsuario-1);
+                                        case 3: System.out.println("Deseja continuar?");
+                                                System.out.println("\n1 - Sim\n2 - Não\n");
+                                                int escolha = scan.nextInt();
+                                                if(escolha<1||escolha>2){
+                                                    System.out.println("ERROR: COOMO VOCÊ CONSEGUE?");
+                                                }
+                                                else{
+                                                    if(escolha == 1){
+                                                        usuario.deleteThis(email,senha);
+                                                        System.out.println("Usuario deletado com sucesso!\n");
+                                                        continuaMenu=false;
+                                                    }
+                                                }
                                                 break;
                                         case 4: continuaMenu = false;
                                                 break;
@@ -96,10 +111,11 @@ public class TelaInicial {
     }
     public static void gerencia(CadastroProduto produtos){
         boolean continuaMenu = true;
+        int index;
         while(continuaMenu){
             System.out.println(":.:.:.:.GERÊNCIA.:.:.:.:\n\n");
             Scanner scan = new Scanner(System.in);
-            System.out.println("1:Cardápio\n2:Mesas\n3:Minha Conta\n4:Cozinha\n5:Gerencia\n6:Voltar ao Menu Principal");
+            System.out.println("1:Cardápio\n2:Cadastrar produtos\n3:Atualizar Produtos\n4:Deletar produtos\n5:Voltar ao Menu Principal");
             int selecionaMenu = scan.nextInt();
 
             if(selecionaMenu<1||selecionaMenu>6){
@@ -108,17 +124,28 @@ public class TelaInicial {
             }
             else{
                 switch(selecionaMenu){
-                    case 1: produtos.getCardapio();
+                    case 1:
+                        System.out.println(produtos);
                         break;
-                    case 2:
+                    case 2: produtos.cadastrar();
                         break;
                     case 3:
+                            System.out.println("Selecione o produto que deseja atualizar:\n\n");
+                            System.out.println(produtos);
+                            index = scan.nextInt();
+                            if (produtos.update(index-1)){
+                                System.out.println("Atualizado com sucesso!!!");
+                            } else System.out.println("ERROR!!!");
                         break;
                     case 4:
+                          System.out.println("Selecione o produto que deseja deletar:\n\n");
+                          System.out.println(produtos);
+                          index = scan.nextInt();
+                          if(produtos.delete(index-1)){
+                              System.out.println("Produto deletado com sucesso!!!");
+                          }else System.out.println("ERROR!!!");
                         break;
-                    case 5:
-                        break;
-                    case 6: continuaMenu = false;
+                    case 5: continuaMenu = false;
                             break;
                 }
             }

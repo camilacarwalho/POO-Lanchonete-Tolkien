@@ -42,14 +42,20 @@ public class CadastroProduto {
     public boolean cadastrar() {
         Produto novo =  readData();
         cardapio.addProduto(novo);
+        System.out.println("Produto cadastrado com sucesso!!!");
         return true;
     }
 
 
 
     public String consulta(String codigo) {
-
-        return "";
+        List<Produto> produtos = cardapio.getProdutos();
+        for (Produto produto: produtos) {
+            if(Objects.equals(codigo,produto.getCodigo())){
+                return produto.toString();
+            }
+        }
+        return "Este produto não existe!";
     }
 
     public boolean update(int index){

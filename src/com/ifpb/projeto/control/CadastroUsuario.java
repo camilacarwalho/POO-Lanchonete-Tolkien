@@ -77,13 +77,15 @@ public class CadastroUsuario {
     }
 
 
-    public String consulta(String email, String senha) {
+    public Usuario consulta(String email, String senha) {
         for (Usuario usuario: cadastrados) {
             if(usuario.autentication(email,senha)){
-                return usuario.toString();
+                System.out.println(usuario);
+                return usuario;
             }
         }
-        return "O usuário não existe!";
+        System.out.println("O usuário não existe!");
+        return null;
     }
 
     public boolean update(int index){
@@ -95,6 +97,10 @@ public class CadastroUsuario {
         return true;
     }
 
+    public boolean updateThis(String email, String senha){
+        Usuario antigo = consulta(email,senha);
+        return update(cadastrados.indexOf(antigo));
+    }
 
     public boolean delete(int index){
         if(index>cadastrados.size()-1){
@@ -102,6 +108,11 @@ public class CadastroUsuario {
         }
         cadastrados.remove(index);
         return true;
+    }
+
+    public boolean deleteThis(String email, String senha){
+        Usuario falecido = consulta(email,senha);
+        return delete(cadastrados.indexOf(falecido));
     }
 
     @Override
