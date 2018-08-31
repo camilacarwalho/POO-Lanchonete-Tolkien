@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
-//Modelagem de Usuario
+/**
+ * 
+ */
 public class Usuario {
 
     //Abaixo se econtram os dados base do cadastro de um usuário;
