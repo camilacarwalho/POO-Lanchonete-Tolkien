@@ -30,7 +30,9 @@ public class Produto {
         this.preco = preco;
     }
 
-    //Getters and Setters
+    /**
+     * Getters e Setters
+     */
 
     public int getCodigo() {
         return codigo;

@@ -3,13 +3,16 @@ package com.ifpb.projeto.model;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
-
 /**
- * 
+ * A classe Usuário representa os dados de um usuário do dompinio da aplicação.
+ *   @author Camila Carvalho
+ *   @author Mailson Dennis
+ *   @since 26-07-2018
+ *   @version 1.0
  */
 public class Usuario {
 
-    //Abaixo se econtram os dados base do cadastro de um usuário;
+
 
     private String cpf;
     private String nome;
@@ -19,7 +22,16 @@ public class Usuario {
     private Setor setor;
     private String senha;
 
-    //Construtor
+    /**
+     * Construtor da classe
+     * @param cpf : O CPF de um usuário.
+     * @param nome : O nome de um usuário.
+     * @param email :  O e-mail de um usuário.
+     * @param telefone : O número de telefone de um usuário para contato.
+     * @param nascimento : A data de nascimento do usuário.
+     * @param setor : O setor em que o usuário atua.
+     * @param senha : A senha de um usuário para autenticação.
+     */
     public Usuario(String cpf, String nome, String email, String telefone, LocalDate nascimento, Setor setor, String senha) {
         this.cpf = cpf;
         this.nome = nome;
@@ -30,7 +42,9 @@ public class Usuario {
         this.senha = senha;
     }
 
-    //Getters and Setters
+    /**
+     * Getters e Setters
+     */
 
     public String getCpf() {
         return cpf;
@@ -73,7 +87,10 @@ public class Usuario {
     }
 
 
-    //Caso precise de idade
+    /**
+     * Função criada para caso seja necessário saber a idade do usuário
+     * @return Idade do usuário
+     */
     public int getIdade(){
         Period period = Period.between(nascimento,
                 LocalDate.now());
@@ -110,10 +127,13 @@ public class Usuario {
     }
 
 
-    //FUNÇÕES COMUNS PARA CADA USUÁRIO;
-
-    //Verifica a autenticação do usuário;
-    //SUJEITO A MUDANÇAS, POR FAVOR FALAR COM MAILSU NO WHATS E NÃO DAR VÁCUO NELE <3;
+    /**
+     * Função interna que realiza a autenticação de um usuário
+     * @param email : O email escolhido pelo usuário no cadastro,
+     * @param senha : A senha escolhida pelo usuário no cadastro.
+     * @return true, caso a autenticação seja feita.
+     * @return false, caso o email e senha não formem o usuário.
+     */
     public boolean autentication(String email, String senha){
         return Objects.equals(this.email, email) && Objects.equals(this.senha, senha);
     }
