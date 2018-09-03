@@ -60,7 +60,8 @@ public class TelaInicial {
                                                 email = scan.next();
                                                 System.out.println("Digite a sua senha\n");
                                                 senha = scan.next();
-                                                if(usuario.updateThis(email,senha)){
+                                                if(usuario.autentication(email,senha)){
+                                                    usuario.updateThis(email,senha,readData());
                                                     System.out.println("Usuario atualizado com sucesso!");
                                                 }else System.out.println("ERROR!");
                                                 break;
@@ -92,7 +93,7 @@ public class TelaInicial {
                         break;
                     case 2:
                         System.out.println(":.:.:.:.CADASTRANDO USUÁRIO.:.:.:.:\n\n");
-                        usuario.cadastrar();
+                        usuario.cadastrar(readData());
                         break;
 
                     case 0: continua = false;
@@ -127,13 +128,13 @@ public class TelaInicial {
                     case 1:
                         System.out.println(produtos);
                         break;
-                    case 2: produtos.cadastrar();
+                    case 2: produtos.cadastrar(readDataP());
                         break;
                     case 3:
                             System.out.println("Selecione o produto que deseja atualizar:\n\n");
                             System.out.println(produtos);
                             index = scan.nextInt();
-                            if (produtos.update(index-1)){
+                            if (produtos.update(index-1,readDataP())){
                                 System.out.println("Atualizado com sucesso!!!");
                             } else System.out.println("ERROR!!!");
                         break;
@@ -150,5 +151,57 @@ public class TelaInicial {
                 }
             }
         }
+    }
+
+    public static Usuario readData(){
+        Scanner scan = new Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("CPF:");
+        String cpf = scan.next();
+        System.out.println("Nome:");
+        String nome = scan.next();
+        System.out.println("E-mail:");
+        String email = scan.next();
+        System.out.println("Telefone:");
+        String telefone = scan.next();
+        System.out.println("Data:");
+        String data = scan.next();
+        LocalDate nascimento = LocalDate.parse(data, formatter);
+        System.out.println("Setor:\n 1-Atendimento\n2-Cozinha\n3-Caixa\n4-Gerencia");
+        int set = scan.nextInt();
+        Setor setor;
+        switch (set) {
+            case 1:
+                setor = Setor.ATENDIMENTO;
+                break;
+            case 2:
+                setor = Setor.COZINHA;
+                break;
+            case 3:
+                setor = Setor.CAIXA;
+                break;
+            case 4:
+                setor = Setor.GERENCIA;
+                break;
+            default:
+                setor = Setor.ATENDIMENTO;
+        }
+        System.out.println("Senha");
+        String senha = scan.next();
+        Usuario novousuario = new Usuario(cpf, nome, email, telefone, nascimento, setor, senha);
+        return novousuario;
+    }
+    public static Produto readDataP(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Código:");
+        int codigo = scan.nextInt();
+        System.out.println("Nome:");
+        String nome = scan.next();
+        System.out.println("Descrição");
+        String descricao = scan.next();
+        System.out.println("Preço:");
+        float preco = scan.nextFloat();
+        Produto novoproduto = new Produto(codigo, nome, descricao, preco);
+        return novoproduto;
     }
 }

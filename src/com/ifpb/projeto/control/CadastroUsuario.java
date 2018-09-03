@@ -33,56 +33,13 @@ public class CadastroUsuario {
     public List<Usuario> getCadastrados() {
         return cadastrados;
     }
- /**
- * Função facilitadora para leitura de dados de um Usuário, criada para evitar repetições de linha de código.
- * @return O usuário lido.
- */
 
-    public Usuario readData(){
-        Scanner scan = new Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println("CPF:");
-        String cpf = scan.next();
-        System.out.println("Nome:");
-        String nome = scan.next();
-        System.out.println("E-mail:");
-        String email = scan.next();
-        System.out.println("Telefone:");
-        String telefone = scan.next();
-        System.out.println("Data:");
-        String data = scan.next();
-        LocalDate nascimento = LocalDate.parse(data, formatter);
-        System.out.println("Setor:\n 1-Atendimento\n2-Cozinha\n3-Caixa\n4-Gerencia");
-        int set = scan.nextInt();
-        Setor setor;
-        switch (set) {
-            case 1:
-                setor = Setor.ATENDIMENTO;
-                break;
-            case 2:
-                setor = Setor.COZINHA;
-                break;
-            case 3:
-                setor = Setor.CAIXA;
-                break;
-            case 4:
-                setor = Setor.GERENCIA;
-                break;
-            default:
-                setor = Setor.ATENDIMENTO;
-        }
-        System.out.println("Senha");
-        String senha = scan.next();
-        Usuario novousuario = new Usuario(cpf, nome, email, telefone, nascimento, setor, senha);
-        return novousuario;
-    }
  /**
  * Função que cadastra um usuário novo e adiciona na lista de cadastrados.
  *@return true
  */
 
-    public boolean cadastrar() {
-        Usuario novo =  readData();
+    public boolean cadastrar(Usuario novo) {
         cadastrados.add(novo);
         return true;
     }
@@ -126,11 +83,10 @@ public class CadastroUsuario {
      * @return true caso o produto seja editado com sucesso
      * @return false caso a posição passada como parâmetro nao exista.
      */
-    public boolean update(int index){
+    public boolean update(int index, Usuario novo){
         if(index>cadastrados.size()-1){
             return false;
         }
-        Usuario novo = readData();
         cadastrados.add(index,novo);
         return true;
     }
@@ -141,9 +97,9 @@ public class CadastroUsuario {
      * @param senha : A senha do usuário.
      * @return true, caso a atualização seja realizada com sucesso.
      */
-    public boolean updateThis(String email, String senha){
+    public boolean updateThis(String email, String senha, Usuario novo){
         Usuario antigo = consulta(email,senha);
-        return update(cadastrados.indexOf(antigo));
+        return update(cadastrados.indexOf(antigo),novo);
     }
     /**
      * Função que deleta um usuário.
@@ -166,6 +122,10 @@ public class CadastroUsuario {
      * @param senha : A senha do usuário.
      * @return true, caso a exclusão seja realizada com sucesso.
      */
+
+//        minha nossa senhora o cara morreu
+//    bjos do dudu
+//    énoix
 
     public boolean deleteThis(String email, String senha){
         Usuario falecido = consulta(email,senha);

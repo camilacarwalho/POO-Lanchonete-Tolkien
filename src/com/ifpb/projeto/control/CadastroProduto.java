@@ -60,8 +60,7 @@ public class CadastroProduto {
      * @return true
      */
 
-    public boolean cadastrar() {
-        Produto novo =  readData();
+    public boolean cadastrar(Produto novo) {
         cardapio.addProduto(novo);
         System.out.println("Produto cadastrado com sucesso!!!");
         return true;
@@ -90,11 +89,10 @@ public class CadastroProduto {
      * @return false caso a posição passada como parâmetro nao exista.
      */
 
-    public boolean update(int index){
+    public boolean update(int index,Produto novo){
         if(index>cardapio.size()-1){
             return false;
         }
-        Produto novo = readData();
         cardapio.atualizar(index,novo);
         return true;
     }
