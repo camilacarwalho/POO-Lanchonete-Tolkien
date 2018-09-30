@@ -1,5 +1,7 @@
 package com.ifpb.projeto.model;
 
+import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +57,7 @@ public class GerenciarMesa {
      * @return true, caso a comanda possa ser criada.
      * @return false, caso a comanda não possa ser gerada nessa mesa.
      */
-    public boolean gerarComanda(int numeroMesa) {
+    public boolean gerarComanda(int numeroMesa) throws NumeroMesaPositivoException {
         boolean existeComanda = false;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {

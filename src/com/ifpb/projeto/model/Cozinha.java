@@ -1,5 +1,7 @@
 package com.ifpb.projeto.model;
 
+import com.ifpb.projeto.Exceptions.PedidoNaoExisteException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,8 +70,10 @@ public class Cozinha {
      * @return false caso o pedido já tenha sido atendido
      */
     //Esta função remove um pedido da Lista da cozinha;
-    public boolean atendePedido(int idPedido){
-        if(getPedido(idPedido)==null) return false;
+    public boolean atendePedido(int idPedido) throws PedidoNaoExisteException {
+        if(getPedido(idPedido)==null){
+            throw new PedidoNaoExisteException("Não existe nenhum pedido com este código!");
+        }
         //Testa se o pedido ainda não foi atendido;
         if(!getPedido(idPedido).isAtendido()){
             for (Pedido pedido: pedidos) {

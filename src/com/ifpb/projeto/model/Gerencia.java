@@ -36,6 +36,11 @@ public class Gerencia {
      */
 
     public static String between(LocalDate inicio, LocalDate fim){
+        if(inicio.compareTo(fim)>0){
+            LocalDate aux = fim;
+            fim = inicio;
+            inicio = aux;
+        }
         //É criada uma lista vazia para caso não haja nenhuma comanda no intervalo;
         String resultado = "";
         //para cada comanda na lista "comandas":

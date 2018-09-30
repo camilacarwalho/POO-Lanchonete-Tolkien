@@ -38,24 +38,6 @@ public class CadastroProduto {
     }
 
     /**
-     * Função facilitadora para leitura de dados de um Produto, criada para evitar repetições de linha de código.
-     * @return O produto lido.
-     */
-    public Produto readData(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Código:");
-        int codigo = scan.nextInt();
-        System.out.println("Nome:");
-        String nome = scan.next();
-        System.out.println("Descrição");
-        String descricao = scan.next();
-        System.out.println("Preço:");
-        float preco = scan.nextFloat();
-        Produto novoproduto = new Produto(codigo, nome, descricao, preco);
-        return novoproduto;
-    }
-
-    /**
      * Função que cadastra um produto novo e adiciona no cardápio.
      * @return true
      */

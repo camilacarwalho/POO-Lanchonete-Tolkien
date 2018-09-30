@@ -1,5 +1,8 @@
 package com.ifpb.projeto.model;
 
+import com.ifpb.projeto.Exceptions.CodigoInvalidoException;
+import com.ifpb.projeto.Exceptions.PrecoInvalidoException;
+
 import java.util.Objects;
 /**
  * A classe Produto modela a entidade produto do domínio da aplicação.
@@ -23,7 +26,13 @@ public class Produto {
      * @param descricao : Representa a descrição do produto
      * @param preco : Representa o preço do produto em reais
      */
-    public Produto(int codigo, String nome, String descricao, float preco) {
+    public Produto(int codigo, String nome, String descricao, float preco) throws PrecoInvalidoException, CodigoInvalidoException {
+        if(codigo<=0){
+            throw new CodigoInvalidoException("O código informado é inválido!");
+        }
+        if(preco<=0){
+            throw new PrecoInvalidoException("O preço informado é invalido!");
+        }
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
@@ -38,7 +47,10 @@ public class Produto {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) throws CodigoInvalidoException {
+        if(codigo<=0){
+            throw new CodigoInvalidoException("O código informado é inválido");
+        }
         this.codigo = codigo;
     }
 
@@ -62,7 +74,10 @@ public class Produto {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(float preco) throws PrecoInvalidoException {
+        if(preco<=0){
+            throw new PrecoInvalidoException("O preço informado é invalido!");
+        }
         this.preco = preco;
     }
 

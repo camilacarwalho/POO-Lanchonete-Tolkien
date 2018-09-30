@@ -1,5 +1,7 @@
 package com.ifpb.projeto.model;
 
+import com.ifpb.projeto.Exceptions.QuantidadePorPedidoPositivaException;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 /**
@@ -27,7 +29,10 @@ public class Pedido{
      * @param produto Recebe o produto que deve ser adicionado como Pedido.
      * @param quantidade Recebe um número inteiro representando a quantidade de produtos
      */
-    public Pedido(Produto produto, int quantidade) {
+    public Pedido(Produto produto, int quantidade) throws QuantidadePorPedidoPositivaException {
+        if(quantidade<=0){
+            throw new QuantidadePorPedidoPositivaException("A quantidade de produtos por pedido tem que ser positiva!");
+        }
         this.produto = produto;
         this.quantidade = quantidade;
         data = LocalDate.now();
@@ -37,9 +42,14 @@ public class Pedido{
     }
 
 
-    public int getIdPedido() {
+    public static int getIdPedido() {
         return idPedido;
     }
+
+    public static void setIdPedido(int ID){
+        idPedido = ID;
+    }
+
 
     public float getValorTotal() {
         float valorTotal;
@@ -52,7 +62,10 @@ public class Pedido{
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(int quantidade) throws QuantidadePorPedidoPositivaException {
+        if(quantidade<=0){
+            throw new QuantidadePorPedidoPositivaException("A quantidade de produtos por pedido tem que ser positiva!");
+        }
         this.quantidade = quantidade;
     }
 
@@ -70,13 +83,21 @@ public class Pedido{
         this.atendido = atendido;
     }
 
-    public Produto getProduto() {return produto;}
+    public Produto getProduto() {
+        return produto;
+    }
 
-    public void setProduto(Produto produto) {this.produto = produto;}
+    public void setProduto(Produto produto){
+        this.produto = produto;
+    }
 
-    public int getNumeroPedido() {return numeroPedido;}
+    public int getNumeroPedido() {
+        return numeroPedido;
+    }
 
-    public void setNumeroPedido(int numeroPedido) {this.numeroPedido = numeroPedido;}
+    public void setNumeroPedido(int numeroPedido) {
+        this.numeroPedido = numeroPedido;
+    }
 
     public void editarAtendido(){
         if(!isAtendido()){

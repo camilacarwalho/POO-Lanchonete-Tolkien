@@ -2,6 +2,8 @@ package com.ifpb.projeto.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+
+import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
 import com.ifpb.projeto.model.Pedido;
 
 /**
@@ -26,7 +28,10 @@ public class Comanda {
      * @param numMesa : número da mesa
      */
 
-    public Comanda(int numMesa) {
+    public Comanda(int numMesa) throws NumeroMesaPositivoException {
+        if(numMesa<=0){
+            throw new NumeroMesaPositivoException("O número da mesa deve ser positivo!");
+        }
         numComanda = ++codigo;
         comanda = new ArrayList<>();
         this.numMesa = numMesa;
@@ -70,7 +75,10 @@ public class Comanda {
         return numMesa;
     }
 
-    public void setNumMesa(int numMesa) {
+    public void setNumMesa(int numMesa) throws NumeroMesaPositivoException {
+        if(numMesa<=0){
+            throw new NumeroMesaPositivoException("O número da mesa deve ser positivo!");
+        }
         this.numMesa = numMesa;
     }
 
@@ -78,11 +86,21 @@ public class Comanda {
         return data;
     }
 
-    public int getNumComanda() { return numComanda; }
+    public int getNumComanda() {
+        return numComanda;
+    }
 
-    public void setNumComanda(int numComanda) { this.numComanda = numComanda; }
+    public void setNumComanda(int numComanda) {
+        this.numComanda = numComanda;
+    }
 
-    public static int getCodigo() { return codigo; }
+    public static void setCodigo(int cod){
+        codigo=cod;
+    }
+
+    public static int getCodigo() {
+        return codigo;
+    }
 
     /**
      * Procurar um pedido pelo seu ID
