@@ -66,9 +66,11 @@ public class CadastroUsuario {
                 throw new CpfExistenteException("Já existe um usuário com este cpf!");
             }
         }
-        cadastrados.add(novo);
-        atualizarArquivo();
-        return true;
+        if(cadastrados.add(novo)){
+            atualizarArquivo();
+            return true;
+        }
+        return false;
     }
     /**
      * Função que realiza a autenticação de um usuário

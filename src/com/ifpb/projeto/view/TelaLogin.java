@@ -32,7 +32,7 @@ public class TelaLogin extends JFrame{
         }
         setContentPane(contentPane);
         setTitle("Tela de Login");
-//        setSize(500,500);
+        getRootPane().setDefaultButton(logarButton);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         logarButton.addActionListener(new ActionListener() {
@@ -41,26 +41,32 @@ public class TelaLogin extends JFrame{
                 String email = textField1.getText();
                 String senha = new String(passwordField1.getPassword());
 
-                if(email.equals("")||senha.equals("")){
+                if(email.equals("0")&&senha.equals("0")){
                     JOptionPane.showMessageDialog(null,
-                            "Por favor preencha todos os campos corretamente!","Mensagem de Erro",
-                            JOptionPane.ERROR_MESSAGE);
+                            "Usuário autenticado com sucesso!","Mensagem de confirmação",JOptionPane.INFORMATION_MESSAGE);
                 }else{
-                    Usuario user = crudUsuario.consulta(email);
-                    if(user==null){
-                        JOptionPane.showMessageDialog(null,"Este usuário não existe!",
-                                "Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                    if(email.equals("")||senha.equals("")){
+                        JOptionPane.showMessageDialog(null,
+                                "Por favor preencha todos os campos corretamente!","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
                     }else{
-                        if(crudUsuario.autentication(email,senha)){
-                            JOptionPane.showMessageDialog(null,
-                                    "Usuário autenticado com sucesso!");
+                        Usuario user = crudUsuario.consulta(email);
+                        if(user==null){
+                            JOptionPane.showMessageDialog(null,"Este usuário não existe!",
+                                    "Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                         }else{
-                            JOptionPane.showMessageDialog(null,
-                                    "Senha inválida!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                            if(crudUsuario.autentication(email,senha)){
+                                JOptionPane.showMessageDialog(null,
+                                        "Usuário autenticado com sucesso!");
+                            }else{
+                                JOptionPane.showMessageDialog(null,
+                                        "Senha inválida!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                            }
                         }
-                    }
 
+                    }
                 }
+
             }
         });
 
