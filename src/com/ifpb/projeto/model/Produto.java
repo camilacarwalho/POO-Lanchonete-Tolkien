@@ -3,6 +3,7 @@ package com.ifpb.projeto.model;
 import com.ifpb.projeto.Exceptions.CodigoInvalidoException;
 import com.ifpb.projeto.Exceptions.PrecoInvalidoException;
 
+import java.io.Serializable;
 import java.util.Objects;
 /**
  * A classe Produto modela a entidade produto do domínio da aplicação.
@@ -13,7 +14,7 @@ import java.util.Objects;
  *   @version 1.0
  */
 
-public class Produto {
+public class Produto implements Serializable {
     private int codigo;
     private String nome;
     private String descricao;

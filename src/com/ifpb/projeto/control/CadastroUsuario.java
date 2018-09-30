@@ -1,17 +1,16 @@
 package com.ifpb.projeto.control;
 
+import java.io.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 import java.time.format.DateTimeFormatter;
 
+import com.ifpb.projeto.Exceptions.CpfExistenteException;
 import com.ifpb.projeto.model.*;
 /**
  * A classe CasastroUsuario representa o CRUD de objetoc tipo Usuario.
- * Autenticação, Consulta, Cadastro, Edição e Exclusão.
+ * Autenticação, Consulta, TelaDeCadastro, Edição e Exclusão.
  *   @author Camila Carvalho
  *   @author Mailson Dennis
  *   @since 26-07-2018
@@ -20,17 +19,39 @@ import com.ifpb.projeto.model.*;
 
 public class CadastroUsuario {
 
-    private List<Usuario> cadastrados;
+    private File fileCadastrados;
+    private Set<Usuario> cadastrados;
 
-    public CadastroUsuario() {
-        cadastrados = new ArrayList<>();
+
+    public CadastroUsuario() throws IOException, ClassNotFoundException {
+        fileCadastrados = new File("Cadastrados");
+        if(!fileCadastrados.exists()){
+            fileCadastrados.createNewFile();
+            cadastrados = new HashSet<>();
+        }else{
+            if(fileCadastrados.length()>0){
+                try(ObjectInputStream in = new ObjectInputStream(
+                        new FileInputStream(fileCadastrados))){
+                    cadastrados = (Set<Usuario>) in.readObject();
+                }
+            }else cadastrados = new HashSet<>();
+        }
     }
+
+
+    public void atualizarArquivo() throws IOException {
+        try(ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream(fileCadastrados))){
+            out.writeObject(cadastrados);
+        }
+    }
+
 /**
 * Leitura de todos os usuários cadastrados
 * @return : Lista de usuários, caso não há nenhum, retorna mensagem de aviso.
 */
 
-    public List<Usuario> getCadastrados() {
+    public Set<Usuario> getCadastrados() {
         return cadastrados;
     }
 
@@ -39,8 +60,14 @@ public class CadastroUsuario {
  *@return true
  */
 
-    public boolean cadastrar(Usuario novo) {
+    public boolean cadastrar(Usuario novo) throws IOException, CpfExistenteException {
+        for (Usuario usuario:cadastrados){
+            if(novo.getCpf().equals(usuario.getCpf())){
+                throw new CpfExistenteException("Já existe um usuário com este cpf!");
+            }
+        }
         cadastrados.add(novo);
+        atualizarArquivo();
         return true;
     }
     /**
@@ -61,76 +88,73 @@ public class CadastroUsuario {
     /**
      * Função que consulta os dados de um usuário..
      * @param email: O email do usuário.
-     * @param senha : A senha do usuário.
      * @return String com dados do usuário logado.
      */
 
 
-    public Usuario consulta(String email, String senha) {
+    public Usuario consulta(String email) {
         for (Usuario usuario: cadastrados) {
-            if(usuario.autentication(email,senha)){
-                System.out.println(usuario);
+            if(usuario.getEmail().equals(email)){
                 return usuario;
             }
         }
-        System.out.println("O usuário não existe!");
         return null;
     }
 
     /**
      * Função que edita um usuário.
-     * @param index : A posição do usuário da lista de cadastrados.
-     * @return true caso o produto seja editado com sucesso
+     * @param antigo,novo : O usuário que vai ser atualizado, e o usuário já atualizado.
+     * @return true caso o produto seja editado com sucesso.
      * @return false caso a posição passada como parâmetro nao exista.
      */
-    public boolean update(int index, Usuario novo){
-        if(index>cadastrados.size()-1){
+    public boolean update(Usuario antigo,Usuario novo) throws IOException {
+        if(!cadastrados.remove(antigo)){
             return false;
         }
-        cadastrados.add(index,novo);
+        cadastrados.add(novo);
+        atualizarArquivo();
         return true;
     }
 
-    /**
-     * Função que garante que o usuário a editar seja o logado, por questões de ética e segurança.
-     * @param email : O email do usuário.
-     * @param senha : A senha do usuário.
-     * @return true, caso a atualização seja realizada com sucesso.
-     */
-    public boolean updateThis(String email, String senha, Usuario novo){
-        Usuario antigo = consulta(email,senha);
-        return update(cadastrados.indexOf(antigo),novo);
-    }
+//    /**
+//     * Função que garante que o usuário a editar seja o logado, por questões de ética e segurança.
+//     * @param email : O email do usuário.
+//     * @param senha : A senha do usuário.
+//     * @return true, caso a atualização seja realizada com sucesso.
+//     */
+//    public boolean updateThis(String email, String senha, Usuario novo){
+//        Usuario antigo = consulta(email,senha);
+//        return update(cadastrados.indexOf(antigo),novo);
+//    }
     /**
      * Função que deleta um usuário.
-     * @param index : A posição do usuário na lista de cadastrados.
+     * @param usuario : O objeto do usuário que será deletado.
      * @return true caso o usuário seja deletado com sucesso.
      * @return  false caso a posição passada como parâmetro não exista.
      */
 
-    public boolean delete(int index){
-        if(index>cadastrados.size()-1){
-            return false;
-        }
-        cadastrados.remove(index);
-        return true;
+    public boolean delete(Usuario usuario) throws IOException {
+        if(cadastrados.remove(usuario)){
+            atualizarArquivo();
+            return true;
+        }return false;
     }
 
-    /**
-     * Função que garante que o usuário a deletar seja o logado, por questões de ética e segurança.
-     * @param email : O email do usuário.
-     * @param senha : A senha do usuário.
-     * @return true, caso a exclusão seja realizada com sucesso.
-     */
-
-//        minha nossa senhora o cara morreu
-//    bjos do dudu
-//    énoix
-
-    public boolean deleteThis(String email, String senha){
-        Usuario falecido = consulta(email,senha);
-        return delete(cadastrados.indexOf(falecido));
-    }
+//    /**
+//     * Função que garante que o usuário a deletar seja o logado, por questões de ética e segurança.
+//     * @param email : O email do usuário.
+//     * @param senha : A senha do usuário.
+//     * @return true, caso a exclusão seja realizada com sucesso.
+//     */
+//
+////        minha nossa senhora o cara morreu
+////    bjos do dudu
+////    énoix
+//
+//    public boolean deleteThis(String email, String senha){
+//        Usuario falecido = consulta(email,senha);
+//        return delete(cadastrados.indexOf(falecido));
+//    }
 
     @Override
     public String toString() {

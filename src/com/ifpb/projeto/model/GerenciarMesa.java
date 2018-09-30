@@ -1,6 +1,7 @@
 package com.ifpb.projeto.model;
 
 import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
+import com.ifpb.projeto.control.GerenciaComandasFechadas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,14 +112,14 @@ public class GerenciarMesa {
      * @return true, caso a comanda tenha sido encerrada
      * @return false, caso o encerramento não seja permitido
      */
-    public boolean encerrarComanda(int numeroMesa) {
+    public boolean encerrarComanda(int numeroMesa, GerenciaComandasFechadas gerencia) {
         int indice = -1;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 System.out.println("entrou aqui");
                 if(comanda.allIsAtendido()){
                     System.out.println("Entrou nesse if");
-                    Gerencia.adicionaComanda(comanda);
+                    gerencia.adicionaComanda(comanda);
                     indice = mesas.indexOf(comanda);
                     System.out.println("Valor final:"+comanda.getValorFinal());
                     break;

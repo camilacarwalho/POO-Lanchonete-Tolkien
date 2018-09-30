@@ -1,4 +1,5 @@
 package com.ifpb.projeto.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.String;
@@ -16,7 +17,7 @@ import com.ifpb.projeto.model.Produto;
  *   @version 1.0
  */
 
-public class Cardapio {
+public class Cardapio implements Serializable {
 
     private List<Produto> produtos;
     /**

@@ -1,5 +1,6 @@
 package com.ifpb.projeto.control;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +11,8 @@ import java.time.format.DateTimeFormatter;
 
 import com.ifpb.projeto.model.*;
 /**
- * A classe CasastroProduto representa o CRUD de objetoc tipo Produtp.
- * Consulta, Cadastro, Edição e Exclusão.
+ * A classe CasastroProduto representa o CRUD de objetoc tipo Produto.
+ * Consulta, TelaDeCadastro, Edição e Exclusão.
  *   @author Camila Carvalho
  *   @author Mailson Dennis
  *   @since 26-07-2018
@@ -20,10 +21,30 @@ import com.ifpb.projeto.model.*;
 
 public class CadastroProduto {
 
+    private File fileCardapio;
     private Cardapio cardapio;
 
-    public CadastroProduto() {
-        cardapio = new Cardapio();
+    public CadastroProduto() throws IOException, ClassNotFoundException {
+        fileCardapio = new File("Cardapio");
+        if(!fileCardapio.exists()){
+            fileCardapio.createNewFile();
+            cardapio = new Cardapio();
+        }else{
+            if(fileCardapio.length()>0){
+                try(ObjectInputStream in = new ObjectInputStream(
+                        new FileInputStream(fileCardapio))){
+                    cardapio = (Cardapio) in.readObject();
+                }
+
+            }else cardapio = new Cardapio();
+        }
+    }
+
+    public void atualizarArquivo() throws IOException {
+        try(ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream(fileCardapio))){
+            out.writeObject(cardapio);
+        }
     }
 
     /**
@@ -42,9 +63,9 @@ public class CadastroProduto {
      * @return true
      */
 
-    public boolean cadastrar(Produto novo) {
+    public boolean cadastrar(Produto novo) throws IOException {
         cardapio.addProduto(novo);
-        System.out.println("Produto cadastrado com sucesso!!!");
+        atualizarArquivo();
         return true;
     }
 
@@ -54,14 +75,14 @@ public class CadastroProduto {
      * @return String com dados do produto escolhido.
      */
 
-    public String consulta(String codigo) {
+    public Produto consulta(String codigo) {
         List<Produto> produtos = cardapio.getProdutos();
         for (Produto produto: produtos) {
             if(Objects.equals(codigo,produto.getCodigo())){
-                return produto.toString();
+                return produto;
             }
         }
-        return "Este produto não existe!";
+        return null;
     }
 
     /**
@@ -71,11 +92,12 @@ public class CadastroProduto {
      * @return false caso a posição passada como parâmetro nao exista.
      */
 
-    public boolean update(int index,Produto novo){
+    public boolean update(int index,Produto novo) throws IOException {
         if(index>cardapio.size()-1){
             return false;
         }
         cardapio.atualizar(index,novo);
+        atualizarArquivo();
         return true;
     }
 
@@ -86,11 +108,12 @@ public class CadastroProduto {
      * @return  false caso a posição passada como parâmetro não exista.
      */
 
-    public boolean delete(int index){
+    public boolean delete(int index) throws IOException {
         if(index>cardapio.size()-1){
             return false;
         }
         cardapio.removeProduto(index);
+        atualizarArquivo();
         return true;
     }
 

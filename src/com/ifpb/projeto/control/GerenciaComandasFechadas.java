@@ -1,13 +1,13 @@
-package com.ifpb.projeto.model;
+package com.ifpb.projeto.control;
 
-import java.io.Serializable;
+import com.ifpb.projeto.model.Comanda;
+
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A classe Gerencia modela a entidade gerencia do domínio da aplicação.
+ * A classe GerenciaComandasFechadas representa um Controle sobre todas as comandas ja encerradas.
  *   Responsável por auxiliar na busca de comandas em um período determinado
  *   @author Camila Carvalho
  *   @author Mailson Dennis
@@ -15,14 +15,20 @@ import java.util.List;
  *   @version 1.0
  */
 
+public class GerenciaComandasFechadas {
 
-public class Gerencia implements Serializable {
+    private List<Comanda> comandas;
 
-    private static List<Comanda> comandas = new ArrayList<>();
+    public GerenciaComandasFechadas(){
+        comandas = new ArrayList<>();
+    }
 
+    public List<Comanda> getComandas(){
+        return comandas;
+    }
 
-    public static void setComandas(List<Comanda> atualizadas){
-        comandas = atualizadas;
+    public void setComandas(List<Comanda> comandas){
+        this.comandas = comandas;
     }
 
     /**
@@ -30,7 +36,7 @@ public class Gerencia implements Serializable {
      * @param comanda : O objeto comanda desejado
      */
 
-    public static void adicionaComanda(Comanda comanda){
+    public void adicionaComanda(Comanda comanda){
         comandas.add(comanda);
     }
 
@@ -41,7 +47,7 @@ public class Gerencia implements Serializable {
      * @return String com as comandas encontradas
      */
 
-    public static String between(LocalDate inicio, LocalDate fim){
+    public String between(LocalDate inicio, LocalDate fim){
         //Caso as as datas venham invertidas, elas são postas na ordem correta
         if(inicio.compareTo(fim)>0){
             LocalDate aux = fim;
@@ -59,5 +65,4 @@ public class Gerencia implements Serializable {
         }
         return resultado;
     }
-
 }

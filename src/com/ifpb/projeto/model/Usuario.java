@@ -154,7 +154,7 @@ public class Usuario {
     @Override
     public int hashCode() {
 
-        return Objects.hash(cpf, nome, email, telefone, nascimento, setor);
+        return Objects.hash(email);
     }
 
     @Override
