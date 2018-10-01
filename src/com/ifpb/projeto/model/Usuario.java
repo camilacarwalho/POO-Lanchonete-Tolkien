@@ -1,5 +1,6 @@
 package com.ifpb.projeto.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
@@ -10,7 +11,7 @@ import java.util.Objects;
  *   @since 26-07-2018
  *   @version 1.0
  */
-public class Usuario {
+public class Usuario implements Serializable {
 
 
 

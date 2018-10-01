@@ -50,7 +50,16 @@ public class TelaLogin extends JFrame{
                                 "Por favor preencha todos os campos corretamente!","Mensagem de Erro",
                                 JOptionPane.ERROR_MESSAGE);
                     }else{
-                        Usuario user = crudUsuario.consulta(email);
+                        Usuario user = null;
+                        try{
+                            user = crudUsuario.consulta(email);
+                        }catch(IOException ex){
+                            JOptionPane.showMessageDialog(null,
+                                    "Falha na conexão com o arquivo!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                        }catch(ClassNotFoundException ex){
+                            JOptionPane.showMessageDialog(null,
+                                    "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                        }
                         if(user==null){
                             JOptionPane.showMessageDialog(null,"Este usuário não existe!",
                                     "Mensagem de Erro",JOptionPane.ERROR_MESSAGE);

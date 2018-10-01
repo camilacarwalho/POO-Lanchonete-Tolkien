@@ -94,7 +94,11 @@ public class CadastroUsuario {
      */
 
 
-    public Usuario consulta(String email) {
+    public Usuario consulta(String email) throws IOException, ClassNotFoundException {
+        try(ObjectInputStream in = new ObjectInputStream(
+                new FileInputStream(fileCadastrados))){
+            cadastrados = (Set<Usuario>) in.readObject();
+        }
         for (Usuario usuario: cadastrados) {
             if(usuario.getEmail().equals(email)){
                 return usuario;

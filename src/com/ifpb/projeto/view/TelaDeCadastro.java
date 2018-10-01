@@ -94,6 +94,7 @@ public class TelaDeCadastro extends JDialog {
                                 JOptionPane.showMessageDialog(null,
                                         "Usuário cadastrado com sucesso!","Mensagem de confirmação",
                                         JOptionPane.INFORMATION_MESSAGE);
+                                setVisible(false);
                             }
                         } catch (CpfExistenteException e1) {
                             JOptionPane.showMessageDialog(null,
