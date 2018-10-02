@@ -6,6 +6,7 @@
       <xy x="98" y="71" width="388" height="338"/>
     </constraints>
     <properties>
+      <background color="-6807263"/>
       <preferredSize width="300" height="150"/>
       <requestFocusEnabled value="true"/>
     </properties>
@@ -16,7 +17,9 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-6807263"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="d2f81" class="javax.swing.JLabel">
@@ -24,6 +27,8 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-1"/>
+              <foreground color="-1"/>
               <text value="E-mail:"/>
             </properties>
           </component>
@@ -33,7 +38,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1"/>
+            </properties>
           </component>
         </children>
       </grid>
@@ -42,7 +49,9 @@
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-6807263"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="4bcbc" class="javax.swing.JLabel">
@@ -50,6 +59,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <foreground color="-1"/>
               <text value="Senha:"/>
             </properties>
           </component>
@@ -59,7 +69,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1"/>
+            </properties>
           </component>
         </children>
       </grid>
@@ -68,7 +80,9 @@
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-6807263"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="105c6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -76,7 +90,9 @@
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-6807263"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="e8864" class="javax.swing.JButton" binding="cadastrarButton" default-binding="true">
@@ -84,6 +100,8 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-40675"/>
+                  <foreground color="-1"/>
                   <text value="Cadastrar"/>
                 </properties>
               </component>
@@ -94,6 +112,9 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-40675"/>
+              <foreground color="-1"/>
+              <hideActionText value="false"/>
               <text value="Logar"/>
             </properties>
           </component>
