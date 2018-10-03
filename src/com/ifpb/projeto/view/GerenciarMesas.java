@@ -23,6 +23,7 @@ public class GerenciarMesas extends JFrame{
         verPedidosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 VerPedidos verpedidos = new VerPedidos();
                 verpedidos.pack();
                 verpedidos.setVisible(true);
@@ -36,9 +37,5 @@ public class GerenciarMesas extends JFrame{
         dialog.setVisible(true);
     }
 
-    private void createUIComponents() {
-        GerenciarMesa mesas = new GerenciarMesa();
-        //Aprender sobre essa parte aqui
-        comboBox1 = new JComboBox(mesas.getMesas().toArray());
-    }
+
 }

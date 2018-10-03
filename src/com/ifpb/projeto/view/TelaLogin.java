@@ -69,6 +69,9 @@ public class TelaLogin extends JFrame{
                             if(crudUsuario.autentication(email,senha)){
                                 JOptionPane.showMessageDialog(null,
                                         "Usuário autenticado com sucesso!");
+                                    MenuPrincipal menu = new MenuPrincipal();
+                                    menu.pack();
+                                    menu.setVisible(true);
                             }else{
                                 JOptionPane.showMessageDialog(null,
                                         "Senha inválida!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);

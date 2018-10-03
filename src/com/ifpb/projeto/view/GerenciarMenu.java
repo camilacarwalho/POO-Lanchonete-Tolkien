@@ -13,6 +13,7 @@ public class GerenciarMenu extends JFrame {
     private JTextField textField2;
     private JTextField textField3;
     private JTextField textField4;
+    private JButton buscarButton;
 
     public GerenciarMenu(){
         setContentPane(panel1);
