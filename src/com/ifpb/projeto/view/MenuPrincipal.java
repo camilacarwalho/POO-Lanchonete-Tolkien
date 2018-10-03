@@ -12,6 +12,7 @@ public class MenuPrincipal extends JFrame {
     private JButton gerênciaButton;
     private JButton minhaContaButton;
     private JButton sairButton;
+    private JLabel createLabelImagem;
 
     public MenuPrincipal() {
 
@@ -51,6 +52,12 @@ public class MenuPrincipal extends JFrame {
                 cozinha.setVisible(true);
             }
         });
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -59,4 +66,9 @@ public class MenuPrincipal extends JFrame {
         dialog.setVisible(true);
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        ImageIcon icone = new ImageIcon("img/logo.png");
+        createLabelImagem = new JLabel(icone);
+    }
 }

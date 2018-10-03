@@ -17,6 +17,7 @@ public class TelaLogin extends JFrame{
     private JPasswordField passwordField1;
     private JButton cadastrarButton;
     private JButton logarButton;
+    private JLabel test;
 
 
     public TelaLogin(){
@@ -34,6 +35,7 @@ public class TelaLogin extends JFrame{
         setTitle("Tela de Login");
         getRootPane().setDefaultButton(logarButton);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
         logarButton.addActionListener(new ActionListener() {
             @Override
@@ -61,7 +63,7 @@ public class TelaLogin extends JFrame{
                                     "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                         }
                         if(user==null){
-                            JOptionPane.showMessageDialog(null,"Este usuário não existe!",
+                            JOptionPane.showMessageDialog(null,"Este usuário não existe!You Shall Not Pass!!!",
                                     "Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                         }else{
                             if(crudUsuario.autentication(email,senha)){
@@ -94,4 +96,5 @@ public class TelaLogin extends JFrame{
         dialog.pack();
         dialog.setVisible(true);
     }
+
 }
