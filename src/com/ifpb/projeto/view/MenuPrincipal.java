@@ -60,12 +60,6 @@ public class MenuPrincipal extends JFrame {
         });
     }
 
-    public static void main(String[] args) {
-        MenuPrincipal dialog = new MenuPrincipal();
-        dialog.pack();
-        dialog.setVisible(true);
-    }
-
     private void createUIComponents() {
         // TODO: place custom component creation code here
         ImageIcon icone = new ImageIcon("img/logo.png");

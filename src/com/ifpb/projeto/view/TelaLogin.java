@@ -17,8 +17,8 @@ public class TelaLogin extends JFrame{
     private JPasswordField passwordField1;
     private JButton cadastrarButton;
     private JButton logarButton;
-    private JLabel test;
 
+    private static Usuario logado;
 
     public TelaLogin(){
 
@@ -69,6 +69,8 @@ public class TelaLogin extends JFrame{
                             if(crudUsuario.autentication(email,senha)){
                                 JOptionPane.showMessageDialog(null,
                                         "Usuário autenticado com sucesso!");
+                                    logado = user;
+                                    dispose();
                                     MenuPrincipal menu = new MenuPrincipal();
                                     menu.pack();
                                     menu.setVisible(true);
@@ -93,6 +95,10 @@ public class TelaLogin extends JFrame{
                 cadastro.setVisible(true);
             }
         });
+    }
+
+    public static Usuario getLogado(){
+        return logado;
     }
     public static void main(String[] args) {
         TelaLogin dialog = new TelaLogin();
