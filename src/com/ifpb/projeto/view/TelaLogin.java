@@ -2,6 +2,7 @@ package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Usuario;
+import com.ifpb.projeto.view.auxilio.AplicaNimbusLookAndFeel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -106,6 +107,7 @@ public class TelaLogin extends JFrame{
         return logado;
     }
     public static void main(String[] args) {
+        AplicaNimbusLookAndFeel.pegaNimbus();
         TelaLogin dialog = new TelaLogin();
         dialog.pack();
         dialog.setVisible(true);
