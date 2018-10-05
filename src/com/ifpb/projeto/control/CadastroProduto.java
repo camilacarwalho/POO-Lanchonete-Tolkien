@@ -82,7 +82,7 @@ public class CadastroProduto {
         List<Produto> produtos = getProdutos();
         Produto antigo = buscarPorCodigo(codigo);
         if(antigo!=null){
-            produtos.add(produtos.indexOf(antigo),novo);
+            produtos.set(produtos.indexOf(antigo),novo);
             atualizarArquivo(produtos);
             return true;
         }

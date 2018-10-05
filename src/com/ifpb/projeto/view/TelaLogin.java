@@ -45,7 +45,12 @@ public class TelaLogin extends JFrame{
 
                 if(email.equals("0")&&senha.equals("0")){
                     JOptionPane.showMessageDialog(null,
-                            "Usuário autenticado com sucesso!","Mensagem de confirmação",JOptionPane.INFORMATION_MESSAGE);
+                            "Diga amigo e entre!","Mensagem de confirmação",JOptionPane.INFORMATION_MESSAGE);
+                    logado = null;
+                    dispose();
+                    MenuPrincipal menu = new MenuPrincipal();
+                    menu.pack();
+                    menu.setVisible(true);
                 }else{
                     if(email.equals("")||senha.equals("")){
                         JOptionPane.showMessageDialog(null,

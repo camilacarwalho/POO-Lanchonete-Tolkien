@@ -2,6 +2,7 @@ package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.Exceptions.CodigoInvalidoException;
 import com.ifpb.projeto.Exceptions.PrecoInvalidoException;
+import com.ifpb.projeto.Exceptions.ProdutoInexistenteException;
 import com.ifpb.projeto.control.CadastroProduto;
 import com.ifpb.projeto.model.Produto;
 import com.ifpb.projeto.view.auxilio.FloatField;
@@ -24,7 +25,6 @@ public class GerenciarMenu extends JFrame {
     private JTextField textFieldPreco;
     private JButton buscarButton;
     private JSpinner spinner1;
-    private JFormattedTextField formattedTextFieldPreco;
 
     public GerenciarMenu(){
         setContentPane(panel1);
@@ -92,10 +92,128 @@ public class GerenciarMenu extends JFrame {
 
             }
         });
+        buscarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Produto p = CadastroProduto.buscarPorCodigo((int)spinner1.getValue());
+                    if(p==null){
+                        JOptionPane.showMessageDialog(null,
+                                "O produto não existe!","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                        limparForm();
+                    }else{
+                        textFieldNome.setText(p.getNome());
+                        textFieldDescricao.setText(p.getDescricao());
+                        textFieldPreco.setText(new Float(p.getPreco()).toString().replace('.',','));
+                    }
+                } catch (IOException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Erro na conexão com o arquivo!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (ClassNotFoundException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Ocorreu um erro com a classe Produto!", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        excluirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Produto p = null;
+                try {
+                    p = CadastroProduto.buscarPorCodigo((int)spinner1.getValue());
+                    if(p==null) {
+                        JOptionPane.showMessageDialog(null,
+                                "O produto não existe!", "Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                        limparForm();
+                    }else{
+                        if(CadastroProduto.remove((int)spinner1.getValue())){
+                            JOptionPane.showMessageDialog(null,
+                                    "Produto Excluido com Sucesso!", "Mensagem de confirmação",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            limparForm();
+                        }else{
+                            JOptionPane.showMessageDialog(null,
+                                    "Não foi possivel excluir o produto", "Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                            limparForm();
+                        }
+                    }
+                } catch (IOException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Erro na conexão com o arquivo!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (ClassNotFoundException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Ocorreu um erro com a classe Produto!", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        editarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Produto old = null;
+                try {
+                    old = CadastroProduto.buscarPorCodigo((int) spinner1.getValue());
+                    if (old == null) {
+                        JOptionPane.showMessageDialog(null,
+                                "O produto não existe, por favor ponha um código válido!", "Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }else{
+                        try {
+                            Produto novo = new Produto((int)spinner1.getValue(),textFieldNome.getText(),textFieldDescricao.getText(),
+                                    Float.parseFloat(textFieldPreco.getText().replace(',','.')));
+                            if(novo.equals(old)){
+                                JOptionPane.showMessageDialog(null,
+                                        "Não houve nenhuma alteração!","Mensagem de Erro",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                            }else{
+                                try {
+                                    if(CadastroProduto.update(old.getCodigo(),novo)){
+                                        JOptionPane.showMessageDialog(null,
+                                                "O produto foi alterado com sucesso!","Mensagem de Erro",
+                                                JOptionPane.INFORMATION_MESSAGE);
+                                        limparForm();
+                                    }else{
+                                        JOptionPane.showMessageDialog(null,
+                                                "O produto não pode ser alterado","Mensagem de Erro",
+                                                JOptionPane.ERROR_MESSAGE);
+                                    }
+                                } catch (ProdutoInexistenteException e1) {
+                                    JOptionPane.showMessageDialog(null,
+                                            "O produto solicitado não existe!","Mensagem de Erro",
+                                            JOptionPane.ERROR_MESSAGE);
+                                }
+                            }
+                        } catch (PrecoInvalidoException e1) {
+                            JOptionPane.showMessageDialog(null,
+                                    "O preço do produto deve ser um valor positivo!","Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                        } catch (CodigoInvalidoException e1) {
+                            JOptionPane.showMessageDialog(null,
+                                    "O código digitado é inválido!","Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                } catch (IOException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Erro na conexão com o arquivo!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (ClassNotFoundException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Ocorreu um erro com a classe Produto!", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
     }
     private void createUIComponents() {
         textFieldPreco = new FloatField(10,1000,2);
-
+        textFieldPreco.setText("0,00");
         spinner1 = new JSpinner();
         spinner1.setModel(new SpinnerNumberModel(1, 1, null, 1));
         JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)spinner1.getEditor();
@@ -104,12 +222,11 @@ public class GerenciarMenu extends JFrame {
 
     }
 
-    public static void main(String[] args) {
-        GerenciarMenu dialog = new GerenciarMenu();
-        dialog.pack();
-        dialog.setVisible(true);
-
+    private void limparForm(){
+        textFieldNome.setText("");
+        textFieldDescricao.setText("");
+        textFieldPreco.setText("0,00");
     }
-
+    
 
 }
