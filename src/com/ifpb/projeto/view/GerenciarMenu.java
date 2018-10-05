@@ -4,9 +4,12 @@ import com.ifpb.projeto.Exceptions.CodigoInvalidoException;
 import com.ifpb.projeto.Exceptions.PrecoInvalidoException;
 import com.ifpb.projeto.control.CadastroProduto;
 import com.ifpb.projeto.model.Produto;
+import com.ifpb.projeto.view.auxilio.FloatField;
 
 import javax.swing.*;
 import javax.swing.text.DefaultFormatter;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.NumberFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -21,6 +24,7 @@ public class GerenciarMenu extends JFrame {
     private JTextField textFieldPreco;
     private JButton buscarButton;
     private JSpinner spinner1;
+    private JFormattedTextField formattedTextFieldPreco;
 
     public GerenciarMenu(){
         setContentPane(panel1);
@@ -45,12 +49,15 @@ public class GerenciarMenu extends JFrame {
                         }else{
                             try {
                                 Produto novo = new Produto((int)spinner1.getValue(),textFieldNome.getText(),textFieldDescricao.getText(),
-                                        Float.parseFloat(textFieldPreco.getText()));
+                                        Float.parseFloat(textFieldPreco.getText().replace(',','.')));
+
                                 try {
                                     if(CadastroProduto.add(novo)){
                                         JOptionPane.showMessageDialog(null,
                                                 "Produto cadastrado com sucesso!","Mensagem de confirmação",
                                                 JOptionPane.INFORMATION_MESSAGE);
+                                        JOptionPane.showMessageDialog(null,
+                                                novo);
                                     }
                                 } catch (IOException e1) {
                                     JOptionPane.showMessageDialog(null,
@@ -87,6 +94,8 @@ public class GerenciarMenu extends JFrame {
         });
     }
     private void createUIComponents() {
+        textFieldPreco = new FloatField(10,1000,2);
+
         spinner1 = new JSpinner();
         spinner1.setModel(new SpinnerNumberModel(1, 1, null, 1));
         JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)spinner1.getEditor();
