@@ -2,6 +2,7 @@ package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Setor;
+import com.ifpb.projeto.model.Usuario;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -9,8 +10,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
-public class EditarUsuario extends JFrame {
+public class EditarUsuario extends JDialog {
 
     private CadastroUsuario crudUsuario;
 
@@ -23,6 +27,7 @@ public class EditarUsuario extends JFrame {
     private JButton cancelarButton;
     private JComboBox comboBoxEmail;
     private JFormattedTextField nascimento;
+    private Usuario logado;
 
     public EditarUsuario(){
 
@@ -36,9 +41,11 @@ public class EditarUsuario extends JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
 
+        logado = TelaLogin.getLogado();
+
         setContentPane(panel1);
         setTitle("Editar Usuário");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setModal(true);
         getRootPane().setDefaultButton(salvarButton);
 
         cancelarButton.addActionListener(new ActionListener() {
@@ -51,12 +58,62 @@ public class EditarUsuario extends JFrame {
         salvarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(textFieldNome.getText().equals("") || textFieldEmail.getText().equals("") || telefone.getText().length()<14 ||
-                        nascimento.getText().length()<10){
+                String nome = textFieldNome.getText();
+                String email = textFieldEmail.getText() + comboBoxEmail.getSelectedItem();
+                String phone = telefone.getText();
+                String data = nascimento.getText();
+
+                if(nome.equals("") || textFieldEmail.getText().equals("") || phone.length()<14 ||
+                        data.length()<10){
                     JOptionPane.showMessageDialog(null,
                             "Por favor preencha todos os campos corretamente!","Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
                 }else{
+                    LocalDate Nasc = null;
+                    Setor setor = (Setor) comboBoxSetor.getSelectedItem();
+
+                    DateTimeFormatter formatter = DateTimeFormatter
+                            .ofPattern("dd/MM/yyyy");
+
+                    try{
+
+                        Nasc = LocalDate.parse(data,formatter);
+                        Usuario novo = new Usuario(logado.getCpf(),nome,email,phone,Nasc,setor,logado.getSenha());
+                        String modificacoes = "\tForam feitas as seguintes modificações:\n";
+                        if(!nome.equals(logado.getNome())){
+                            modificacoes += "O nome foi alterado de "+logado.getNome()+" Para "+nome+";\n";
+                        }
+                        if(!email.equals(logado.getEmail())){
+                            modificacoes += "O email foi alterado de "+logado.getEmail()+" Para "+email+";\n";
+                        }
+                        if(!phone.equals(logado.getTelefone())){
+                            modificacoes += "O Telefone foi alterado de "+logado.getTelefone()+" Para "+phone+";\n";
+                        }
+                        if(!Nasc.equals(logado.getNascimento())){
+                            modificacoes += "A data de nascimento foi alterado de "+logado.getNome()+" Para "+Nasc+";\n";
+                        }
+                        if(modificacoes.equals("\tForam feitas as seguintes modificações:\n")){
+                            modificacoes = "Não foi feita nenhuma alteração!";
+                        }
+
+                        try {
+                            if(crudUsuario.update(logado,novo)){
+                                TelaLogin.setLogado(novo);
+                                logado=novo;
+                                JOptionPane.showMessageDialog(null,modificacoes,"Mensagem de Confirmação",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                            }
+                        } catch (IOException e1) {
+                            JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+
+                    }catch(DateTimeParseException ex){
+                        JOptionPane.showMessageDialog(null,
+                                "Erro ao na ao converter a data para o formato dd/MM/yyyy","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+
 
                 }
             }

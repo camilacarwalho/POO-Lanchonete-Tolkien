@@ -106,6 +106,10 @@ public class TelaLogin extends JFrame{
     public static Usuario getLogado(){
         return logado;
     }
+
+    public static void setLogado(Usuario usuario){
+        logado = usuario;
+    }
     public static void main(String[] args) {
         AplicaNimbusLookAndFeel.pegaNimbus();
         TelaLogin dialog = new TelaLogin();
