@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu">
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +21,7 @@
       <file leaf-file-name="TelaLogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="379">
               <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -31,9 +30,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TelaLogin.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+      <file leaf-file-name="TelaDeCadastro.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="44" column="9" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="TelaDeCadastro.form" pinned="false" current-in-tab="false">
@@ -65,11 +68,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditarUsuario.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EditarUsuario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="-192">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#919#920#0" expanded="true" />
+                <element signature="e#960#961#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarPedido.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.form" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Graphics.java" />
@@ -185,10 +192,11 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/AplicaNimbusLookAndFeel.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.form" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" />
       </list>
     </option>
   </component>
@@ -291,7 +299,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="288" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="302" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Exemplo-aplicacao-master" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
@@ -673,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="77" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1392">
@@ -690,10 +691,36 @@
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state relative-caret-position="292">
+          <caret line="229" column="4" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/AplicaNimbusLookAndFeel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -717,44 +744,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="229" column="4" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/AplicaNimbusLookAndFeel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="246">
+          <caret line="44" column="9" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+        <state relative-caret-position="-192">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">
