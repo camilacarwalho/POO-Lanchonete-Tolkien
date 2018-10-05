@@ -4,12 +4,13 @@ import javax.swing.*;
 
 public class EditarUsuario extends JFrame {
     private JPanel panel1;
-    private JButton editarButton;
     private JTextField textField1;
     private JTextField textField2;
-    private JTextField textField3;
-    private JFormattedTextField formattedTextField1;
     private JComboBox comboBox1;
+    private JFormattedTextField formattedTextField2;
+    private JButton salvarButton;
+    private JButton cancelarButton;
+    private JComboBox comboBox2;
 
     public EditarUsuario(){
         setContentPane(panel1);

@@ -55,7 +55,10 @@ public class MenuPrincipal extends JFrame {
         sairButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
+                dispose();
+                TelaLogin dialog = new TelaLogin();
+                dialog.pack();
+                dialog.setVisible(true);
             }
         });
     }
