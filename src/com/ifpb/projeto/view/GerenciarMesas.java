@@ -1,5 +1,7 @@
 package com.ifpb.projeto.view;
 
+import com.ifpb.projeto.Exceptions.ComandaExistenteException;
+import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
 import com.ifpb.projeto.model.Gerencia;
 import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Setor;
@@ -38,6 +40,40 @@ public class GerenciarMesas extends JFrame{
                 MenuPrincipal menu = new MenuPrincipal();
                 menu.pack();
                 menu.setVisible(true);
+            }
+        });
+        novaComandaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    GerenciarMesa.gerarComanda((int)spinnerMesa.getValue());
+                    JOptionPane.showMessageDialog(null,
+                            "Foi criada uma comanda para a mesa "+(int)spinnerMesa.getValue(),"Mensagem de Confirmação",
+                            JOptionPane.INFORMATION_MESSAGE);
+                } catch (NumeroMesaPositivoException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "O numero informado para esta mesa é um valor inválido!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (ComandaExistenteException e1) {
+                    JOptionPane.showMessageDialog(null,
+                            "Já existe uma comanda criada para esta mesa!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        fazerPedidoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(GerenciarMesa.getComanda((int)spinnerMesa.getValue())==null){
+                    JOptionPane.showMessageDialog(null,
+                            "Não existe comanda criada para esta mesa!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }else{
+                    FazerPedido.setNumMesa((int)spinnerMesa.getValue());
+                    FazerPedido fp = new FazerPedido();
+                    fp.pack();
+                    fp.setVisible(true);
+                }
             }
         });
     }

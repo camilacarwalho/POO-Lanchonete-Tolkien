@@ -23,6 +23,7 @@ public class MenuPrincipal extends JFrame {
         cardápioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 GerenciarMenu cardapio = new GerenciarMenu();
                 cardapio.pack();
                 cardapio.setVisible(true);

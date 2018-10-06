@@ -25,6 +25,16 @@ public class GerenciarMesa {
         return mesas;
     }
 
+    /**
+     * Esta função irá criar uma nova comanda para a mesa que for selecionada. (sujeito a testes)
+     * A variável existeComanda irá informar se a mesa desejada já possui comanda.
+     * A função irá rodar a lista até que a comanda na mesa seja encontrada.
+     * Se a comanda for encontrada, a variável passa a ser TRUE.
+     * Se a comanda não for encontrada, irá gerar uma comanda na mesa informada.
+     * @param numMesa : O número da mesa desejada
+     * @return true, caso a comanda possa ser criada.
+     * @return false, caso a comanda não possa ser gerada nessa mesa.
+     */
     public static boolean gerarComanda(int numMesa) throws NumeroMesaPositivoException, ComandaExistenteException {
         if(numMesa<=0){
             throw new NumeroMesaPositivoException("O numero da mesa deve ser um valor positivo!");
@@ -54,6 +64,12 @@ public class GerenciarMesa {
         return null;
     }
 
+    /**
+     * Esta função irá mostrar ao usuário todos os pedidos de uma mesa.
+     * É feito o teste de onde se encontra a mesa, quando for encontrada, seus pedidos são impressos.(testar)
+     * @param mesa :  O número da mesa em que deseja fazer a ação
+     * @return String com os pedidos da comanda.
+     */
     public static List<Pedido> verPedidos(int mesa){
         for(Comanda comanda: mesas){
             if(comanda.getNumMesa()==mesa){
@@ -116,14 +132,14 @@ public class GerenciarMesa {
      * @return true caso o pedido seja editado
      */
 
-    public boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {
+    public static boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {
         for (Comanda comanda : mesas) {
             if (numMesa == comanda.getNumMesa()) {
                 List<Pedido> mesa = comanda.getComanda();
                 for (Pedido pedido : mesa) {
                     if (idPedidoAntigo == pedido.getIdPedido()) {
                         int indice = mesa.indexOf(pedido);
-                        mesa.add(indice, novo);
+                        mesa.set(indice, novo);
                         return true;
                     }
                 }

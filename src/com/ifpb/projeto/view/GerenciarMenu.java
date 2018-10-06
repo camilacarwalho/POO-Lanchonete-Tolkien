@@ -25,13 +25,13 @@ public class GerenciarMenu extends JFrame {
     private JTextField textFieldPreco;
     private JButton buscarButton;
     private JSpinner spinner1;
+    private JButton voltarButton;
 
     public GerenciarMenu(){
         setContentPane(panel1);
         setTitle("Gerenciar Menu");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(salvarButton);
-
 
         salvarButton.addActionListener(new ActionListener() {
             @Override
@@ -208,6 +208,15 @@ public class GerenciarMenu extends JFrame {
                             "Ocorreu um erro com a classe Produto!", "Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.pack();
+                menu.setVisible(true);
             }
         });
     }
