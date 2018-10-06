@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" line="228" mnemonic="1" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cadastrados" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastrados" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +56,8 @@
       <file leaf-file-name="CadastroUsuario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="140" column="101" selection-start-line="140" selection-start-column="101" selection-end-line="140" selection-end-column="101" />
+            <state relative-caret-position="318">
+              <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -735,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="140" column="101" selection-start-line="140" selection-start-column="101" selection-end-line="140" selection-end-column="101" />
+        <state relative-caret-position="318">
+          <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
