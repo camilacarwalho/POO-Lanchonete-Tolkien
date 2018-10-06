@@ -5,6 +5,7 @@ import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Setor;
 
 import javax.swing.*;
+import javax.swing.text.DefaultFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,13 +14,14 @@ public class GerenciarMesas extends JFrame{
     private JButton novaComandaButton;
     private JButton verPedidosButton;
     private JButton fazerPedidoButton;
-    private JComboBox comboBox1;
     private JButton encerrarComandaButton;
+    private JSpinner spinnerMesa;
+    private JButton voltarButton;
 
     public GerenciarMesas(){
         setContentPane(panel1);
         setTitle("Gerenciar Mesas");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         verPedidosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,6 +29,15 @@ public class GerenciarMesas extends JFrame{
                 VerPedidos verpedidos = new VerPedidos();
                 verpedidos.pack();
                 verpedidos.setVisible(true);
+            }
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.pack();
+                menu.setVisible(true);
             }
         });
     }
@@ -38,4 +49,11 @@ public class GerenciarMesas extends JFrame{
     }
 
 
+    private void createUIComponents() {
+        spinnerMesa = new JSpinner();
+        spinnerMesa.setModel(new SpinnerNumberModel(1, 1, null, 1));
+        JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)spinnerMesa.getEditor();
+        DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
+        formatter.setAllowsInvalid(false);
+    }
 }

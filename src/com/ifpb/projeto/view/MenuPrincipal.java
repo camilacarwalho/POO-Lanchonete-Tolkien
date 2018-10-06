@@ -31,6 +31,7 @@ public class MenuPrincipal extends JFrame {
         mesasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 GerenciarMesas mesas = new GerenciarMesas();
                 mesas.pack();
                 mesas.setVisible(true);

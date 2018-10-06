@@ -144,17 +144,17 @@ public class Comanda {
      * @return string de todos os pedidos
      */
 
-    public String pedidosNaoAtendidos(){
-        String s = "";
+    public List<Pedido> pedidosNaoAtendidos(){
+        List<Pedido> pedidoList = new ArrayList<>();
         for (Pedido pedido:comanda) {
             if(!pedido.isAtendido()){
-                s+=pedido.toString();
+                pedidoList.add(pedido);
             }
         }
-        if(s.equals("")){
-            return "Todos os pedidos desta mesa ja foram atendidos";
+        if(pedidoList.isEmpty()){
+            return null;
         }
-        return s;
+        return pedidoList;
     }
 
     @Override

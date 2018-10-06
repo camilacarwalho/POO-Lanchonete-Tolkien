@@ -18,26 +18,17 @@ import java.util.List;
 
 
 public class Cozinha {
-    private List<Pedido> pedidos;
 
 
-    /**
-     * Construtor da classe.
-     */
-    public Cozinha() {
-        pedidos = new ArrayList<Pedido>();
-    }
+    private static List<Pedido> pedidos = new ArrayList<>();
 
-
-
-    public List<Pedido> getPedidos() {
+    public static List<Pedido> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
+    public static void setPedidos(List<Pedido> pedidosList) {
+        pedidos = pedidosList;
     }
-
 
     /**
      * Retornar um pedido pelo seu id
@@ -46,7 +37,7 @@ public class Cozinha {
      * @return nulo caso o pedido não seja encontrado
      */
 
-    public Pedido getPedido(int idPedido){
+    public static Pedido getPedido(int idPedido){
         for (Pedido pedido:pedidos) {
             if(pedido.getNumeroPedido()==idPedido){
                 return pedido;
@@ -58,9 +49,8 @@ public class Cozinha {
      * Adicionar um objeto do tipo Pedido
      * @param pedido : objeto
      */
-    public void adicionarPedido(Pedido pedido){
+    public static void adicionarPedido(Pedido pedido){
         pedidos.add(pedido);
-
     }
     /**
      * Remover um pedido da Lista da cozinha
@@ -70,7 +60,7 @@ public class Cozinha {
      * @return false caso o pedido já tenha sido atendido
      */
     //Esta função remove um pedido da Lista da cozinha;
-    public boolean atendePedido(int idPedido) throws PedidoNaoExisteException {
+    public static boolean atendePedido(int idPedido) throws PedidoNaoExisteException {
         if(getPedido(idPedido)==null){
             throw new PedidoNaoExisteException("Não existe nenhum pedido com este código!");
         }

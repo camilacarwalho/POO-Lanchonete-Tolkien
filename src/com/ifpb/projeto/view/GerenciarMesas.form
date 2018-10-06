@@ -1,86 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.ifpb.projeto.view.GerenciarMesas">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties>
       <background color="-6807263"/>
+      <foreground color="-6807263"/>
+      <inheritsPopupMenu value="true"/>
+      <opaque value="false"/>
+      <preferredSize width="375" height="220"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="62057" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="62057" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="10" bottom="10" right="10"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-6807263"/>
         </properties>
-        <border type="none"/>
+        <border type="none" title="Gerencia de mesas">
+          <font size="18" style="1"/>
+          <title-color color="-16777216"/>
+        </border>
         <children>
-          <component id="9979c" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-6807263"/>
-              <foreground color="-1"/>
-              <text value="Mesa"/>
-            </properties>
-          </component>
           <component id="fb19b" class="javax.swing.JButton" binding="novaComandaButton" default-binding="true">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-18418"/>
-              <foreground color="-1"/>
+              <foreground color="-16777216"/>
               <text value="Nova Comanda"/>
+            </properties>
+          </component>
+          <component id="8220c" class="javax.swing.JButton" binding="encerrarComandaButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-51401"/>
+              <foreground color="-16777216"/>
+              <text value="Encerrar Comanda"/>
+            </properties>
+          </component>
+          <component id="9979c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6807263"/>
+              <foreground color="-16645630"/>
+              <text value="Mesa"/>
+            </properties>
+          </component>
+          <component id="17d6d" class="javax.swing.JButton" binding="voltarButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-18165"/>
+              <text value="Voltar"/>
+            </properties>
+          </component>
+          <component id="3f7db" class="javax.swing.JSpinner" binding="spinnerMesa" custom-create="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="a29d" class="javax.swing.JButton" binding="fazerPedidoButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-18165"/>
+              <foreground color="-16777216"/>
+              <text value="Fazer Pedido"/>
             </properties>
           </component>
           <component id="b194c" class="javax.swing.JButton" binding="verPedidosButton" default-binding="true">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-18418"/>
-              <foreground color="-1"/>
-              <text value="Ver Pedidos"/>
-            </properties>
-          </component>
-          <component id="a29d" class="javax.swing.JButton" binding="fazerPedidoButton" default-binding="true">
-            <constraints>
-              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-18418"/>
-              <foreground color="-1"/>
-              <text value="Fazer Pedido"/>
-            </properties>
-          </component>
-          <component id="c42c5" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1907998"/>
               <foreground color="-16777216"/>
+              <text value="Ver Pedidos"/>
             </properties>
           </component>
         </children>
       </grid>
-      <component id="8220c" class="javax.swing.JButton" binding="encerrarComandaButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-51401"/>
-          <foreground color="-1"/>
-          <text value="Encerrar Comanda"/>
-        </properties>
-      </component>
     </children>
   </grid>
 </form>
