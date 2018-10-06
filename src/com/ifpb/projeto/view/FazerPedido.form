@@ -7,7 +7,7 @@
     </constraints>
     <properties>
       <background color="-6807263"/>
-      <preferredSize width="270" height="235"/>
+      <preferredSize width="280" height="250"/>
     </properties>
     <border type="none" title="Fazer Pedido">
       <font size="18" style="1"/>
@@ -45,18 +45,12 @@
           </component>
           <component id="d7678" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <foreground color="-16645630"/>
               <text value="Produto"/>
             </properties>
-          </component>
-          <component id="3bbb8" class="javax.swing.JComboBox" binding="comboBoxProduto" custom-create="true">
-            <constraints>
-              <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
           </component>
           <component id="f07bc" class="javax.swing.JSpinner" binding="spinnerQuantidade" custom-create="true">
             <constraints>
@@ -73,6 +67,14 @@
               <foreground color="-16645630"/>
               <text value="Voltar"/>
             </properties>
+          </component>
+          <component id="44649" class="javax.swing.JList" binding="listProdutos" custom-create="true">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties/>
           </component>
         </children>
       </grid>

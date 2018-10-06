@@ -27,10 +27,16 @@ public class GerenciarMesas extends JFrame{
         verPedidosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                VerPedidos verpedidos = new VerPedidos();
-                verpedidos.pack();
-                verpedidos.setVisible(true);
+                if(GerenciarMesa.verPedidos((int)spinnerMesa.getValue())==null){
+                    JOptionPane.showMessageDialog(null,
+                            "Não existe comanda criada para esta mesa!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }else{
+                    VerPedidos.setNumMesa((int)spinnerMesa.getValue());
+                    VerPedidos verpedidos = new VerPedidos();
+                    verpedidos.pack();
+                    verpedidos.setVisible(true);
+                }
             }
         });
         voltarButton.addActionListener(new ActionListener() {
@@ -76,12 +82,12 @@ public class GerenciarMesas extends JFrame{
                 }
             }
         });
-    }
+        verPedidosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-    public static void main(String[] args) {
-        GerenciarMesas dialog = new GerenciarMesas();
-        dialog.pack();
-        dialog.setVisible(true);
+            }
+        });
     }
 
 
