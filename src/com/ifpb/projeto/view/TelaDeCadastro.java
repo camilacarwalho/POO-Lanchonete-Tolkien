@@ -1,6 +1,7 @@
 package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.Exceptions.CpfExistenteException;
+import com.ifpb.projeto.control.CadastroProduto;
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Setor;
 import com.ifpb.projeto.model.Usuario;
@@ -17,8 +18,6 @@ import java.time.format.DateTimeParseException;
 
 public class TelaDeCadastro extends JDialog {
 
-    private CadastroUsuario crudUsuario;
-
     private JPanel contentPane;
     private JTextField textField1;
     private JTextField textField2;
@@ -34,15 +33,6 @@ public class TelaDeCadastro extends JDialog {
 
 
     public TelaDeCadastro(){
-        try{
-            crudUsuario = new CadastroUsuario();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Não foi possivel encontrar a classe!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
         setContentPane(contentPane);
         setTitle("Cadastro de Usuário");
         getRootPane().setDefaultButton(salvarButton);
@@ -84,23 +74,36 @@ public class TelaDeCadastro extends JDialog {
                                     "Senhas diferentes!","Mensagem de Erro",
                                     JOptionPane.ERROR_MESSAGE);
                         }else{
-                            Usuario novo = new Usuario(Cpf,nome,email,telefone,nascimento,setor,senha);
-                            JOptionPane.showMessageDialog(null,novo);
-                            try{
-                                if(crudUsuario.cadastrar(novo)){
+                            try {
+                                Usuario teste = CadastroUsuario.buscarPorEmail(email);
+                                if(teste!=null){
                                     JOptionPane.showMessageDialog(null,
-                                            "Usuário cadastrado com sucesso!","Mensagem de confirmação",
-                                            JOptionPane.INFORMATION_MESSAGE);
-                                    dispose();
+                                            "Já existe um usuário cadastrado com este email","Mensagem de Erro",
+                                            JOptionPane.ERROR_MESSAGE);
+                                }else{
+                                    Usuario novo = new Usuario(Cpf,nome,email,telefone,nascimento,setor,senha);
+                                    JOptionPane.showMessageDialog(null,novo);
+                                    try{
+                                        if(CadastroUsuario.add(novo)){
+                                            JOptionPane.showMessageDialog(null,
+                                                    "Usuário cadastrado com sucesso!","Mensagem de confirmação",
+                                                    JOptionPane.INFORMATION_MESSAGE);
+                                            dispose();
+                                        }
+                                    } catch (CpfExistenteException e1) {
+                                        JOptionPane.showMessageDialog(null,
+                                                "Já existe um usuário com este CPF!","Mensagem de Erro",
+                                                JOptionPane.ERROR_MESSAGE);
+                                    } catch (IOException e1) {
+                                        JOptionPane.showMessageDialog(null,
+                                                "Falha ao se conectar com o arquivo!","Mensagem de Erro",
+                                                JOptionPane.ERROR_MESSAGE);
+                                    }
                                 }
-                            } catch (CpfExistenteException e1) {
-                                JOptionPane.showMessageDialog(null,
-                                        "Já existe um usuário com este CPF!","Mensagem de Erro",
-                                        JOptionPane.ERROR_MESSAGE);
                             } catch (IOException e1) {
-                                JOptionPane.showMessageDialog(null,
-                                        "Falha ao se conectar com o arquivo!","Mensagem de Erro",
-                                        JOptionPane.ERROR_MESSAGE);
+                                e1.printStackTrace();
+                            } catch (ClassNotFoundException e1) {
+                                e1.printStackTrace();
                             }
                         }
                     }catch(DateTimeParseException ex){

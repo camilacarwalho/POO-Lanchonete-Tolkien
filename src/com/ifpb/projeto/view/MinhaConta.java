@@ -1,22 +1,35 @@
 package com.ifpb.projeto.view;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class MinhaConta extends JDialog {
+public class MinhaConta extends JFrame {
     private JPanel panel1;
     private JButton alterarDadosButton;
     private JButton editarSenhaButton;
     private JButton excluirContaButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JButton voltarButton;
 
     public MinhaConta(){
         setContentPane(panel1);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        alterarDadosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EditarUsuario minhaconta = new EditarUsuario();
+                minhaconta.pack();
+                minhaconta.setVisible(true);
+
+            }
+        });
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
     }
 
 

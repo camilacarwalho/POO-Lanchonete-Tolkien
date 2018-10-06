@@ -165,6 +165,7 @@ public class Usuario implements Serializable {
                 +"E-mail: "+email+"\n"
                 +"Telefone"+telefone+"\n"
                 +"Setor: "+setor+"\n"
+                +"Senha: "+senha+"\n"
                 +".-----------------------------------------.\n";
     }
 }

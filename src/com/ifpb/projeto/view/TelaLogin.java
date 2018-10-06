@@ -11,8 +11,6 @@ import java.io.IOException;
 
 public class TelaLogin extends JFrame{
 
-    private CadastroUsuario crudUsuario;
-
     private JPanel contentPane;
     private JTextField textField1;
     private JPasswordField passwordField1;
@@ -22,16 +20,6 @@ public class TelaLogin extends JFrame{
     private static Usuario logado;
 
     public TelaLogin(){
-
-        try {
-            crudUsuario = new CadastroUsuario();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Não foi possivel encontrar a classe!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
         setContentPane(contentPane);
         setTitle("Tela de Login");
         getRootPane().setDefaultButton(logarButton);
@@ -60,7 +48,7 @@ public class TelaLogin extends JFrame{
                     }else{
                         Usuario user = null;
                         try{
-                            user = crudUsuario.consulta(email);
+                            user = CadastroUsuario.buscarPorEmail(email);
                         }catch(IOException ex){
                             JOptionPane.showMessageDialog(null,
                                     "Falha na conexão com o arquivo!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
@@ -72,17 +60,25 @@ public class TelaLogin extends JFrame{
                             JOptionPane.showMessageDialog(null,"Este usuário não existe!You Shall Not Pass!!!",
                                     "Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                         }else{
-                            if(crudUsuario.autentication(email,senha)){
+                            try {
+                                if(CadastroUsuario.autentication(email,senha)){
+                                    JOptionPane.showMessageDialog(null,
+                                            "Usuário autenticado com sucesso!");
+                                        logado = user;
+                                        dispose();
+                                        MenuPrincipal menu = new MenuPrincipal();
+                                        menu.pack();
+                                        menu.setVisible(true);
+                                }else{
+                                    JOptionPane.showMessageDialog(null,
+                                            "Senha inválida!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                                }
+                            } catch(IOException ex){
                                 JOptionPane.showMessageDialog(null,
-                                        "Usuário autenticado com sucesso!");
-                                    logado = user;
-                                    dispose();
-                                    MenuPrincipal menu = new MenuPrincipal();
-                                    menu.pack();
-                                    menu.setVisible(true);
-                            }else{
+                                        "Falha na conexão com o arquivo!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                            }catch(ClassNotFoundException ex){
                                 JOptionPane.showMessageDialog(null,
-                                        "Senha inválida!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                                        "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                             }
                         }
 

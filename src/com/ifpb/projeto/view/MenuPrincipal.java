@@ -39,7 +39,7 @@ public class MenuPrincipal extends JFrame {
         minhaContaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EditarUsuario minhaconta = new EditarUsuario();
+                MinhaConta minhaconta = new MinhaConta();
                 minhaconta.pack();
                 minhaconta.setVisible(true);
             }

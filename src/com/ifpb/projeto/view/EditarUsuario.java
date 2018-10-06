@@ -16,8 +16,6 @@ import java.time.format.DateTimeParseException;
 
 public class EditarUsuario extends JDialog {
 
-    private CadastroUsuario crudUsuario;
-
     private JPanel panel1;
     private JTextField textFieldNome;
     private JTextField textFieldEmail;
@@ -30,16 +28,6 @@ public class EditarUsuario extends JDialog {
     private Usuario logado;
 
     public EditarUsuario(){
-
-        try{
-            crudUsuario = new CadastroUsuario();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Não foi possivel encontrar a classe!","Mensagem de Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
 
         logado = TelaLogin.getLogado();
 
@@ -97,7 +85,7 @@ public class EditarUsuario extends JDialog {
                         }
 
                         try {
-                            if(crudUsuario.update(logado,novo)){
+                            if(CadastroUsuario.update(logado,novo)){
                                 TelaLogin.setLogado(novo);
                                 logado=novo;
                                 JOptionPane.showMessageDialog(null,modificacoes,"Mensagem de Confirmação",
