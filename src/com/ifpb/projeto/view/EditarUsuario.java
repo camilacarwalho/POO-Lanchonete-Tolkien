@@ -33,9 +33,9 @@ public class EditarUsuario extends JDialog {
 
         setContentPane(panel1);
         setTitle("Editar Usuário");
-        setModal(true);
         getRootPane().setDefaultButton(salvarButton);
-
+        setModal(true);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,35 +64,45 @@ public class EditarUsuario extends JDialog {
                             .ofPattern("dd/MM/yyyy");
 
                     try{
-
                         Nasc = LocalDate.parse(data,formatter);
                         Usuario novo = new Usuario(logado.getCpf(),nome,email,phone,Nasc,setor,logado.getSenha());
-                        String modificacoes = "\tForam feitas as seguintes modificações:\n";
-                        if(!nome.equals(logado.getNome())){
-                            modificacoes += "O nome foi alterado de "+logado.getNome()+" Para "+nome+";\n";
-                        }
-                        if(!email.equals(logado.getEmail())){
-                            modificacoes += "O email foi alterado de "+logado.getEmail()+" Para "+email+";\n";
-                        }
-                        if(!phone.equals(logado.getTelefone())){
-                            modificacoes += "O Telefone foi alterado de "+logado.getTelefone()+" Para "+phone+";\n";
-                        }
-                        if(!Nasc.equals(logado.getNascimento())){
-                            modificacoes += "A data de nascimento foi alterado de "+logado.getNome()+" Para "+Nasc+";\n";
-                        }
-                        if(modificacoes.equals("\tForam feitas as seguintes modificações:\n")){
-                            modificacoes = "Não foi feita nenhuma alteração!";
-                        }
-
-                        try {
-                            if(CadastroUsuario.update(logado,novo)){
-                                TelaLogin.setLogado(novo);
-                                logado=novo;
-                                JOptionPane.showMessageDialog(null,modificacoes,"Mensagem de Confirmação",
-                                        JOptionPane.INFORMATION_MESSAGE);
+                        Usuario teste = CadastroUsuario.buscarPorEmail(email);
+                        if(teste!=null&&teste.getEmail().equals(logado.getEmail()) || teste==null){
+                            String modificacoes = "\tForam feitas as seguintes modificações:\n";
+                            if(!nome.equals(logado.getNome())){
+                                modificacoes += "O nome foi alterado de "+logado.getNome()+" Para "+nome+";\n";
                             }
-                        } catch (IOException e1) {
-                            JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
+                            if(!email.equals(logado.getEmail())){
+                                modificacoes += "O email foi alterado de "+logado.getEmail()+" Para "+email+";\n";
+                            }
+                            if(!phone.equals(logado.getTelefone())){
+                                modificacoes += "O Telefone foi alterado de "+logado.getTelefone()+" Para "+phone+";\n";
+                            }
+                            if(!Nasc.equals(logado.getNascimento())){
+                                modificacoes += "A data de nascimento foi alterado de "+logado.getNome()+" Para "+Nasc+";\n";
+                            }
+                            if(modificacoes.equals("\tForam feitas as seguintes modificações:\n")){
+                                modificacoes = "Não foi feita nenhuma alteração!";
+                            }
+
+                            try {
+                                if(CadastroUsuario.update(logado,novo)){
+                                    TelaLogin.setLogado(novo);
+                                    logado=novo;
+                                    JOptionPane.showMessageDialog(null,modificacoes,"Mensagem de Confirmação",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                    dispose();
+                                }
+                            } catch (IOException e1) {
+                                JOptionPane.showMessageDialog(null,"Erro na conexão com o arquivo!","Mensagem de Erro",
+                                        JOptionPane.ERROR_MESSAGE);
+                            }catch(ClassNotFoundException ex){
+                                JOptionPane.showMessageDialog(null,
+                                        "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null,
+                                    "Já existe um usuário com este email!","Mensagem de Erro",
                                     JOptionPane.ERROR_MESSAGE);
                         }
 
@@ -100,18 +110,18 @@ public class EditarUsuario extends JDialog {
                         JOptionPane.showMessageDialog(null,
                                 "Erro ao na ao converter a data para o formato dd/MM/yyyy","Mensagem de Erro",
                                 JOptionPane.ERROR_MESSAGE);
+                    }catch(IOException ex){
+                        JOptionPane.showMessageDialog(null,
+                                "Falha na conexão com o arquivo!","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                    }catch(ClassNotFoundException ex){
+                        JOptionPane.showMessageDialog(null,
+                                "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                     }
 
 
                 }
             }
         });
-    }
-
-    public static void main(String[] args) {
-        EditarUsuario dialog = new EditarUsuario();
-        dialog.pack();
-        dialog.setVisible(true);
     }
 
     private void createUIComponents() {

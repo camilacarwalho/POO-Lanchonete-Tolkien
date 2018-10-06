@@ -49,8 +49,8 @@ public class CadastroUsuario {
  * @throws IOException
  * @return true
 */
-    public static boolean add(Usuario novo) throws CpfExistenteException, IOException {
-        Set<Usuario> cadastrados = new HashSet<>();
+    public static boolean add(Usuario novo) throws CpfExistenteException, IOException, ClassNotFoundException {
+        Set<Usuario> cadastrados = getCadastrados();
         for(Usuario user:cadastrados){
             if(user.getCpf().equals(novo.getCpf())){
                 throw new CpfExistenteException("Já existe um usuário com este CPF");
@@ -102,8 +102,8 @@ public class CadastroUsuario {
  * @return true caso consiga atualizar o usuario.
  * @reutrn false caso não consiga atualziar.
 */
-    public static boolean update(Usuario antigo, Usuario novo) throws IOException {
-        Set<Usuario> cadastrados = new HashSet<>();
+    public static boolean update(Usuario antigo, Usuario novo) throws IOException, ClassNotFoundException {
+        Set<Usuario> cadastrados = getCadastrados();
         if(antigo!=null){
             if(cadastrados.remove(antigo)){
                 if(cadastrados.add(novo)){
@@ -122,8 +122,8 @@ public class CadastroUsuario {
  * @return true caso seja possivel remnover o usuário
  * @return false caso não seja possivel remover o usuário
 */
-    public static boolean remove(Usuario user) throws IOException {
-        Set<Usuario> cadastrados = new HashSet<>();
+    public static boolean remove(Usuario user) throws IOException, ClassNotFoundException {
+        Set<Usuario> cadastrados = getCadastrados();
         if(cadastrados.remove(user)){
             atualizarArquivo(cadastrados);
             return true;
@@ -151,7 +151,7 @@ public class CadastroUsuario {
     }
 
 
-    
+
     @Override
     public String toString() {
         Set<Usuario> cadastrados = null;

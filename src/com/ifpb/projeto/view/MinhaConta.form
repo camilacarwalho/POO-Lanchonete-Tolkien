@@ -100,7 +100,7 @@
               <text value="CPF:"/>
             </properties>
           </component>
-          <component id="95ad9" class="javax.swing.JLabel">
+          <component id="95ad9" class="javax.swing.JLabel" binding="LabelNome">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -109,7 +109,7 @@
               <text value="Meu nome"/>
             </properties>
           </component>
-          <component id="bc109" class="javax.swing.JLabel">
+          <component id="bc109" class="javax.swing.JLabel" binding="LabelEmail">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -118,7 +118,7 @@
               <text value="Label"/>
             </properties>
           </component>
-          <component id="e2c9" class="javax.swing.JLabel">
+          <component id="e2c9" class="javax.swing.JLabel" binding="LabelNascimento">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -127,7 +127,7 @@
               <text value="Label"/>
             </properties>
           </component>
-          <component id="b8bb9" class="javax.swing.JLabel">
+          <component id="b8bb9" class="javax.swing.JLabel" binding="LabemSetor">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -136,7 +136,7 @@
               <text value="Label"/>
             </properties>
           </component>
-          <component id="8ca99" class="javax.swing.JLabel">
+          <component id="8ca99" class="javax.swing.JLabel" binding="LabelCpf">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

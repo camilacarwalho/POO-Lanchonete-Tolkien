@@ -39,6 +39,7 @@ public class MenuPrincipal extends JFrame {
         minhaContaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 MinhaConta minhaconta = new MinhaConta();
                 minhaconta.pack();
                 minhaconta.setVisible(true);
@@ -62,6 +63,7 @@ public class MenuPrincipal extends JFrame {
             }
         });
     }
+
 
     private void createUIComponents() {
         // TODO: place custom component creation code here

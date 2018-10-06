@@ -68,7 +68,7 @@ public class TelaDeCadastro extends JDialog {
                             JOptionPane.ERROR_MESSAGE);
                 }else{
                     try{
-                        nascimento= LocalDate.parse(data,formatter);
+                        nascimento = LocalDate.parse(data,formatter);
                         if(!senha.equals(confirmacao)){
                             JOptionPane.showMessageDialog(null,
                                     "Senhas diferentes!","Mensagem de Erro",
@@ -100,10 +100,13 @@ public class TelaDeCadastro extends JDialog {
                                                 JOptionPane.ERROR_MESSAGE);
                                     }
                                 }
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            } catch (ClassNotFoundException e1) {
-                                e1.printStackTrace();
+                            }catch (IOException e1) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Falha ao se conectar com o arquivo!","Mensagem de Erro",
+                                        JOptionPane.ERROR_MESSAGE);
+                            }catch(ClassNotFoundException ex){
+                                JOptionPane.showMessageDialog(null,
+                                        "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
                             }
                         }
                     }catch(DateTimeParseException ex){
