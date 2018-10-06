@@ -147,6 +147,20 @@ public class GerenciarMesa {
         }return false;
     }
 
+    public static boolean excluirPedido(int numMesa,int idPedido) throws NumeroMesaPositivoException {
+        if(numMesa<=0){
+            throw new NumeroMesaPositivoException("O numero da mesa deve ser um valor positivo!");
+        }
+        List<Pedido> pedidos = verPedidos(numMesa);
+        if(pedidos!=null){
+            for (Pedido p: pedidos){
+                if(p.getNumeroPedido()==idPedido){
+                    getComanda(numMesa).removerPedido(p);
+                    return true;
+                }
+            }
+        }return false;
+    }
 
 //    private List<Comanda> mesas;
 //

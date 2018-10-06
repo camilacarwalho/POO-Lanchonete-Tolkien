@@ -1,6 +1,7 @@
 package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.control.CadastroProduto;
+import com.ifpb.projeto.model.Gerencia;
 import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Pedido;
 import com.ifpb.projeto.model.Produto;
@@ -29,21 +30,56 @@ public class VerPedidos extends JDialog {
                 dispose();
             }
         });
+        editarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(GerenciarMesa.verPedidos(numMesa)==null){
+                    JOptionPane.showMessageDialog(null,
+                            "Não Existe pedidos para editar!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }else{
+                    EditarPedido.setIdPedido(Integer.parseInt(listPedidos.getSelectedValue().toString().split("-")[0]));
+                    setVisible(false);
+                    EditarPedido editarpedio = new EditarPedido();
+                    editarpedio.pack();
+                    editarpedio.setVisible(true);
+                    setVisible(true);
+                }
+            }
+        });
     }
 
     public static void setNumMesa(int mesa){
         numMesa = mesa;
     }
 
+    public static int getNumMesa(){
+        return numMesa;
+    }
+
     private void createUIComponents() {
+        listPedidos = new JList();
         DefaultListModel<String> listModel = new DefaultListModel<>();
         List<Pedido> pedidos = GerenciarMesa.verPedidos(numMesa);
-        listPedidos = new JList();
-        for(Pedido p:pedidos) {
-            listModel.addElement(p.getNumeroPedido()+"-"+p.getProduto().getNome()+" Subtotal:"+p.getValorTotal());
+        if(pedidos!=null){
+            for(Pedido p:pedidos) {
+                listModel.addElement(p.getNumeroPedido()+"-"+p.getProduto().getNome()+" Subtotal:"+p.getValorTotal());
             }
-        listPedidos.setModel(listModel);
-        listPedidos.setSelectedIndex(0);
-        listPedidos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            listPedidos.setModel(listModel);
+            listPedidos.setSelectedIndex(0);
+            listPedidos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        }
     }
+
+    private void atualizarLista(){
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        List<Pedido> pedidos = GerenciarMesa.verPedidos(numMesa);
+        if(pedidos!=null){
+            for(Pedido p:pedidos) {
+                listModel.addElement(p.getNumeroPedido()+"-"+p.getProduto().getNome()+" Subtotal:"+p.getValorTotal());
+            }
+            listPedidos.setModel(listModel);
+        }else listPedidos.setModel(null);
+    }
+
 }

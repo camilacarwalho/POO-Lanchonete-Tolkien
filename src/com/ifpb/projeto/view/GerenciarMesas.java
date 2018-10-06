@@ -27,7 +27,7 @@ public class GerenciarMesas extends JFrame{
         verPedidosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(GerenciarMesa.verPedidos((int)spinnerMesa.getValue())==null){
+                if(GerenciarMesa.getComanda((int)spinnerMesa.getValue())==null){
                     JOptionPane.showMessageDialog(null,
                             "Não existe comanda criada para esta mesa!","Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);

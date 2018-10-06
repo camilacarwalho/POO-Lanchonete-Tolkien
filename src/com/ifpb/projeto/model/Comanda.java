@@ -123,6 +123,10 @@ public class Comanda {
     public void adicionarPedido(Pedido pedido){
         comanda.add(pedido);
     }
+
+    public void removerPedido(Pedido pedido){
+        comanda.remove(pedido);
+    }
     /**
      * Verifica se todos os pedidos foram atendidos
      * @return true, se foram atendidos
