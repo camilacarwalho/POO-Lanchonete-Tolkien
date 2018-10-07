@@ -33,7 +33,7 @@
             </constraints>
             <properties>
               <background color="-18418"/>
-              <foreground color="-1"/>
+              <foreground color="-16645630"/>
               <text value="Nova Comanda"/>
             </properties>
           </component>
@@ -43,7 +43,7 @@
             </constraints>
             <properties>
               <background color="-51401"/>
-              <foreground color="-1"/>
+              <foreground color="-16645630"/>
               <text value="Encerrar Comanda"/>
             </properties>
           </component>
@@ -53,7 +53,7 @@
             </constraints>
             <properties>
               <background color="-6807263"/>
-              <foreground color="-1"/>
+              <foreground color="-16777216"/>
               <text value="Mesa"/>
             </properties>
           </component>
@@ -63,7 +63,7 @@
             </constraints>
             <properties>
               <background color="-18165"/>
-              <foreground color="-1"/>
+              <foreground color="-16645630"/>
               <text value="Voltar"/>
             </properties>
           </component>
@@ -82,7 +82,7 @@
             </constraints>
             <properties>
               <background color="-18165"/>
-              <foreground color="-1"/>
+              <foreground color="-16645630"/>
               <text value="Fazer Pedido"/>
             </properties>
           </component>
@@ -92,7 +92,7 @@
             </constraints>
             <properties>
               <background color="-18418"/>
-              <foreground color="-1"/>
+              <foreground color="-16645630"/>
               <text value="Ver Pedidos"/>
             </properties>
           </component>

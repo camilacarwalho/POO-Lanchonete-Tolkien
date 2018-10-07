@@ -8,7 +8,7 @@
     <properties>
       <background color="-6807263"/>
       <foreground color="-1"/>
-      <preferredSize width="270" height="250"/>
+      <preferredSize width="340" height="250"/>
     </properties>
     <border type="none" title="Ver Pedidos">
       <font size="18" style="1"/>

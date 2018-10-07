@@ -1,6 +1,7 @@
 package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
+import com.ifpb.projeto.Exceptions.QuantidadePorPedidoPositivaException;
 import com.ifpb.projeto.control.CadastroProduto;
 import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Pedido;
@@ -42,9 +43,6 @@ public class EditarPedido extends JDialog {
                         JOptionPane.showMessageDialog(null, "Pedido excluido com sucesso!", "Mensagem de Confirmação",
                                 JOptionPane.INFORMATION_MESSAGE);
                         dispose();
-//                        VerPedidos verPedidos = new VerPedidos();
-//                        verPedidos.pack();
-//                        verPedidos.setVisible(true);
 
                     }
                 } catch (NumeroMesaPositivoException e1) {
@@ -53,6 +51,40 @@ public class EditarPedido extends JDialog {
                             JOptionPane.ERROR_MESSAGE);
                 }
 
+            }
+        });
+        editarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Pedido novo = new Pedido(CadastroProduto.buscarPorCodigo(Integer.parseInt
+                            (listProdutos.getSelectedValue().toString().split("-")[0])),(int) spinnerQuantidade.getValue());
+                    if(novo.equals(GerenciarMesa.getComanda(VerPedidos.getNumMesa()).getPedido(idPedido))){
+                        JOptionPane.showMessageDialog(null, "Não houve nenhuma alteração no pedido!",
+                                "Mensagem de Confirmação",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        if(GerenciarMesa.editarPedido(idPedido,VerPedidos.getNumMesa(),novo)){
+                            JOptionPane.showMessageDialog(null, "Pedido alterado com sucesso!",
+                                    "Mensagem de Confirmação",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            dispose();
+                        }
+                    }
+                } catch (QuantidadePorPedidoPositivaException e1) {
+                    JOptionPane.showMessageDialog(null, "A quantidade de produtos por pedido deve ser um valo positivo",
+                            "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (ClassNotFoundException ex) {
+                    JOptionPane.showMessageDialog(null, "Problema com a classe Produto", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (IOException ex){
+                    JOptionPane.showMessageDialog(null, "Falha na conexão com o arquivo", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch(NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null, "Problema com a conversão do código do produto", "Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }

@@ -127,6 +127,20 @@ public class Comanda {
     public void removerPedido(Pedido pedido){
         comanda.remove(pedido);
     }
+
+    public boolean editarPedido(int idPedidoAntigo,Pedido novo){
+        if(comanda.size()==0){
+            return false;
+        }else{
+            for (Pedido p:comanda){
+                if(p.getNumeroPedido()==idPedidoAntigo){
+                    comanda.set(comanda.indexOf(p),novo);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     /**
      * Verifica se todos os pedidos foram atendidos
      * @return true, se foram atendidos

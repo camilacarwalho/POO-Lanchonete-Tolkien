@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class VerPedidos extends JDialog {
@@ -38,12 +39,18 @@ public class VerPedidos extends JDialog {
                             "Não Existe pedidos para editar!","Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
                 }else{
-                    EditarPedido.setIdPedido(Integer.parseInt(listPedidos.getSelectedValue().toString().split("-")[0]));
-                    setVisible(false);
-                    EditarPedido editarpedio = new EditarPedido();
-                    editarpedio.pack();
-                    editarpedio.setVisible(true);
-                    setVisible(true);
+                    try{
+                        EditarPedido.setIdPedido(Integer.parseInt(listPedidos.getSelectedValue().toString().split(" ")[0]));
+                        EditarPedido editarpedio = new EditarPedido();
+                        editarpedio.pack();
+                        editarpedio.setVisible(true);
+                        atualizarLista();
+                    }catch(NullPointerException ex ){
+                        JOptionPane.showMessageDialog(null,
+                                "Não Foi Selecionado nenhum pedido!","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+
                 }
             }
         });
@@ -62,8 +69,10 @@ public class VerPedidos extends JDialog {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         List<Pedido> pedidos = GerenciarMesa.verPedidos(numMesa);
         if(pedidos!=null){
+            DecimalFormat fm = new DecimalFormat("0.00");
             for(Pedido p:pedidos) {
-                listModel.addElement(p.getNumeroPedido()+"-"+p.getProduto().getNome()+" Subtotal:"+p.getValorTotal());
+                listModel.addElement(p.getNumeroPedido()+" - "+p.getProduto().getNome()+"|Quant: "+p.getQuantidade()+
+                        " |Subtotal:"+ fm.format(p.getValorTotal()));
             }
             listPedidos.setModel(listModel);
             listPedidos.setSelectedIndex(0);
@@ -75,11 +84,13 @@ public class VerPedidos extends JDialog {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         List<Pedido> pedidos = GerenciarMesa.verPedidos(numMesa);
         if(pedidos!=null){
+            DecimalFormat fm = new DecimalFormat("0.00");
             for(Pedido p:pedidos) {
-                listModel.addElement(p.getNumeroPedido()+"-"+p.getProduto().getNome()+" Subtotal:"+p.getValorTotal());
+                listModel.addElement(p.getNumeroPedido()+" - "+p.getProduto().getNome()+"|Quant: "+p.getQuantidade()+
+                        " |Subtotal:"+fm.format(p.getValorTotal()));
             }
             listPedidos.setModel(listModel);
-        }else listPedidos.setModel(null);
+        }else listPedidos.setModel(new DefaultListModel<String>());
     }
 
 }

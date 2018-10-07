@@ -4,6 +4,8 @@ import com.ifpb.projeto.Exceptions.QuantidadePorPedidoPositivaException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
+
 /**
  * A classe Pedido modela a entidade que representa um modelo no domínio da aplicação.
  *   @author Camila Carvalho
@@ -103,6 +105,21 @@ public class Pedido{
         if(!isAtendido()){
             setAtendido(true);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pedido pedido = (Pedido) o;
+        return quantidade == pedido.quantidade &&
+                Objects.equals(produto, pedido.produto);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(produto, quantidade);
     }
 
     @Override

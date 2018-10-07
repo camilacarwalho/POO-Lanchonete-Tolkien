@@ -135,13 +135,8 @@ public class GerenciarMesa {
     public static boolean editarPedido(int idPedidoAntigo, int numMesa, Pedido novo) {
         for (Comanda comanda : mesas) {
             if (numMesa == comanda.getNumMesa()) {
-                List<Pedido> mesa = comanda.getComanda();
-                for (Pedido pedido : mesa) {
-                    if (idPedidoAntigo == pedido.getIdPedido()) {
-                        int indice = mesa.indexOf(pedido);
-                        mesa.set(indice, novo);
-                        return true;
-                    }
+                if(comanda.editarPedido(idPedidoAntigo,novo)){
+                    return true;
                 }
             }
         }return false;
