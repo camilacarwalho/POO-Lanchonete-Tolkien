@@ -2,6 +2,7 @@ package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.Exceptions.ComandaExistenteException;
 import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
+import com.ifpb.projeto.model.Comanda;
 import com.ifpb.projeto.model.Gerencia;
 import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Setor;
@@ -10,6 +11,8 @@ import javax.swing.*;
 import javax.swing.text.DefaultFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class GerenciarMesas extends JFrame{
     private JPanel panel1;
@@ -79,6 +82,40 @@ public class GerenciarMesas extends JFrame{
                     FazerPedido fp = new FazerPedido();
                     fp.pack();
                     fp.setVisible(true);
+                }
+            }
+        });
+        encerrarComandaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Comanda comanda = GerenciarMesa.getComanda((int)spinnerMesa.getValue());
+                if(comanda==null){
+                    JOptionPane.showMessageDialog(null,
+                            "Não existe comanda criada para esta mesa!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }else{
+                    if(comanda.allIsAtendido()){
+                        try {
+                            if(GerenciarMesa.encerrarComanda((int)spinnerMesa.getValue())){
+                                JOptionPane.showMessageDialog(null,
+                                        "Comanda Encerrada com Sucesso!\nValor Total R$"+
+                                                new DecimalFormat("0.00").format(comanda.getValorFinal()),"Mensagem de Erro",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                            }
+                        } catch (IOException ex) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Falha ao se conectar com o arquivo!","Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                            ex.printStackTrace();
+                        }catch(ClassNotFoundException ex){
+                            JOptionPane.showMessageDialog(null,
+                                    "Problema com a classe Comanda","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null,
+                                "Esta comanda ainda possui pedidos não atendidos!","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });

@@ -10,10 +10,10 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Gerência extends JDialog {
+public class Gerência extends JFrame {
     private JPanel panel1;
     private JButton okButton;
-    private JTable table1;
+    private JTable tableComandas;
     private JFormattedTextField fim;
     private JFormattedTextField inicio;
     private JButton pesquisarButton;
@@ -23,7 +23,7 @@ public class Gerência extends JDialog {
     public Gerência(){
         setContentPane(panel1);
         setTitle("Gerência");
-        setModal(true);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         pesquisarButton.addActionListener(new ActionListener() {
             @Override
@@ -36,25 +36,32 @@ public class Gerência extends JDialog {
 
                 String datainicio = inicio.getText();
                 String datafinal = fim.getText();
-                dataI = LocalDate.parse(datainicio,formatter);
-                dataF = LocalDate.parse(datafinal,formatter);
 
 
-                if (inicio.equals("") || fim.equals("")) {
+                if (inicio.getText().length()<10 || fim.getText().length()<10) {
                     JOptionPane.showMessageDialog(null,
                             "Por favor, preencha todos os campos corretamente!", "Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
                 }else {
-                    Gerencia gerencia = new Gerencia();
-                    gerencia.between(dataI, dataF);
+                    try{
+                        dataI = LocalDate.parse(datainicio,formatter);
+                        dataF = LocalDate.parse(datafinal,formatter);
+                        Gerencia.between(dataI, dataF);
+                    }catch(NullPointerException ex){
+                        JOptionPane.showMessageDialog(null,
+                                "Erro na conversão da data", "Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.pack();
+                menu.setVisible(true);
                 dispose();
-
             }
         });
     }

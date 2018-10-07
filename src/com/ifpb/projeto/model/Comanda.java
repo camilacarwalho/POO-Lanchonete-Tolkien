@@ -1,4 +1,5 @@
 package com.ifpb.projeto.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ import com.ifpb.projeto.model.Pedido;
  *   @version 1.0
  */
 
-public class Comanda {
+public class Comanda implements Serializable {
    private List<Pedido> comanda;
    private int numMesa;
    private LocalDate data;

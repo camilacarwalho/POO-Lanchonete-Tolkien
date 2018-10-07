@@ -1,6 +1,8 @@
 package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.control.CadastroUsuario;
+import com.ifpb.projeto.control.GerenciaComandasFechadas;
+import com.ifpb.projeto.model.Comanda;
 import com.ifpb.projeto.model.Usuario;
 import com.ifpb.projeto.view.auxilio.AplicaNimbusLookAndFeel;
 
@@ -108,6 +110,17 @@ public class TelaLogin extends JFrame{
     }
     public static void main(String[] args) {
         AplicaNimbusLookAndFeel.pegaNimbus();
+        try {
+            Comanda.setCodigo(GerenciaComandasFechadas.getComandas().size()+1);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null,
+                    "Falha ao se conectar com o arquivo!","Mensagem de Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }catch(ClassNotFoundException ex){
+            JOptionPane.showMessageDialog(null,
+                    "Problema com a classe Comanda","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+        }
         TelaLogin dialog = new TelaLogin();
         dialog.pack();
         dialog.setVisible(true);

@@ -2,6 +2,7 @@ package com.ifpb.projeto.model;
 
 import com.ifpb.projeto.Exceptions.QuantidadePorPedidoPositivaException;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.Objects;
  *   @version 1.0
  */
 
-public class Pedido{
+public class Pedido implements Serializable {
     private Produto produto;
     private int quantidade;
     private LocalDate data;

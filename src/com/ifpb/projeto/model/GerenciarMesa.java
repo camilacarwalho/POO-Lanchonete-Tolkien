@@ -133,14 +133,13 @@ public class GerenciarMesa {
      * @return true, caso a comanda tenha sido encerrada
      * @return false, caso o encerramento não seja permitido
      */
-    public static boolean encerrarComanda(int numeroMesa, GerenciaComandasFechadas gerencia) throws IOException, ClassNotFoundException {
+    public static boolean encerrarComanda(int numeroMesa) throws IOException, ClassNotFoundException {
         int indice = -1;
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {
                 if(comanda.allIsAtendido()){
                     GerenciaComandasFechadas.addComanda(comanda);
                     indice = mesas.indexOf(comanda);
-                    System.out.println("Valor final:"+comanda.getValorFinal());
                     break;
                 }
                 else break;
