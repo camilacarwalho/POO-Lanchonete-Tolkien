@@ -1,5 +1,7 @@
 package com.ifpb.projeto.view;
 
+import com.ifpb.projeto.model.Gerencia;
+
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
@@ -42,6 +44,9 @@ public class Gerência extends JDialog {
                     JOptionPane.showMessageDialog(null,
                             "Por favor, preencha todos os campos corretamente!", "Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
+                }else {
+                    Gerencia gerencia = new Gerencia();
+                    gerencia.between(dataI, dataF);
                 }
             }
         });
@@ -61,16 +66,11 @@ public class Gerência extends JDialog {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        fim = new JFormattedTextField();
 
         inicio = new JFormattedTextField();
-
-
-
+        fim = new JFormattedTextField();
         if(formatter1!=null){
             formatter1.install(inicio);
-        }
-        if(formatter1!=null){
             formatter1.install(fim);
         }
 
