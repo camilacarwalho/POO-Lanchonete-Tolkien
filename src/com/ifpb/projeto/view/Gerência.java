@@ -15,6 +15,8 @@ public class Gerência extends JDialog {
     private JFormattedTextField fim;
     private JFormattedTextField inicio;
     private JButton pesquisarButton;
+    private JLabel calendar;
+    private JLabel calendar2;
 
     public Gerência(){
         setContentPane(panel1);
@@ -43,6 +45,13 @@ public class Gerência extends JDialog {
                 }
             }
         });
+        okButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+
+            }
+        });
     }
 
     private void createUIComponents() {
@@ -64,5 +73,9 @@ public class Gerência extends JDialog {
         if(formatter1!=null){
             formatter1.install(fim);
         }
+
+        ImageIcon icone = new ImageIcon("img/calendar.png");
+        calendar = new JLabel(icone);
+        calendar2 = new JLabel(icone);
     }
 }
