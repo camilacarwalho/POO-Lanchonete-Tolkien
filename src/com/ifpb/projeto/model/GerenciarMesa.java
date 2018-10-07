@@ -100,6 +100,15 @@ public class GerenciarMesa {
         return quant;
     }
 
+    public static boolean atendePedido(int numMesa,int idPedido){
+        for(Comanda comanda: mesas){
+            if(comanda.getNumMesa()==numMesa){
+                return comanda.atendePedido(idPedido);
+            }
+        }
+        return false;
+    }
+
     public static boolean fazerPedido(int numeroMesa, Pedido pedido) {
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {

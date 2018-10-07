@@ -175,6 +175,18 @@ public class Comanda {
         return pedidoList;
     }
 
+    public boolean atendePedido(int idPedido){
+        if(comanda.size()>0){
+            for(Pedido pedido:comanda){
+                if(pedido.getNumeroPedido()==idPedido){
+                    pedido.setAtendido(true);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         String resultado = "|Mesa:"+numMesa+"|| Numero da comanda"+numComanda+"||Data: "+ data+"|\n";

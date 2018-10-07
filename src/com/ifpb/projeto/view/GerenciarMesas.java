@@ -82,12 +82,6 @@ public class GerenciarMesas extends JFrame{
                 }
             }
         });
-        verPedidosButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
     }
 
 

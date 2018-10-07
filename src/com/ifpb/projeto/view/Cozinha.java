@@ -28,16 +28,48 @@ public class Cozinha extends JFrame {
                 menu.setVisible(true);
             }
         });
+        atenderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    String[] pedido = ((String)comboBox1.getSelectedItem()).split(" ");
+                    try{
+                        if(GerenciarMesa.atendePedido(Integer.parseInt(pedido[4]),Integer.parseInt(pedido[1]))){
+                            JOptionPane.showMessageDialog(null,
+                                    "Pedido atendido com sucesso!","Mensagem de Confirmação",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            atualizarComboBox();
+                        }else{
+                            JOptionPane.showMessageDialog(null,
+                                    "Não foi possivel atender o pedido!","Mensagem de Erro",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+                    }catch(ArrayIndexOutOfBoundsException | NullPointerException ex){
+                        JOptionPane.showMessageDialog(null,
+                                "Ocorreu um Erro na hora de seelcionar o pedido para atender!","Mensagem de Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                }catch(NullPointerException ex){
+                    JOptionPane.showMessageDialog(null,
+                            "Não existem pedidos para se atender!","Mensagem de Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+    }
+
+    private void atualizarComboBox(){
+        comboBox1.removeItemAt(comboBox1.getSelectedIndex());
     }
 
     private void createUIComponents() {
-        String[] pedidos = new String[GerenciarMesa.quantPedidosNaoAtendidos()];
         if(GerenciarMesa.quantPedidosNaoAtendidos()>0){
+            String[] pedidos = new String[GerenciarMesa.quantPedidosNaoAtendidos()];
             int quant=0;
             for(Comanda comanda:GerenciarMesa.getMesas()){
                 for(Pedido pedido:comanda.getComanda()){
                     if(!pedido.isAtendido()){
-                        pedidos[quant++]="Pedido "+pedido.getNumeroPedido()+"| Mesa "+comanda.getNumMesa();
+                        pedidos[quant++]="Pedido "+pedido.getNumeroPedido()+" | " + "Mesa "+comanda.getNumMesa();
                     }
                 }
             }

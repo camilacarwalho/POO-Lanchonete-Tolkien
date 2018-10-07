@@ -29,9 +29,6 @@ public class VerPedidos extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                MenuPrincipal menu = new MenuPrincipal();
-                menu.pack();
-                menu.setVisible(true);
             }
         });
         editarButton.addActionListener(new ActionListener() {
