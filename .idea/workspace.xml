@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu">
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/control/GerenciaComandasFechadas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/control/GerenciaComandasFechadas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/model/GerenciarMesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/model/GerenciarMesa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/Gerência.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/MenuPrincipal$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/MenuPrincipal$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/MenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/MenuPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,16 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Gerência.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
       <file leaf-file-name="GerenciaComandasFechadas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+            <state relative-caret-position="216">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -36,10 +41,40 @@
       <file leaf-file-name="Gerência.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state relative-caret-position="323">
+              <caret line="52" column="55" lean-forward="true" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
+              <folding>
+                <element signature="e#3366#3507#0" expanded="true" />
+                <element signature="e#3506#3507#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comanda.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1314">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerPedidos.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="74" column="56" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gerência.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file leaf-file-name="Produto.java" pinned="false" current-in-tab="false">
@@ -54,8 +89,8 @@
       <file leaf-file-name="MenuPrincipal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="255">
+              <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,38 +102,9 @@
         <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-57">
-              <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+              <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TelaLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1728">
-              <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerPedidos.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="78" column="56" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GerenciarMesas.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -157,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/Exceptions/ComandaExistenteException.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.java" />
@@ -167,20 +172,21 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/FazerPedido.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarPedido.form" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarPedido.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java" />
       </list>
     </option>
@@ -500,49 +506,49 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007587" side_tool="true" weight="0.24177632" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985294" visible="true" weight="0.23190789" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985294" visible="true" weight="0.23190789" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924126" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18968134" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18968134" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40201005" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40131578" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296355" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296355" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18455882" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985294" visible="true" weight="0.23190789" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18968134" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.2393027" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296355" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40201005" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40131578" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32967034" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50073206" side_tool="true" weight="0.50549453" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924126" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007587" side_tool="true" weight="0.24177632" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32488114" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -765,26 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="78" column="56" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -799,60 +785,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#2828#2829#0" expanded="true" />
-            <element signature="e#2863#2864#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-            <element signature="e#2948#2949#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-57">
+          <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+        <state relative-caret-position="412">
+          <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="64" />
+        <state relative-caret-position="255">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+        <state relative-caret-position="287">
+          <caret line="74" column="56" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        <state relative-caret-position="426">
+          <caret line="113" column="75" selection-start-line="113" selection-start-column="75" selection-end-line="113" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1314">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="323">
+          <caret line="52" column="55" lean-forward="true" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
+          <folding>
+            <element signature="e#3366#3507#0" expanded="true" />
+            <element signature="e#3506#3507#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

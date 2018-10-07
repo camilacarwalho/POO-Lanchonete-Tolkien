@@ -60,7 +60,7 @@ public class GerenciaComandasFechadas {
      * @return Lista com as comandas encontradas
      */
 
-    public static List<Comanda> between(LocalDate inicio, LocalDate fim) throws IOException, ClassNotFoundException {
+    public static ArrayList<Comanda> between(LocalDate inicio, LocalDate fim) throws IOException, ClassNotFoundException {
         //Caso as as datas venham invertidas, elas são postas na ordem correta
         if(inicio.compareTo(fim)>0){
             LocalDate aux = fim;
@@ -68,7 +68,7 @@ public class GerenciaComandasFechadas {
             inicio = aux;
         }
         //É criada uma lista vazia para caso não haja nenhuma comanda no intervalo;
-        List<Comanda> resultado = new ArrayList<>();
+        ArrayList<Comanda> resultado = new ArrayList<>();
         List<Comanda> comandas = getComandas();
         //para cada comanda na lista "comandas":
         for (Comanda comanda: comandas){

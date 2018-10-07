@@ -111,7 +111,7 @@ public class TelaLogin extends JFrame{
     public static void main(String[] args) {
         AplicaNimbusLookAndFeel.pegaNimbus();
         try {
-            Comanda.setCodigo(GerenciaComandasFechadas.getComandas().size()+1);
+            Comanda.setCodigo(GerenciaComandasFechadas.getComandas().size());
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null,
                     "Falha ao se conectar com o arquivo!","Mensagem de Erro",

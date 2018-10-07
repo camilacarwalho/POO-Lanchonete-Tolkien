@@ -3,9 +3,7 @@ package com.ifpb.projeto.view;
 import com.ifpb.projeto.Exceptions.ComandaExistenteException;
 import com.ifpb.projeto.Exceptions.NumeroMesaPositivoException;
 import com.ifpb.projeto.model.Comanda;
-import com.ifpb.projeto.model.Gerencia;
 import com.ifpb.projeto.model.GerenciarMesa;
-import com.ifpb.projeto.model.Setor;
 
 import javax.swing.*;
 import javax.swing.text.DefaultFormatter;

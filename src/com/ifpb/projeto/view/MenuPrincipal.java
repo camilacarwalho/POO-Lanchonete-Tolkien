@@ -68,6 +68,7 @@ public class MenuPrincipal extends JFrame {
         gerênciaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 Gerência dialog = new Gerência();
                 dialog.pack();
                 dialog.setVisible(true);

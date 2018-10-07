@@ -1,15 +1,11 @@
 package com.ifpb.projeto.view;
 
-import com.ifpb.projeto.control.CadastroProduto;
-import com.ifpb.projeto.model.Gerencia;
 import com.ifpb.projeto.model.GerenciarMesa;
 import com.ifpb.projeto.model.Pedido;
-import com.ifpb.projeto.model.Produto;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 
