@@ -79,6 +79,27 @@ public class GerenciarMesa {
         return null;
     }
 
+    public static List<Pedido> verTodosOsPedidos(int mesa){
+        for(Comanda comanda: mesas){
+            if(comanda.getNumMesa()==mesa){
+                return comanda.getComanda();
+            }
+        }
+        return null;
+    }
+
+    public static int quantPedidosNaoAtendidos(){
+        int quant = 0;
+        for(Comanda comanda: mesas){
+            for(Pedido pedido:comanda.getComanda()){
+                if(!pedido.isAtendido()){
+                    quant++;
+                }
+            }
+        }
+        return quant;
+    }
+
     public static boolean fazerPedido(int numeroMesa, Pedido pedido) {
         for (Comanda comanda : mesas) {
             if (comanda.getNumMesa() == numeroMesa) {

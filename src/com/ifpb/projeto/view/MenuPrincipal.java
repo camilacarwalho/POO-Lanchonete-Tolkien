@@ -50,6 +50,7 @@ public class MenuPrincipal extends JFrame {
         cozinhaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 Cozinha cozinha = new Cozinha();
                 cozinha.pack();
                 cozinha.setVisible(true);
