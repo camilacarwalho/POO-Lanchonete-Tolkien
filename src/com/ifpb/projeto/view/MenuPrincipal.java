@@ -64,6 +64,14 @@ public class MenuPrincipal extends JFrame {
                 dialog.setVisible(true);
             }
         });
+        gerênciaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gerência dialog = new Gerência();
+                dialog.pack();
+                dialog.setVisible(true);
+            }
+        });
     }
 
 
