@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu">
-      <change beforePath="$PROJECT_DIR$/Cadastrados" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastrados" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fechadas" beforeDir="false" afterPath="$PROJECT_DIR$/Fechadas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Produtos" beforeDir="false" afterPath="$PROJECT_DIR$/Produtos" afterDir="false" />
-    </list>
+    <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -405,7 +401,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007587" side_tool="true" weight="0.24177632" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985294" visible="true" weight="0.23076923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985294" weight="0.23076923" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924126" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
