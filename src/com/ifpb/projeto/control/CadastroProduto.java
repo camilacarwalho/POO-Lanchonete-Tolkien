@@ -19,6 +19,13 @@ public class CadastroProduto {
 
     private static File fileCardapio = new File("Produtos");
 
+    /**
+     * A função getProdutos é usada para a listagem de produtos cadastrados
+     * @return Array com todos os produtos
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+
     public static List<Produto> getProdutos() throws IOException, ClassNotFoundException {
         List<Produto> produtos = new ArrayList<>();
         if (!fileCardapio.exists()) {
@@ -34,6 +41,14 @@ public class CadastroProduto {
         return produtos;
     }
 
+    /**
+     * Função para adicionar um novo produto
+     * @param novo : O produto que deseja adicionar
+     * @return true, caso a operação tenha sido realizada com sucesso e false caso haja erro
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+
     public static boolean add(Produto novo) throws IOException, ClassNotFoundException {
         List<Produto> produtos = getProdutos();
         if(buscarPorCodigo(novo.getCodigo())==null){
@@ -44,6 +59,11 @@ public class CadastroProduto {
         return false;
     }
 
+    /**
+     * Função para atualizar o arquivo com os produtos
+     * @param produtos : Lista com os produtos
+     * @throws IOException
+     */
     public static void atualizarArquivo(List<Produto> produtos) throws IOException {
         try(ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream(fileCardapio))){
@@ -51,6 +71,13 @@ public class CadastroProduto {
         }
     }
 
+    /**
+     * Função que busca produto pelo seu código
+     * @param codigo : O inteiro que representa o código do número pesquisado
+     * @return retorna o produto caso seja encontrado, se não, retorna null
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static Produto buscarPorCodigo(int codigo) throws IOException, ClassNotFoundException {
         List<Produto> produtos = getProdutos();
         if(produtos.size()==0){
@@ -62,6 +89,14 @@ public class CadastroProduto {
             return null;
         }
     }
+
+    /**
+     * Função que remove um produto pelo seu código
+     * @param codigo : O inteiro que representa o produto que se deseja remover
+     * @return true, caso a operação tenha sido realizada e false caso haja algum erro de busca
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
 
     public static boolean remove(int codigo) throws IOException, ClassNotFoundException{
         List<Produto> produtos = getProdutos();

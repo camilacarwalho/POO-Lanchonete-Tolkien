@@ -171,6 +171,14 @@ public class GerenciarMesa {
         }return false;
     }
 
+    /**
+     * Função que auxilia na exclusão de um pedido
+     * @param numMesa : inteiro com o número da mesa desejada
+     * @param idPedido : inteiro com a ID do pedido que se deseja remover
+     * @return true, caso o pedido seja excluído e false caso a mesa não tenha pedidos para excluir
+     * @throws NumeroMesaPositivoException
+     */
+
     public static boolean excluirPedido(int numMesa,int idPedido) throws NumeroMesaPositivoException {
         if(numMesa<=0){
             throw new NumeroMesaPositivoException("O numero da mesa deve ser um valor positivo!");

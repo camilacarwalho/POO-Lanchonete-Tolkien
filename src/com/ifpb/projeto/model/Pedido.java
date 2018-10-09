@@ -44,14 +44,28 @@ public class Pedido implements Serializable {
         numeroPedido = ++idPedido;
     }
 
+    /**
+     * Função que retorna a ID de um pedido
+     * @return : ID do pedido
+     */
 
     public static int getIdPedido() {
         return idPedido;
     }
 
+    /**
+     * Função que seta a ID de um pedido
+     * @param ID : inteiro com a ID que deseja setar
+     */
+
     public static void setIdPedido(int ID){
         idPedido = ID;
     }
+
+    /**
+     * Função que retorna o valor total de um pedido
+     * @return float com o valor total
+     */
 
 
     public float getValorTotal() {
@@ -61,9 +75,20 @@ public class Pedido implements Serializable {
 
     }
 
+    /**
+     * Função que retorna a quantidade de produtos por pedido
+     * @return inteiro com a quantidade econtrada
+     */
+
     public int getQuantidade() {
         return quantidade;
     }
+
+    /**
+     * Função que seta a quantidade de produtos por pedido
+     * @param quantidade : inteiro com a quantidade desejada
+     * @throws QuantidadePorPedidoPositivaException
+     */
 
     public void setQuantidade(int quantidade) throws QuantidadePorPedidoPositivaException {
         if(quantidade<=0){

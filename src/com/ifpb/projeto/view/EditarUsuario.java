@@ -1,5 +1,6 @@
 package com.ifpb.projeto.view;
 
+import com.ifpb.projeto.Exceptions.DataInvalidaException;
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Setor;
 import com.ifpb.projeto.model.Usuario;
@@ -63,7 +64,7 @@ public class EditarUsuario extends JDialog {
 
                     DateTimeFormatter formatter = DateTimeFormatter
                             .ofPattern("dd/MM/yyyy");
-                    LocalDate date6 = LocalDate.parse(data, formatter);
+
 
                     try{
                         Nasc = LocalDate.parse(data,formatter);
@@ -88,10 +89,7 @@ public class EditarUsuario extends JDialog {
                             }
 
                             try {
-                                if (date6.isAfter(LocalDate.now())){
-                                    JOptionPane.showMessageDialog(null,"Data Inválida", "Mensagem de erro",JOptionPane.ERROR_MESSAGE);
-                                    dispose();
-                                }
+
                                 if(CadastroUsuario.update(logado,novo)){
                                     TelaLogin.setLogado(novo);
                                     logado=novo;
@@ -105,6 +103,9 @@ public class EditarUsuario extends JDialog {
                             }catch(ClassNotFoundException ex){
                                 JOptionPane.showMessageDialog(null,
                                         "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                            }catch (DataInvalidaException el){
+                                JOptionPane.showMessageDialog(null,"A data de nascimento é inválida","Mensagem de erro",JOptionPane.ERROR_MESSAGE);
+
                             }
                         }else{
                             JOptionPane.showMessageDialog(null,

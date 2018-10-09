@@ -7,6 +7,7 @@ import java.util.*;
 import java.time.format.DateTimeFormatter;
 
 import com.ifpb.projeto.Exceptions.CpfExistenteException;
+import com.ifpb.projeto.Exceptions.DataInvalidaException;
 import com.ifpb.projeto.model.*;
 /**
  * A classe CasastroUsuario representa o CRUD de objetoc tipo Usuario.
@@ -49,11 +50,14 @@ public class CadastroUsuario {
  * @throws IOException
  * @return true
 */
-    public static boolean add(Usuario novo) throws CpfExistenteException, IOException, ClassNotFoundException {
+    public static boolean add(Usuario novo) throws CpfExistenteException, IOException, ClassNotFoundException, DataInvalidaException {
         Set<Usuario> cadastrados = getCadastrados();
         for(Usuario user:cadastrados){
             if(user.getCpf().equals(novo.getCpf())){
                 throw new CpfExistenteException("Já existe um usuário com este CPF");
+            }
+            if(user.getNascimento().isAfter(LocalDate.now())){
+                throw new DataInvalidaException("Data inválida");
             }
         }
         if(cadastrados.add(novo)){
@@ -102,9 +106,13 @@ public class CadastroUsuario {
  * @return true caso consiga atualizar o usuario.
  * @reutrn false caso não consiga atualziar.
 */
-    public static boolean update(Usuario antigo, Usuario novo) throws IOException, ClassNotFoundException {
+    public static boolean update(Usuario antigo, Usuario novo) throws IOException, ClassNotFoundException, DataInvalidaException {
         Set<Usuario> cadastrados = getCadastrados();
         if(antigo!=null){
+            if(novo.getNascimento().isAfter(LocalDate.now())){
+                throw new DataInvalidaException("Data inválida");
+            }
+
             if(cadastrados.remove(antigo)){
                 if(cadastrados.add(novo)){
                     atualizarArquivo(cadastrados);

@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8b55ed1-3c8b-44f8-b42b-b8bf48cc6254" name="Default" comment="menu">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cadastrados" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastrados" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/EditarUsuario$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/EditarUsuario$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/EditarUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/EditarUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoBUBU/com/ifpb/projeto/view/TelaLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,26 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TelaLogin.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file leaf-file-name="MinhaConta.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file leaf-file-name="Cozinha.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file leaf-file-name="Cozinha.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java">
+      <file leaf-file-name="CadastroUsuario.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="61" column="55" selection-start-line="60" selection-end-line="63" />
+            <state relative-caret-position="212">
+              <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TelaLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java">
+      <file leaf-file-name="TelaDeCadastro.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
+            <state relative-caret-position="-11">
+              <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,28 +46,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPrincipal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java">
+      <file leaf-file-name="MinhaConta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-491">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="236">
+              <caret line="144" column="137" selection-start-line="144" selection-start-column="137" selection-end-line="144" selection-end-column="137" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPrincipal.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file leaf-file-name="BasicButtonListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <file leaf-file-name="EditarUsuario.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="251" selection-start-line="251" selection-end-line="251" />
+            <state relative-caret-position="264">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +101,6 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cadastro.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/Exceptions/PedidoNaoExisteException.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/Exceptions/CpfExistenteException.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaInicial.java" />
@@ -135,11 +112,9 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/NUmberField.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/NumberField.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/FloatField.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/auxilio/AplicaNimbusLookAndFeel.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.form" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/Exceptions/ComandaExistenteException.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMenu.form" />
@@ -154,22 +129,25 @@
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarPedido.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/Exceptions/DataInvalidaException.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" />
-        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java" />
         <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java" />
+        <option value="$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java" />
       </list>
     </option>
   </component>
@@ -216,20 +194,6 @@
               <item name="POO-Lanchonete-Tolkien" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="POO-Lanchonete-Tolkien" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POO-Lanchonete-Tolkien" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="POO-Lanchonete-Tolkien" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POO-Lanchonete-Tolkien" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projeto" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -238,7 +202,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="projeto" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="Cozinha" type="e9f4de52:FormNode" />
+              <item name="EditarUsuario" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="POO-Lanchonete-Tolkien" type="b2602c69:ProjectViewProjectNode" />
@@ -246,7 +210,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="projeto" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="MenuPrincipal" type="e9f4de52:FormNode" />
+              <item name="MinhaConta" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="POO-Lanchonete-Tolkien" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POO-Lanchonete-Tolkien" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="TelaDeCadastro" type="e9f4de52:FormNode" />
             </path>
           </expand>
           <select />
@@ -410,14 +382,14 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3233909" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3233909" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007587" side_tool="true" weight="0.24177632" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985294" visible="true" weight="0.23076923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985294" weight="0.23076923" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924126" weight="0.32894737" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -548,34 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="72" column="43" lean-forward="true" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="164" column="38" lean-forward="true" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Setor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Gerencia.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.form">
       <provider selected="true" editor-type-id="ui-designer" />
@@ -602,27 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="135" column="22" selection-start-line="135" selection-start-column="22" selection-end-line="142" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="141" column="52" selection-start-line="141" selection-start-column="52" selection-end-line="141" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/GerenciarMesas.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
@@ -633,44 +556,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/VerPedidos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
           <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="76" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -691,26 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="65" column="71" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Gerência.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
@@ -721,10 +593,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="53" column="81" lean-forward="true" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="81" />
+        <state relative-caret-position="320">
+          <caret line="61" column="55" selection-start-line="60" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -738,22 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaLogin.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="251" selection-start-line="251" selection-end-line="251" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-491">
@@ -764,18 +632,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MenuPrincipal.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="61" column="55" selection-start-line="60" selection-end-line="63" />
+        <state relative-caret-position="154">
+          <caret line="251" selection-start-line="251" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/GerenciaComandasFechadas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroProduto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="95" column="95" selection-start-line="95" selection-start-column="95" selection-end-line="95" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Cardapio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="73" column="51" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
+          <folding>
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1338#1339#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1503#1504#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Comanda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
+          <folding>
+            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2354#2355#0" expanded="true" />
+            <element signature="e#2380#2381#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#2446#2447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Cozinha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="72" column="43" lean-forward="true" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Pedido.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#2128#2129#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2490#2491#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2601#2602#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
+            <element signature="e#2681#2682#0" expanded="true" />
+            <element signature="e#2721#2722#0" expanded="true" />
+            <element signature="e#2756#2757#0" expanded="true" />
+            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2906#2907#0" expanded="true" />
+            <element signature="e#2941#2942#0" expanded="true" />
+            <element signature="e#2994#2995#0" expanded="true" />
+            <element signature="e#3042#3043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Setor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1822">
+          <caret line="164" column="38" lean-forward="true" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/GerenciarMesa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2535">
+          <caret line="177" column="99" selection-start-line="177" selection-start-column="99" selection-end-line="177" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/model/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/EditarUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/Cozinha.form">
-      <provider selected="true" editor-type-id="ui-designer" />
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/MinhaConta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="144" column="137" selection-start-line="144" selection-start-column="137" selection-end-line="144" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/view/TelaDeCadastro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ifpb/projeto/control/CadastroUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

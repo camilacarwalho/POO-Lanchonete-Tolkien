@@ -1,6 +1,7 @@
 package com.ifpb.projeto.view;
 
 import com.ifpb.projeto.Exceptions.CpfExistenteException;
+import com.ifpb.projeto.Exceptions.DataInvalidaException;
 import com.ifpb.projeto.control.CadastroProduto;
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Setor;
@@ -63,8 +64,6 @@ public class TelaDeCadastro extends JDialog {
 
                 String data = Nascimento.getText();
                 Setor setor = (Setor) comboBox1.getSelectedItem();
-                //oii
-                LocalDate date6 = LocalDate.parse(data, formatter);
 
 
 
@@ -97,10 +96,7 @@ public class TelaDeCadastro extends JDialog {
                                     JOptionPane.showMessageDialog(null,novo);
 
                                     try{
-                                        if (date6.isAfter(LocalDate.now())){
-                                        JOptionPane.showMessageDialog(null,"Data Inválida", "Mensagem de erro",JOptionPane.ERROR_MESSAGE);
-                                        dispose();
-                                        }//Arrumar num local que n permita o cadastro
+
                                         if(CadastroUsuario.add(novo)){
                                             JOptionPane.showMessageDialog(null,
                                                     "Usuário cadastrado com sucesso!","Mensagem de confirmação",
@@ -115,6 +111,8 @@ public class TelaDeCadastro extends JDialog {
                                         JOptionPane.showMessageDialog(null,
                                                 "Falha ao se conectar com o arquivo!","Mensagem de Erro",
                                                 JOptionPane.ERROR_MESSAGE);
+                                    }catch (DataInvalidaException el){
+                                        JOptionPane.showMessageDialog(null,"A data de nascimento é inválida","Mensagem de erro",JOptionPane.ERROR_MESSAGE);
                                     }
                                 }
                             }catch (IOException e1) {

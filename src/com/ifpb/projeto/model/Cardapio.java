@@ -43,7 +43,7 @@ public class Cardapio implements Serializable {
 
 
     /**
-     * Funções gerais para cardápio
+     * Função geral que adiciona um produto
      * @param produto : O produto que deseja adicionar
      */
 
@@ -51,16 +51,36 @@ public class Cardapio implements Serializable {
         produtos.add(produto);
     }
 
+    /**
+     * Função geral que remove um produto
+     * @param index : índice do produto desejado
+     */
     public void removeProduto(int index) {
         produtos.remove(index);
     }
 
+    /**
+     * Função geral que atualiza um produto
+     * @param index : o índice do produto desejado
+     * @param novo : o produto com valores atualizados
+     */
+
     public void atualizar(int index, Produto novo){
         produtos.set(index, novo);
     }
+
+    /**
+     * Função que verifica se a lista de produtos está vazia
+     * @return true se estiver vazia, false  se não
+     */
     public boolean isEmpty(){
         return produtos.isEmpty();
     }
+
+    /**
+     * Função que verifica o tamamho da lista de produtos
+     * @return inteiro com o tamanho da lista
+     */
     public int size(){
         return produtos.size();
     }

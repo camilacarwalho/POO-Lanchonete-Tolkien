@@ -1,5 +1,6 @@
 package com.ifpb.projeto.view;
 
+import com.ifpb.projeto.Exceptions.DataInvalidaException;
 import com.ifpb.projeto.control.CadastroUsuario;
 import com.ifpb.projeto.model.Usuario;
 import javafx.print.PaperSource;
@@ -140,6 +141,8 @@ public class MinhaConta extends JFrame {
                     }catch(ClassNotFoundException ex){
                         JOptionPane.showMessageDialog(null,
                                 "Problema com a classe Usuário","Mensagem de Erro",JOptionPane.ERROR_MESSAGE);
+                    }catch (DataInvalidaException el){
+                        JOptionPane.showMessageDialog(null,"Data de nascimento é inválida","Mensagem de erro",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }

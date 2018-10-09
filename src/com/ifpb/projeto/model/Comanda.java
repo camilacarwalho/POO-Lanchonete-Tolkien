@@ -76,6 +76,12 @@ public class Comanda implements Serializable {
         return numMesa;
     }
 
+    /**
+     * Função que seta o número de uma mesa
+     * @param numMesa : inteiro com o número da mesa
+     * @throws NumeroMesaPositivoException
+     */
+
     public void setNumMesa(int numMesa) throws NumeroMesaPositivoException {
         if(numMesa<=0){
             throw new NumeroMesaPositivoException("O número da mesa deve ser positivo!");
@@ -83,10 +89,18 @@ public class Comanda implements Serializable {
         this.numMesa = numMesa;
     }
 
+    /**
+     * Função que busca a data
+     * @return : LocalDate com a data encontrada
+     */
     public LocalDate getData() {
         return data;
     }
 
+    /**
+     * Função que busca o número da comanda
+     * @return inteiro com número da comanda buscada
+     */
     public int getNumComanda() {
         return numComanda;
     }
@@ -175,6 +189,12 @@ public class Comanda implements Serializable {
         }
         return pedidoList;
     }
+
+    /**
+     * Função que auxilia o atendimento de um pedido
+     * @param idPedido : inteiro com a ID do pedido desejado
+     * @return
+     */
 
     public boolean atendePedido(int idPedido){
         if(comanda.size()>0){
