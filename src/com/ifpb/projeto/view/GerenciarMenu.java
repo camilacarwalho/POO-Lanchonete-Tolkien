@@ -56,8 +56,7 @@ public class GerenciarMenu extends JFrame {
                                         JOptionPane.showMessageDialog(null,
                                                 "Produto cadastrado com sucesso!","Mensagem de confirmação",
                                                 JOptionPane.INFORMATION_MESSAGE);
-                                        JOptionPane.showMessageDialog(null,
-                                                novo);
+
                                     }
                                 } catch (IOException e1) {
                                     JOptionPane.showMessageDialog(null,

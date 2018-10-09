@@ -125,7 +125,7 @@ public class TelaDeCadastro extends JDialog {
                         }
                     }catch(DateTimeParseException ex){
                         JOptionPane.showMessageDialog(null,
-                                "Erro ao na ao converter a data para o formato dd/MM/yyyy","Mensagem de Erro",
+                                "Data invalida","Mensagem de Erro",
                                 JOptionPane.ERROR_MESSAGE);
                     }
                 }
