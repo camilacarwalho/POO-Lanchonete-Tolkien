@@ -18,6 +18,7 @@ public class TelaLogin extends JFrame{
     private JPasswordField passwordField1;
     private JButton cadastrarButton;
     private JButton logarButton;
+    private JLabel login;
 
     private static Usuario logado;
 
@@ -126,4 +127,8 @@ public class TelaLogin extends JFrame{
         dialog.setVisible(true);
     }
 
+    private void createUIComponents() {
+        ImageIcon icone = new ImageIcon("img/login.png");
+        login= new JLabel(icone);
+    }
 }

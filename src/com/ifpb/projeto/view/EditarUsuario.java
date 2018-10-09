@@ -51,6 +51,7 @@ public class EditarUsuario extends JDialog {
                 String phone = telefone.getText();
                 String data = nascimento.getText();
 
+
                 if(nome.equals("") || textFieldEmail.getText().equals("") || phone.length()<14 ||
                         data.length()<10){
                     JOptionPane.showMessageDialog(null,
@@ -62,6 +63,7 @@ public class EditarUsuario extends JDialog {
 
                     DateTimeFormatter formatter = DateTimeFormatter
                             .ofPattern("dd/MM/yyyy");
+                    LocalDate date6 = LocalDate.parse(data, formatter);
 
                     try{
                         Nasc = LocalDate.parse(data,formatter);
@@ -86,6 +88,10 @@ public class EditarUsuario extends JDialog {
                             }
 
                             try {
+                                if (date6.isAfter(LocalDate.now())){
+                                    JOptionPane.showMessageDialog(null,"Data Inválida", "Mensagem de erro",JOptionPane.ERROR_MESSAGE);
+                                    dispose();
+                                }
                                 if(CadastroUsuario.update(logado,novo)){
                                     TelaLogin.setLogado(novo);
                                     logado=novo;
