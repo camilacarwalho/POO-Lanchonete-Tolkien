@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Locale;
 
 public class TelaDeCadastro extends JDialog {
 
@@ -58,15 +59,24 @@ public class TelaDeCadastro extends JDialog {
                         .ofPattern("dd/MM/yyyy");
 
                 LocalDate nascimento = null;
+
+
                 String data = Nascimento.getText();
                 Setor setor = (Setor) comboBox1.getSelectedItem();
+                //oii
+                LocalDate date6 = LocalDate.parse(data, formatter);
+
+
 
                 if(Cpf.equals("")||nome.equals("")||email.equals("")||senha.equals("")||confirmacao.equals("")||telefone.equals("")
                         ||data.length()<10){
                     JOptionPane.showMessageDialog(null,
                             "Por favor preencha todos os campos corretamente!","Mensagem de Erro",
                             JOptionPane.ERROR_MESSAGE);
+
+
                 }else{
+
                     try{
                         nascimento = LocalDate.parse(data,formatter);
                         if(!senha.equals(confirmacao)){
@@ -80,10 +90,17 @@ public class TelaDeCadastro extends JDialog {
                                     JOptionPane.showMessageDialog(null,
                                             "Já existe um usuário cadastrado com este email","Mensagem de Erro",
                                             JOptionPane.ERROR_MESSAGE);
+
                                 }else{
+
                                     Usuario novo = new Usuario(Cpf,nome,email,telefone,nascimento,setor,senha);
                                     JOptionPane.showMessageDialog(null,novo);
+
                                     try{
+                                        if (date6.isAfter(LocalDate.now())){
+                                        JOptionPane.showMessageDialog(null,"Data Inválida", "Mensagem de erro",JOptionPane.ERROR_MESSAGE);
+                                        dispose();
+                                        }//Arrumar num local que n permita o cadastro
                                         if(CadastroUsuario.add(novo)){
                                             JOptionPane.showMessageDialog(null,
                                                     "Usuário cadastrado com sucesso!","Mensagem de confirmação",
