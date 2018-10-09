@@ -26,6 +26,7 @@ public class Gerência extends JFrame {
     private JButton pesquisarButton;
     private JLabel calendar;
     private JLabel calendar2;
+    private JLabel LabelValor;
     private DefaultTableModel model;
 
     public Gerência(){
@@ -68,12 +69,15 @@ public class Gerência extends JFrame {
                                     limparTabela();
                                 }else{
                                     limparTabela();
+                                    float valorTotal = 0;
                                     for(Comanda comanda:fechadas){
+                                        valorTotal += comanda.getValorFinal();
                                         String[] dataQuebrada = comanda.getData().toString().split("-");
                                         String data = dataQuebrada[2]+"/"+dataQuebrada[1]+"/"+dataQuebrada[0];
                                         model.addRow(new String[]{data,"Comanda "+comanda.getNumComanda(),"R$ "+
                                                 new DecimalFormat("0.00").format(comanda.getValorFinal())});
                                     }
+                                    LabelValor.setText("Valor Total - R$ "+new DecimalFormat("0.00").format(valorTotal));
                                 }
                             }catch (IOException ex) {
                                 JOptionPane.showMessageDialog(null,
@@ -115,6 +119,7 @@ public class Gerência extends JFrame {
                 model.removeRow(0);
             }
         }
+        LabelValor.setText("Valor Total - R$ 0,00");
     }
 
     private void createUIComponents() {

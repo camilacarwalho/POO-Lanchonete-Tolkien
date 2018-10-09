@@ -93,7 +93,6 @@ public class TelaDeCadastro extends JDialog {
                                 }else{
 
                                     Usuario novo = new Usuario(Cpf,nome,email,telefone,nascimento,setor,senha);
-                                    JOptionPane.showMessageDialog(null,novo);
 
                                     try{
 

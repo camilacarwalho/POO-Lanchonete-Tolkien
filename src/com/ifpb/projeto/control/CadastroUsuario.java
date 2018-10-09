@@ -56,7 +56,7 @@ public class CadastroUsuario {
             if(user.getCpf().equals(novo.getCpf())){
                 throw new CpfExistenteException("Já existe um usuário com este CPF");
             }
-            if(user.getNascimento().isAfter(LocalDate.now())){
+            if(novo.getNascimento().isAfter(LocalDate.now())){
                 throw new DataInvalidaException("Data inválida");
             }
         }

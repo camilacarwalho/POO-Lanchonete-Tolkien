@@ -7,7 +7,7 @@
     </constraints>
     <properties>
       <background color="-6807263"/>
-      <preferredSize width="350" height="275"/>
+      <preferredSize width="370" height="285"/>
     </properties>
     <border type="none"/>
     <children>
